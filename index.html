@@ -49,8 +49,305 @@
     overflow: hidden;
   }
 
+  /* ══════════════════════════════════════════════════
+     VAULT LANDING PAGE
+     ══════════════════════════════════════════════════ */
+  #vault-screen {
+    position: fixed; inset: 0; z-index: 9999;
+    background: linear-gradient(145deg, #060e1a 0%, #0a1628 40%, #0D3B66 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    overflow: hidden;
+    perspective: 1200px;
+  }
+  #vault-screen.opening { pointer-events: none; }
+  #vault-screen.gone { display: none !important; }
+
+  /* Ambient particles */
+  .vault-particles {
+    position: absolute; inset: 0; overflow: hidden; pointer-events: none;
+  }
+  .vault-particle {
+    position: absolute;
+    width: 2px; height: 2px;
+    background: rgba(201,168,76,.25);
+    border-radius: 50%;
+    animation: floatParticle linear infinite;
+  }
+  @keyframes floatParticle {
+    0%   { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translateY(-10vh) translateX(40px); opacity: 0; }
+  }
+
+  /* Radial glow behind door */
+  .vault-glow {
+    position: absolute;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(201,168,76,.12) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: pulseGlow 4s ease-in-out infinite alternate;
+  }
+  @keyframes pulseGlow { from { transform: scale(1); opacity: .6; } to { transform: scale(1.15); opacity: 1; } }
+
+  /* Door container — holds perspective pivot */
+  .vault-door-wrap {
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: left center;
+    transition: none;
+  }
+  .vault-door-wrap.swing {
+    animation: swingOpen 1.6s cubic-bezier(.32,.94,.6,1) forwards;
+  }
+  @keyframes swingOpen {
+    0%   { transform: rotateY(0deg); }
+    100% { transform: rotateY(-115deg); }
+  }
+
+  /* The vault door itself */
+  .vault-door {
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2a3a50 0%, #1a2a3e 40%, #0f1f33 100%);
+    border: 8px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    box-shadow:
+      0 0 0 8px #C9A84C,
+      0 0 0 12px #a8893d,
+      0 0 0 14px rgba(201,168,76,.3),
+      0 0 60px rgba(201,168,76,.15),
+      inset 0 0 40px rgba(0,0,0,.5);
+  }
+
+  /* Inner ring */
+  .vault-door::before {
+    content: '';
+    position: absolute;
+    inset: 18px;
+    border-radius: 50%;
+    border: 3px solid rgba(201,168,76,.25);
+    box-shadow: inset 0 0 20px rgba(0,0,0,.3);
+  }
+  .vault-door::after {
+    content: '';
+    position: absolute;
+    inset: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,.12);
+  }
+
+  /* Bolts around the perimeter */
+  .vault-bolt {
+    position: absolute;
+    width: 14px; height: 14px;
+    background: radial-gradient(circle at 35% 35%, #d4b862, #8a7033, #5a4820);
+    border-radius: 50%;
+    box-shadow: inset 0 1px 2px rgba(255,255,255,.3), 0 1px 3px rgba(0,0,0,.5);
+    /* positioned via inline styles in HTML */
+  }
+
+  /* Spoke wheel */
+  .vault-spoke-wrap {
+    position: absolute;
+    inset: 60px;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .8s cubic-bezier(.4,0,.2,1);
+  }
+  .vault-spoke-wrap.rotate { transform: rotate(90deg); }
+
+  .vault-spoke {
+    position: absolute;
+    background: linear-gradient(to right, #8a7033, #C9A84C, #8a7033);
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.4);
+  }
+  .vault-spoke.h { width: 100%; height: 6px; top: calc(50% - 3px); }
+  .vault-spoke.v { height: 100%; width: 6px; left: calc(50% - 3px); }
+  .vault-spoke.d1 { width: 100%; height: 5px; top: calc(50% - 2.5px); transform: rotate(45deg); }
+  .vault-spoke.d2 { width: 100%; height: 5px; top: calc(50% - 2.5px); transform: rotate(-45deg); }
+
+  /* Center hub */
+  .vault-hub {
+    position: absolute;
+    width: 60px; height: 60px;
+    top: calc(50% - 30px); left: calc(50% - 30px);
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 35%, #d4b862, #C9A84C, #8a7033);
+    box-shadow: 0 2px 8px rgba(0,0,0,.5), inset 0 1px 4px rgba(255,255,255,.2);
+    z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .vault-hub-inner {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 35%, #1a2a3e, #0f1f33);
+    border: 2px solid rgba(201,168,76,.4);
+  }
+
+  /* Branding on door */
+  .vault-brand {
+    position: absolute;
+    bottom: 55px; left: 0; right: 0;
+    text-align: center;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .vault-brand-tql {
+    font-size: 28px; font-weight: 700;
+    color: #C9A84C;
+    letter-spacing: 8px;
+    text-shadow: 0 2px 8px rgba(0,0,0,.5);
+  }
+  .vault-brand-sub {
+    font-size: 9px; font-weight: 600;
+    color: rgba(201,168,76,.5);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ACCESS GRANTED overlay */
+  .vault-granted {
+    position: absolute;
+    inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 700;
+    color: #22c55e;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    opacity: 0;
+    z-index: 10;
+    text-shadow: 0 0 30px rgba(34,197,94,.6);
+    pointer-events: none;
+  }
+  .vault-granted.show {
+    animation: grantedFlash 1.2s ease forwards;
+  }
+  @keyframes grantedFlash {
+    0%   { opacity: 0; transform: scale(.8); }
+    30%  { opacity: 1; transform: scale(1.05); }
+    70%  { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1); }
+  }
+
+  /* Light flood from behind door */
+  .vault-light {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,.9) 0%, transparent 70%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+  }
+  .vault-light.flood {
+    animation: lightFlood 1.5s ease-in forwards;
+    animation-delay: 1.2s;
+  }
+  @keyframes lightFlood {
+    0%   { opacity: 0; transform: scale(.5); }
+    50%  { opacity: .6; transform: scale(1.2); }
+    100% { opacity: 1; transform: scale(3); }
+  }
+
+  /* Entire vault fade-out */
+  #vault-screen.fade-away {
+    animation: vaultFadeAway .8s ease-in forwards;
+    animation-delay: 2.6s;
+  }
+  @keyframes vaultFadeAway {
+    0%   { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.1); }
+  }
+
+  /* Passcode area */
+  .vault-passcode {
+    margin-top: 36px;
+    text-align: center;
+    z-index: 10;
+    position: relative;
+  }
+  .vault-passcode-label {
+    font-size: 10px; font-weight: 600;
+    color: rgba(201,168,76,.5);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .vault-code-boxes {
+    display: flex; gap: 6px;
+    justify-content: center;
+  }
+  .vault-code-box {
+    width: 38px; height: 46px;
+    background: rgba(255,255,255,.06);
+    border: 1.5px solid rgba(201,168,76,.25);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Inter', monospace;
+    font-size: 18px; font-weight: 700;
+    color: #C9A84C;
+    transition: all .15s;
+  }
+  .vault-code-box.filled {
+    background: rgba(201,168,76,.1);
+    border-color: #C9A84C;
+    box-shadow: 0 0 12px rgba(201,168,76,.2);
+  }
+  .vault-code-box.correct {
+    background: rgba(34,197,94,.15);
+    border-color: #22c55e;
+    color: #22c55e;
+    box-shadow: 0 0 16px rgba(34,197,94,.3);
+  }
+  .vault-code-box.wrong {
+    background: rgba(239,68,68,.12);
+    border-color: #ef4444;
+    color: #ef4444;
+    animation: shakeBox .4s ease;
+  }
+  @keyframes shakeBox {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-6px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
+  }
+
+  /* Hidden real input */
+  .vault-hidden-input {
+    position: absolute;
+    opacity: 0;
+    width: 1px; height: 1px;
+    pointer-events: none;
+  }
+
+  .vault-hint {
+    margin-top: 20px;
+    font-size: 11px;
+    color: rgba(255,255,255,.2);
+    letter-spacing: 1px;
+  }
+
+  /* Mobile vault scaling */
+  @media (max-width: 480px) {
+    .vault-door { width: 220px; height: 220px; }
+    .vault-door-wrap { transform-origin: left center; }
+    .vault-spoke-wrap { inset: 45px; }
+    .vault-hub { width: 44px; height: 44px; top: calc(50% - 22px); left: calc(50% - 22px); }
+    .vault-hub-inner { width: 22px; height: 22px; }
+    .vault-brand { bottom: 40px; }
+    .vault-brand-tql { font-size: 20px; letter-spacing: 5px; }
+    .vault-code-box { width: 32px; height: 40px; font-size: 15px; }
+    .vault-bolt { width: 10px; height: 10px; }
+  }
+
   /* ── LAYOUT SHELL ── */
-  .app { display: flex; height: 100vh; }
+  .app { display: flex; height: 100vh; display: none; }
+  .app.revealed { display: flex; }
 
   /* ── SIDEBAR (Notion/Linear style) ── */
   .sidebar {
@@ -398,7 +695,73 @@
 </head>
 <body>
 
-<div class="app">
+<!-- ══════════ VAULT LANDING PAGE ══════════ -->
+<div id="vault-screen" onclick="focusVault()">
+  <!-- Particles -->
+  <div class="vault-particles" id="vaultParticles"></div>
+
+  <!-- Glow -->
+  <div class="vault-glow"></div>
+
+  <!-- Light flood (triggered on unlock) -->
+  <div class="vault-light" id="vaultLight"></div>
+
+  <!-- ACCESS GRANTED text -->
+  <div class="vault-granted" id="vaultGranted">ACCESS GRANTED</div>
+
+  <!-- Vault door wrapper (for 3D swing) -->
+  <div class="vault-door-wrap" id="vaultDoorWrap">
+    <div class="vault-door">
+      <!-- 12 bolts around perimeter -->
+      <div class="vault-bolt" style="top:8px;left:50%;transform:translateX(-50%)"></div>
+      <div class="vault-bolt" style="top:22px;right:38px"></div>
+      <div class="vault-bolt" style="top:68px;right:12px"></div>
+      <div class="vault-bolt" style="bottom:68px;right:12px"></div>
+      <div class="vault-bolt" style="bottom:22px;right:38px"></div>
+      <div class="vault-bolt" style="bottom:8px;left:50%;transform:translateX(-50%)"></div>
+      <div class="vault-bolt" style="bottom:22px;left:38px"></div>
+      <div class="vault-bolt" style="bottom:68px;left:12px"></div>
+      <div class="vault-bolt" style="top:68px;left:12px"></div>
+      <div class="vault-bolt" style="top:22px;left:38px"></div>
+      <div class="vault-bolt" style="top:40px;right:18px"></div>
+      <div class="vault-bolt" style="top:40px;left:18px"></div>
+
+      <!-- Spoke wheel -->
+      <div class="vault-spoke-wrap" id="vaultSpoke">
+        <div class="vault-spoke h"></div>
+        <div class="vault-spoke v"></div>
+        <div class="vault-spoke d1"></div>
+        <div class="vault-spoke d2"></div>
+        <div class="vault-hub"><div class="vault-hub-inner"></div></div>
+      </div>
+
+      <!-- Branding -->
+      <div class="vault-brand">
+        <div class="vault-brand-tql">TQL</div>
+        <div class="vault-brand-sub">Non-QM Product Intelligence</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Passcode input -->
+  <div class="vault-passcode">
+    <div class="vault-passcode-label">Enter Access Code</div>
+    <div class="vault-code-boxes" id="codeBoxes">
+      <div class="vault-code-box" id="cb0"></div>
+      <div class="vault-code-box" id="cb1"></div>
+      <div class="vault-code-box" id="cb2"></div>
+      <div class="vault-code-box" id="cb3"></div>
+      <div class="vault-code-box" id="cb4"></div>
+      <div class="vault-code-box" id="cb5"></div>
+      <div class="vault-code-box" id="cb6"></div>
+      <div class="vault-code-box" id="cb7"></div>
+    </div>
+    <input type="text" class="vault-hidden-input" id="vaultInput" maxlength="8" autocomplete="off" autocapitalize="characters" autofocus />
+    <div class="vault-hint">Authorized personnel only</div>
+  </div>
+</div>
+
+<div class="app" id="dashboardApp">
   <!-- MOBILE OVERLAY -->
   <div class="mobile-overlay" id="mobileOverlay" onclick="toggleSidebar()"></div>
 
@@ -477,7 +840,7 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           <input type="text" placeholder="Search programs..." id="searchInput" oninput="filterTable()" />
         </div>
-        <div class="disclaimer-pill">Verify with AE before quoting</div>
+        <div class="disclaimer-pill">Verify with Secondary</div>
       </div>
     </header>
 
@@ -826,6 +1189,124 @@ document.addEventListener('keydown', e => {
     document.getElementById('searchInput').focus();
   }
 });
+</script>
+
+<!-- ══════════ VAULT LOGIC ══════════ -->
+<script>
+(function() {
+  const PASSCODE = 'TQLFAITH';
+  const input = document.getElementById('vaultInput');
+  const boxes = Array.from({length: 8}, (_, i) => document.getElementById('cb' + i));
+  let unlocked = false;
+
+  // Generate floating particles
+  const particleContainer = document.getElementById('vaultParticles');
+  for (let i = 0; i < 30; i++) {
+    const p = document.createElement('div');
+    p.className = 'vault-particle';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.animationDuration = (6 + Math.random() * 10) + 's';
+    p.style.animationDelay = (Math.random() * 8) + 's';
+    p.style.width = p.style.height = (1 + Math.random() * 2) + 'px';
+    particleContainer.appendChild(p);
+  }
+
+  // Focus input on click anywhere on vault
+  window.focusVault = function() {
+    if (!unlocked) input.focus();
+  };
+
+  // Auto-focus on load
+  setTimeout(() => input.focus(), 100);
+
+  // Handle typing
+  input.addEventListener('input', function() {
+    const val = this.value.toUpperCase().replace(/[^A-Z]/g, '').slice(0, 8);
+    this.value = val;
+
+    // Update boxes
+    boxes.forEach((box, i) => {
+      box.textContent = val[i] || '';
+      box.className = 'vault-code-box' + (val[i] ? ' filled' : '');
+    });
+
+    // Check passcode when 8 chars entered
+    if (val.length === 8 && !unlocked) {
+      if (val === PASSCODE) {
+        unlocked = true;
+        openVault();
+      } else {
+        wrongCode();
+      }
+    }
+  });
+
+  // Also capture keydown for mobile/desktop compat
+  document.addEventListener('keydown', function(e) {
+    const vs = document.getElementById('vault-screen');
+    if (vs.classList.contains('gone') || unlocked) return;
+    if (e.key === 'Backspace') {
+      input.focus();
+      return;
+    }
+    if (/^[a-zA-Z]$/.test(e.key) && input.value.length < 8) {
+      input.focus();
+    }
+  });
+
+  function wrongCode() {
+    boxes.forEach(box => box.classList.add('wrong'));
+    setTimeout(() => {
+      boxes.forEach(box => {
+        box.classList.remove('wrong', 'filled');
+        box.textContent = '';
+      });
+      input.value = '';
+      input.focus();
+    }, 800);
+  }
+
+  function openVault() {
+    const screen = document.getElementById('vault-screen');
+    const spoke = document.getElementById('vaultSpoke');
+    const doorWrap = document.getElementById('vaultDoorWrap');
+    const granted = document.getElementById('vaultGranted');
+    const light = document.getElementById('vaultLight');
+    const app = document.getElementById('dashboardApp');
+
+    screen.classList.add('opening');
+
+    // Phase 1: Boxes flash green
+    boxes.forEach(box => box.classList.add('correct'));
+
+    // Phase 2: ACCESS GRANTED + spoke rotation (500ms)
+    setTimeout(() => {
+      granted.classList.add('show');
+      spoke.classList.add('rotate');
+    }, 500);
+
+    // Phase 3: Door swings open (1500ms)
+    setTimeout(() => {
+      doorWrap.classList.add('swing');
+    }, 1500);
+
+    // Phase 4: Light floods in (2200ms)
+    setTimeout(() => {
+      light.classList.add('flood');
+    }, 2200);
+
+    // Phase 5: Fade away vault, reveal dashboard (3000ms)
+    setTimeout(() => {
+      screen.classList.add('fade-away');
+      app.classList.add('revealed');
+    }, 3000);
+
+    // Phase 6: Remove vault entirely (3800ms)
+    setTimeout(() => {
+      screen.classList.add('gone');
+    }, 3800);
+  }
+})();
 </script>
 </body>
 </html>
