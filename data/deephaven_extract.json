@@ -1,0 +1,1143 @@
+[
+  {
+    "investor": "Deephaven",
+    "program": "Expanded Prime",
+    "last_updated": "03/03/2026",
+    "general": {
+      "min_fico": 660,
+      "max_loan": 3500000,
+      "min_loan": 100000,
+      "max_dti": "55% standard; DTI >50% requires primary residence only, min 700 FICO, max 80% LTV/CLTV, no FTHB",
+      "property_types": ["SFR", "PUD", "Townhomes", "Condos", "2-4 Unit", "Rural"],
+      "rural_allowed": "Purchase only, max 75% LTV",
+      "condotel_allowed": "No",
+      "foreign_national": "No",
+      "io_available": "Yes - max 80% LTV; 10yr IO / 20yr amort / 30yr maturity OR 10yr IO / 30yr amort / 40yr maturity",
+      "prepay_options": "Investment Only; 5yr (5/4/3/2/1%), 4yr (5/4/3/2%), 3yr (5/4/3%), 2yr (3%/3%), 1yr (3%)"
+    },
+    "ltv_grid": {
+      "primary": {
+        "purchase_and_rate_term": {
+          "full_doc": [
+            {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "reserves": "6 months", "ltv": 90, "note": "Up to 90%; Max 89.99%"},
+            {"fico_min": 680, "fico_max": 719, "max_loan": 1500000, "reserves": "6 months", "ltv": 90},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 1500000, "reserves": "6 months", "ltv": 85},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 1500000, "reserves": "6 months", "ltv": 85},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 1500000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 1500000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "reserves": "6 months", "ltv": 85},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000, "reserves": "6 months", "ltv": 85},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000, "reserves": "9 months", "ltv": 80},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "reserves": "9 months", "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000, "reserves": "9 months", "ltv": 75},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "reserves": "9 months", "ltv": 75},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3000000, "reserves": "12 months", "ltv": 80},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3000000, "reserves": "12 months", "ltv": 75},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3500000, "reserves": "12 months", "ltv": 70}
+          ],
+          "alt_doc": [
+            {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "reserves": "6 months", "ltv": 90},
+            {"fico_min": 680, "fico_max": 719, "max_loan": 1500000, "reserves": "6 months", "ltv": 90},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 1500000, "reserves": "6 months", "ltv": 85},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 1500000, "reserves": "6 months", "ltv": 85},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 1500000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 1500000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "reserves": "6 months", "ltv": 85},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000, "reserves": "6 months", "ltv": 85},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000, "reserves": "9 months", "ltv": 80},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "reserves": "9 months", "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000, "reserves": "9 months", "ltv": 75},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "reserves": "9 months", "ltv": 75},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3000000, "reserves": "12 months", "ltv": 80},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3000000, "reserves": "12 months", "ltv": 75},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3500000, "reserves": "12 months", "ltv": 70}
+          ]
+        },
+        "cashout": {
+          "full_doc": [
+            {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 680, "fico_max": 719, "max_loan": 1500000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 1500000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 1500000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 1500000, "reserves": "6 months", "ltv": 75},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 1500000, "reserves": "6 months", "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "reserves": "6 months", "ltv": 75},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000, "reserves": "6 months", "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000, "reserves": "9 months", "ltv": 75},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "reserves": "9 months", "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000, "reserves": "9 months", "ltv": 70},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "reserves": "9 months", "ltv": 70},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3000000, "reserves": "12 months", "ltv": 75},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3000000, "reserves": "12 months", "ltv": 70},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3500000, "reserves": "12 months", "ltv": "N/A"}
+          ],
+          "alt_doc": [
+            {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 680, "fico_max": 719, "max_loan": 1500000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 1500000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 1500000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 1500000, "reserves": "6 months", "ltv": 75},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 1500000, "reserves": "6 months", "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000, "reserves": "6 months", "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "reserves": "6 months", "ltv": 75},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000, "reserves": "6 months", "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000, "reserves": "9 months", "ltv": 75},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "reserves": "9 months", "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000, "reserves": "9 months", "ltv": 70},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "reserves": "9 months", "ltv": 70},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3000000, "reserves": "12 months", "ltv": 75},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3000000, "reserves": "12 months", "ltv": 70},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3500000, "reserves": "12 months", "ltv": "N/A"}
+          ]
+        }
+      },
+      "second_home_and_investment": {
+        "purchase_and_rate_term": {
+          "full_doc": [
+            {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 85},
+            {"fico_min": 680, "fico_max": 719, "max_loan": 1500000, "ltv": 85},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 1500000, "ltv": 80},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 1500000, "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 1500000, "ltv": 75},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 1500000, "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "ltv": 75},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000, "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "ltv": 70},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000, "ltv": 70},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000, "ltv": 75},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000, "ltv": 70},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "ltv": 70},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3000000, "ltv": 70},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3000000, "ltv": 65},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3500000, "ltv": "N/A"}
+          ],
+          "alt_doc": [
+            {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 85},
+            {"fico_min": 680, "fico_max": 719, "max_loan": 1500000, "ltv": 85},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 1500000, "ltv": 80},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 1500000, "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 1500000, "ltv": 75},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 1500000, "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "ltv": 75},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000, "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "ltv": 70},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000, "ltv": 70},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000, "ltv": 70},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "ltv": 70},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000, "ltv": 65},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "ltv": 65},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3000000, "ltv": 65},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3000000, "ltv": 60},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3500000, "ltv": "N/A"}
+          ]
+        },
+        "cashout": {
+          "full_doc": [
+            {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 80},
+            {"fico_min": 680, "fico_max": 719, "max_loan": 1500000, "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 1500000, "ltv": 75},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 1500000, "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 1500000, "ltv": 70},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 1500000, "ltv": 70},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "ltv": 75},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000, "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "ltv": 70},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000, "ltv": 70},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000, "ltv": 70},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "ltv": 70},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000, "ltv": 65},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "ltv": 65},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3000000, "ltv": 65},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3000000, "ltv": 60},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3500000, "ltv": "N/A"}
+          ],
+          "alt_doc": [
+            {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 80},
+            {"fico_min": 680, "fico_max": 719, "max_loan": 1500000, "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 1500000, "ltv": 75},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 1500000, "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 1500000, "ltv": 70},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 1500000, "ltv": 70},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "ltv": 75},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000, "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "ltv": 70},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000, "ltv": 70},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000, "ltv": 65},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "ltv": 65},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000, "ltv": 65},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "ltv": 65},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3000000, "ltv": 65},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3000000, "ltv": 60},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 3500000, "ltv": "N/A"}
+          ]
+        }
+      }
+    },
+    "products": ["15Y Fixed", "30Y Fixed", "40Y Fixed", "30Y Fixed-IO", "40Y Fixed-IO", "5/6 ARM", "5/6 ARM-IO"],
+    "income_doc": {
+      "full_doc_methods": ["1 Yr W-2s or Tax Returns (Full Doc - 12M)"],
+      "alt_doc_methods": ["12 Months Personal Bank Statements", "12 Months Business Bank Statements", "12 Months 1099 Income", "12 Month Profit & Loss Statement", "Asset Utilization (max 80% LTV, Purchase & R/T only)"],
+      "pnl_only_with_bank_statements": "Max 80% LTV Purchase, Max 70% LTV Refinance",
+      "pnl_only_without_bank_statements": "Max 70% LTV Purchase, Max 60% LTV Refinance, Min FICO 720, Max $2.0MM Loan Amt",
+      "self_employed_required": "Must be S/E for 2 years for Alt Doc"
+    },
+    "str": {
+      "allowed": "N/A - Not a DSCR program"
+    },
+    "rural": {
+      "allowed_full_doc": "Purchase only, max 75% LTV",
+      "allowed_alt_doc": "Purchase only, max 75% LTV",
+      "ltv_adjustments": "Max 75% LTV"
+    },
+    "citizenship": {
+      "us_citizen": "Eligible",
+      "permanent_resident": "Eligible",
+      "non_perm_resident": "Eligible (with US Credit)",
+      "foreign_national": "Not Eligible",
+      "itin": "Not Eligible (separate ITIN program exists)"
+    },
+    "credit_events": {
+      "bk_seasoning": "48 months",
+      "fc_dil_ss_seasoning": "48 months",
+      "mortgage_history": "1x30x12",
+      "mortgage_lates_max": "0x60x12 on acceptable tradelines"
+    },
+    "other_details": {
+      "max_cashout_lte_65_ltv": "Unlimited",
+      "max_cashout_gt_65_ltv": "$500,000",
+      "max_cashout_noo": "$500,000",
+      "cashout_used_for_reserves": "Yes",
+      "cashout_appraised_value_seasoning": "Appraised value w/ 6 month ownership seasoning allowed. Max 75% LTV and CDA or SSR of 2.5 or less required",
+      "residual_income": "$2,500",
+      "non_warrantable_condo_max_ltv": 80,
+      "two_to_four_unit_max_ltv": 80,
+      "declining_market_reduction": "5% LTV reduction",
+      "subordinate_financing": "Max CLTV = Grid Max LTV (Institutional seconds only)",
+      "investment_subordinate": "No subordinate financing",
+      "fthb": "Not eligible",
+      "seller_concessions": "Up to 6% towards closing for all occupancies",
+      "assets": "Sourced or seasoned for 30 days; Gift Funds allowed",
+      "credit_tradelines": "Standard: 3 tradelines for 12+ months or 2 for 24+ months with activity in last 12 months or 1 mortgage/installment for 36+ months. Max 0x60x12. Waived if 3 bureau scores and FICO 700+",
+      "qualifying_fico": "Middle score of 3 or lower score when only 2 agency scores provided, of primary wage earner",
+      "appraisal_lt_80_ltv": "Clear Capital AVM or like product",
+      "appraisal_gt_80_ltv": "Clear Capital CDA, Field Review, or FNMA CU Review w/ SRR score 2.5 or less",
+      "appraisal_gt_2m_loan": "Full 2nd Appraisal required",
+      "escrows": "Required for HPML loans",
+      "compliance": "All applicable federal and state regulations; No Section 32 or state high cost",
+      "ineligible_geos_delegated": "Primary & Second Home - NY; All Occupancies: HI lava zones 1 & 2; Investor: Baltimore City MD & Philadelphia PA",
+      "ineligible_geos_non_delegated": "Primary & Second Home - NY; All Occupancies: HI lava zones 1 & 2; Investor: Baltimore MD & Philadelphia PA"
+    },
+    "tql_overlays": "See TQL_OVERLAYS_ALL_PROGRAMS entry at end of file"
+  },
+  {
+    "investor": "Deephaven",
+    "program": "Non-Prime",
+    "last_updated": "03/03/2026",
+    "general": {
+      "min_fico": 620,
+      "max_loan": 2000000,
+      "min_loan": 100000,
+      "max_dti": "50%",
+      "property_types": ["SFR", "PUD", "Townhomes", "Condos", "2-4 Unit", "Rural"],
+      "rural_allowed": "Purchase only, max 75% LTV",
+      "condotel_allowed": "No",
+      "foreign_national": "No",
+      "io_available": "Yes - max 80% LTV; 10yr IO / 20yr amort / 30yr maturity OR 10yr IO / 30yr amort / 40yr maturity",
+      "prepay_options": "Investment Only; 5yr (5/4/3/2/1%), 4yr (5/4/3/2%), 3yr (5/4/3%), 2yr (3%/3%), 1yr (3%)"
+    },
+    "ltv_grid": {
+      "primary": {
+        "standard": {
+          "purchase_and_rate_term": [
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "reserves": "3 months", "ltv": 80},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 2000000, "reserves": "3 months", "ltv": 80},
+            {"fico_min": 620, "fico_max": 659, "max_loan": 2000000, "reserves": "3 months", "ltv": 80},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "reserves": "3 months", "ltv": 75},
+            {"fico_min": 620, "fico_max": 699, "max_loan": 2000000, "reserves": "3 months", "ltv": 75}
+          ],
+          "cashout": [
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "reserves": "3 months", "ltv": 80},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 2000000, "reserves": "3 months", "ltv": 75},
+            {"fico_min": 620, "fico_max": 659, "max_loan": 2000000, "reserves": "3 months", "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "reserves": "3 months", "ltv": 65},
+            {"fico_min": 620, "fico_max": 699, "max_loan": 2000000, "reserves": "3 months", "ltv": 65}
+          ]
+        },
+        "recent_event": {
+          "purchase_and_rate_term": [
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "ltv": 70},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 2000000, "ltv": 70},
+            {"fico_min": 620, "fico_max": 659, "max_loan": 2000000, "ltv": 70}
+          ],
+          "cashout": "N/A"
+        }
+      },
+      "second_home_and_investment": {
+        "purchase_and_rate_term": [
+          {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "ltv": 75},
+          {"fico_min": 660, "fico_max": 699, "max_loan": 2000000, "ltv": 75},
+          {"fico_min": 620, "fico_max": 659, "max_loan": 2000000, "ltv": 70}
+        ],
+        "cashout": [
+          {"fico_min": 700, "fico_max": 999, "max_loan": 2000000, "ltv": 65},
+          {"fico_min": 660, "fico_max": 699, "max_loan": 2000000, "ltv": 60},
+          {"fico_min": 620, "fico_max": 659, "max_loan": 2000000, "ltv": "N/A"}
+        ]
+      }
+    },
+    "products": ["15Y Fixed", "30Y Fixed", "40Y Fixed", "30Y Fixed-IO", "40Y Fixed-IO", "5/6 ARM", "5/6 ARM-IO"],
+    "income_doc": {
+      "full_doc_methods": ["1 Yr W-2 or Tax Return"],
+      "alt_doc_methods": ["12 Months Personal Bank Statements", "12 Months Business Bank Statements", "12 Months 1099 Income", "12 Month Profit & Loss Statement"],
+      "pnl_only": "2 Mo BS required; Min FICO 660; Max LTV 80% Purchase / 70% Refinance"
+    },
+    "str": {
+      "allowed": "N/A - Not a DSCR program"
+    },
+    "rural": {
+      "allowed": "Purchase only, max 75% LTV"
+    },
+    "citizenship": {
+      "us_citizen": "Eligible",
+      "permanent_resident": "Eligible",
+      "non_perm_resident": "Eligible (with US Credit)",
+      "foreign_national": "Not Eligible",
+      "itin": "Not Eligible (separate program)"
+    },
+    "credit_events": {
+      "mortgage_history_standard": "0x60x12",
+      "mortgage_history_recent_event": "1x120x12",
+      "fc_ss_dil_seasoning_standard": "24 months",
+      "fc_ss_dil_seasoning_recent_event": "Settled",
+      "chapter_13_seasoning": "24 months discharged/dismissed",
+      "chapter_7_11_seasoning": "24 months discharged/dismissed"
+    },
+    "other_details": {
+      "max_cashout": "$500,000",
+      "cashout_used_for_reserves": "Yes",
+      "residual_income": "$1,500 plus $150 per dependent",
+      "non_warrantable_condo_max_ltv": 80,
+      "two_to_four_unit_max_ltv": 80,
+      "io_max_ltv": 80,
+      "declining_market_reduction": "5% LTV reduction",
+      "subordinate_financing": "Max CLTV = Grid Max LTV (Institutional seconds only)",
+      "investment_no_subordinate": true,
+      "investment_no_fthb": true,
+      "seller_concessions": "Up to 6% towards closing for all occupancies",
+      "assets": "Sourced or seasoned for 30 days; Gift Funds allowed",
+      "credit_tradelines": "Standard: 3 tradelines for 12+ months or 2 for 24+ months or 1 mortgage/installment for 36+ months. Limited: No minimum tradeline requirements. Waived if 3 bureau scores and FICO 700+",
+      "appraisal": "Clear Capital AVM on all <80% LTV",
+      "escrows": "Required for HPML loans",
+      "compliance": "All applicable federal and state regulations; No Section 32 or state high cost",
+      "ineligible_geos_delegated": "Primary & Second Home - NY; All Occupancies: HI lava zones 1 & 2; Investor: Baltimore City MD & Philadelphia PA",
+      "ineligible_geos_non_delegated": "Primary & Second Home - NY; All Occupancies: HI lava zones 1 & 2; Investor: Baltimore MD & Philadelphia PA"
+    },
+    "tql_overlays": "See TQL_OVERLAYS_ALL_PROGRAMS entry at end of file"
+  },
+  {
+    "investor": "Deephaven",
+    "program": "DSCR",
+    "last_updated": "03/03/2026",
+    "general": {
+      "min_fico": 640,
+      "max_loan": 2500000,
+      "min_loan": 100000,
+      "min_loan_dscr_below_1": 200000,
+      "max_dti": "N/A - DSCR program",
+      "property_types": ["SFR", "PUD", "Townhome", "2-4 Units", "Condos"],
+      "rural_allowed": "Max 65% LTV, Purchase Only, Long Term Rent only, DSCR > 1.0x",
+      "condotel_allowed": "No",
+      "foreign_national": "Yes - max $1,500,000 loan amount",
+      "io_available": "Yes - max 80% LTV, min DSCR 1.00x",
+      "prepay_options": "Investment Only; 5yr (5/4/3/2/1%), 4yr (5/4/3/2%), 3yr (5/4/3%), 2yr (3%/3%), 1yr (3%)"
+    },
+    "ltv_grid": {
+      "investment": {
+        "dscr_gte_1": {
+          "purchase_and_rate_term": [
+            {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 80},
+            {"fico_min": 700, "fico_max": 719, "max_loan": 1500000, "ltv": 80},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 1500000, "ltv": 80},
+            {"fico_min": 640, "fico_max": 679, "max_loan": 1500000, "ltv": 70},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 75, "note": "second tier row"},
+            {"fico_min": 700, "fico_max": 719, "max_loan": 1500000, "ltv": 70, "note": "second tier row"},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 1500000, "ltv": 75, "note": "second tier row"},
+            {"fico_min": 640, "fico_max": 679, "max_loan": 1500000, "ltv": 65, "note": "second tier row"},
+            {"fico": "Foreign National", "max_loan": 1500000, "ltv": 70},
+            {"fico": "Foreign National", "max_loan": 1500000, "ltv": 65, "note": "second tier row"},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2000000},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 2000000},
+            {"fico_min": 660, "fico_max": 679, "max_loan": 2000000},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 2500000},
+            {"fico_min": 660, "fico_max": 699, "max_loan": 2500000}
+          ],
+          "cashout": [
+            {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 80},
+            {"fico_min": 700, "fico_max": 719, "max_loan": 1500000, "ltv": 75},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 1500000, "ltv": 75},
+            {"fico_min": 640, "fico_max": 679, "max_loan": 1500000, "ltv": 65},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 75, "note": "second tier row"},
+            {"fico_min": 700, "fico_max": 719, "max_loan": 1500000, "ltv": 70, "note": "second tier row"},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 1500000, "ltv": 75, "note": "second tier row"},
+            {"fico_min": 640, "fico_max": 679, "max_loan": 1500000, "ltv": 65, "note": "second tier row"},
+            {"fico": "Foreign National", "max_loan": 1500000, "ltv": 65},
+            {"fico": "Foreign National", "max_loan": 1500000, "ltv": 65, "note": "second tier row"}
+          ]
+        },
+        "dscr_lt_1": {
+          "min_loan": 200000,
+          "purchase_and_rate_term": [
+            {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 75},
+            {"fico_min": 700, "fico_max": 719, "max_loan": 1500000, "ltv": 75},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 1500000, "ltv": 70},
+            {"fico_min": 640, "fico_max": 679, "max_loan": 1500000, "ltv": "N/A"},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 70, "note": "second tier row"},
+            {"fico_min": 700, "fico_max": 719, "max_loan": 1500000, "ltv": "N/A", "note": "second tier row"},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 1500000, "ltv": 65, "note": "second tier row"},
+            {"fico_min": 640, "fico_max": 679, "max_loan": 1500000, "ltv": "N/A", "note": "second tier row"},
+            {"fico": "Foreign National", "ltv": "N/A"}
+          ],
+          "cashout": [
+            {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 70},
+            {"fico_min": 700, "fico_max": 719, "max_loan": 1500000, "ltv": 65},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 1500000, "ltv": 65},
+            {"fico_min": 640, "fico_max": 679, "max_loan": 1500000, "ltv": "N/A"},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 65, "note": "second tier row"},
+            {"fico_min": 700, "fico_max": 719, "max_loan": 1500000, "ltv": "N/A", "note": "second tier row"},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 1500000, "ltv": 60, "note": "second tier row"},
+            {"fico_min": 640, "fico_max": 679, "max_loan": 1500000, "ltv": "N/A", "note": "second tier row"},
+            {"fico": "Foreign National", "ltv": "N/A"}
+          ]
+        }
+      }
+    },
+    "products": ["5/6 ARM", "5/6 ARM-IO", "15Y Fixed", "30Y Fixed", "30Y Fixed-IO"],
+    "io_features": {
+      "30y_fixed_io": "10yr IO / 20yr amort / 30yr maturity",
+      "5_6_arm_io": "10yr IO / 20yr amort / 30yr maturity"
+    },
+    "income_doc": {
+      "dscr_calc": "DSCR = Gross Rents / PITIA (fully amortizing) or Gross Rents / ITIA (interest only loans)",
+      "dscr_min": "0.75x",
+      "dscr_min_for_io": "1.00x"
+    },
+    "str": {
+      "allowed": "Yes",
+      "property_guard_report": "Required on all STR transactions",
+      "dscr_min_str": "1.15x",
+      "ltv_reduction": "5% LTV reduction vs matrix (75% Max)",
+      "fico_min_str": 720,
+      "restrictions": "No First Time Investor / 2+ Unit / Rural / Unique Properties",
+      "purchase_income_source": "AirDNA - min 60% Occupancy Rate. Property income = 80% of annual revenue / 12",
+      "operator_experience": "Must document ST rental operator experience in last 12 months",
+      "refinance_requirement": "Documented 12mo history of short term rental income"
+    },
+    "rural": {
+      "allowed": "Max 65% LTV, Purchase Only, Long Term Rent only, DSCR > 1.0x",
+      "cfpb_check": "If CFPB Rural/Underserved Designation indicates 'yes' then ineligible",
+      "cfpb_link": "https://www.consumerfinance.gov/rural-or-underserved-tool/"
+    },
+    "citizenship": {
+      "us_citizen": "Eligible",
+      "permanent_resident": "Eligible",
+      "non_perm_resident": "Eligible (with US Credit)",
+      "foreign_national": "Eligible - Min DSCR 1.00x, max $1,500,000, 6 months PITIA reserves"
+    },
+    "credit_events": {
+      "mortgage_history": "0x30x12",
+      "bk_fc_ss_dil_seasoning": "36 months"
+    },
+    "other_details": {
+      "occupancy": "Business Purpose Investment Properties only",
+      "non_warrantable_condo_max_ltv": 75,
+      "reserves_lte_1m": "3 Months PITIA",
+      "reserves_gt_1m": "6 Months PITIA",
+      "reserves_dscr_lt_1": "6 Months PITIA",
+      "reserves_foreign_national": "6 Months PITIA",
+      "max_cashout_lte_65_ltv": "$1,000,000",
+      "max_cashout_gt_65_ltv": "$500,000",
+      "cashout_for_reserves": "Yes",
+      "ownership_seasoning_0_6mo": "Lesser of Purchase Price + Improvements or Appraisal",
+      "ownership_seasoning_gt_6mo": "Appraised Value",
+      "rtl_renovation_cashout": "Appraised value under 6mo ownership w/ 5% LTV reduction if SSR 2.5 or below",
+      "io_max_ltv": 80,
+      "io_min_dscr": "1.00x",
+      "subordinate_financing": "Not Allowed",
+      "unleased_properties": "Ineligible for R/T or C/O refinances",
+      "unleased_2plus_unit": "Max 1 vacant unit on Refinances",
+      "first_time_investor": "Not Eligible",
+      "first_time_homebuyers": "Not Eligible",
+      "lease_income": "Lesser of Form 1007 estimated market rent or lease. Higher lease rent with 3 months receipt. Lease in place required for all properties. Max 1 vacant unit for 2+ units",
+      "eligible_borrowers": "LLC Entities: Domestic LLC required; US/Perm/Non-Perm/Foreign National guarantors allowed",
+      "credit_tradelines": "3 tradelines for 12+ months or 2 for 24+ months or 1 mortgage/installment for 36+ months. 0x60 in 12 months. Waived if 3 bureau scores and FICO 700+",
+      "qualifying_fico": "Higher middle score of 3 scores or lower score of 2, of all borrowers/guarantors",
+      "appraisal": "One full appraisal + CDA on all properties; CDA variance >10% = 2nd full appraisal; C5/C6 condition rating not acceptable",
+      "rural_dscr_requirements": "Min DSCR 1.00, Min FICO 700, Long-Term Rental Only",
+      "declining_market_reduction": "5% LTV reduction",
+      "seller_concessions": "Up to 6% towards closing",
+      "ineligible_geos_delegated": "HI lava zones 1 & 2; Baltimore City MD & Philadelphia PA",
+      "ineligible_geos_non_delegated": "HI lava zones 1 & 2; Baltimore City MD & Philadelphia PA"
+    },
+    "tql_overlays": "See TQL_OVERLAYS_ALL_PROGRAMS entry at end of file"
+  },
+  {
+    "investor": "Deephaven",
+    "program": "ITIN",
+    "last_updated": "03/03/2026",
+    "general": {
+      "min_fico": 680,
+      "max_loan": 1500000,
+      "min_loan": 100000,
+      "max_dti": "50%",
+      "property_types": ["SFR", "PUD", "Townhomes", "Condos", "Non-Warrantable Condos", "2-4 Unit"],
+      "rural_allowed": "No - Ineligible",
+      "condotel_allowed": "No",
+      "foreign_national": "N/A - ITIN specific program",
+      "io_available": "No - Not permitted",
+      "prepay_options": "Investment Only; 5yr (5/4/3/2/1%), 4yr (5/4/3/2%), 3yr (5/4/3%), 2yr (3%/3%), 1yr (3%)"
+    },
+    "ltv_grid": {
+      "primary": {
+        "purchase": [
+          {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 80},
+          {"fico_min": 700, "fico_max": 719, "max_loan": 1500000, "ltv": 80},
+          {"fico_min": 680, "fico_max": 699, "max_loan": 1500000, "ltv": 75}
+        ],
+        "rate_term": [
+          {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 80},
+          {"fico_min": 700, "fico_max": 719, "max_loan": 1500000, "ltv": 75},
+          {"fico_min": 680, "fico_max": 699, "max_loan": 1500000, "ltv": "N/A"}
+        ],
+        "cashout": [
+          {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 65},
+          {"fico_min": 700, "fico_max": 719, "max_loan": 1500000, "ltv": 60},
+          {"fico_min": 680, "fico_max": 699, "max_loan": 1500000, "ltv": "N/A"}
+        ]
+      },
+      "second_home_and_investment": {
+        "purchase_and_rate_term": [
+          {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 70},
+          {"fico_min": 700, "fico_max": 719, "max_loan": 1500000, "ltv": 70},
+          {"fico_min": 680, "fico_max": 699, "max_loan": 1500000, "ltv": "N/A"}
+        ],
+        "cashout": [
+          {"fico_min": 720, "fico_max": 999, "max_loan": 1500000, "ltv": 65},
+          {"fico_min": 700, "fico_max": 719, "max_loan": 1500000, "ltv": "N/A"},
+          {"fico_min": 680, "fico_max": 699, "max_loan": 1500000, "ltv": "N/A"}
+        ]
+      }
+    },
+    "products": ["30Y Fixed", "5/6 ARM"],
+    "income_doc": {
+      "full_doc_methods": ["1 Yr W-2 or Tax Return"],
+      "alt_doc_methods": ["12 Months Personal Bank Statements", "12 Months Business Bank Statements", "12 Months 1099 Income", "12 Month Profit & Loss Statement"],
+      "pnl_only": "2 Mo BS required; Max LTV 80% Purchase / 75% Refinance"
+    },
+    "str": {
+      "allowed": "N/A"
+    },
+    "rural": {
+      "allowed": "No - Rural Properties, Condotels, Co-ops, Manufactured Homes, Mobile Homes, Geodomes, Unique Properties all ineligible"
+    },
+    "citizenship": {
+      "itin": "Eligible - this is the ITIN program",
+      "itin_documentation": "See guidelines for details"
+    },
+    "credit_events": {
+      "mortgage_rental_history": "0x30x12",
+      "fc_ss_dil_bk_seasoning": "48 months"
+    },
+    "other_details": {
+      "max_cashout": "$500,000",
+      "cashout_for_reserves": "Yes",
+      "residual_income": "$1,500 plus $150 per dependent",
+      "reserves_standard": "3 Months PITIA",
+      "reserves_cashout_2nd_investor_gt80": "6 Months PITIA",
+      "min_3mo_reserves_borrower_own_funds": true,
+      "min_borrower_contribution": "5%",
+      "two_to_four_units_2nd_home": "Ineligible",
+      "subordinate_financing": "Not permitted under ITIN program",
+      "escrow_waivers": "Not permitted under ITIN program",
+      "assets": "Sourced or seasoned for 30 days; Gift Funds allowed with min 5% Borrower Contribution",
+      "credit_tradelines": "Standard: 3 for 12+ months or 2 for 24+ months or 1 mortgage/installment for 36+ months. Limited tradelines ineligible. Waived if 3 bureau scores and FICO 700+",
+      "appraisal": "Clear Capital AVM or like product on all transactions",
+      "declining_market_reduction": "5% LTV reduction",
+      "seller_concessions": "Up to 6% towards closing for all occupancies",
+      "compliance": "HPML escrows required; All federal/state regulations; No Section 32 or state high cost",
+      "ineligible_geos_delegated": "Primary & Second Home - NY; All Occupancies: HI lava zones 1 & 2; Investor: Baltimore City MD & Philadelphia PA",
+      "ineligible_geos_non_delegated": "Primary & Second Home - NY; All Occupancies: HI lava zones 1 & 2; Investor: Baltimore MD & Philadelphia PA"
+    },
+    "tql_overlays": "See TQL_OVERLAYS_ALL_PROGRAMS entry at end of file"
+  },
+  {
+    "investor": "Deephaven",
+    "program": "Expanded Prime Super Jumbo",
+    "last_updated": "03/03/2026",
+    "general": {
+      "min_fico": 680,
+      "max_loan": 5000000,
+      "min_loan": 3500000,
+      "max_dti": "35%",
+      "property_types": ["SFR", "PUD", "Townhomes", "Warrantable Condos", "2-4 Unit"],
+      "rural_allowed": "No - Ineligible",
+      "condotel_allowed": "No",
+      "foreign_national": "No",
+      "io_available": "No - Not permitted",
+      "prepay_options": "Not specified in matrix"
+    },
+    "ltv_grid": {
+      "primary_only": {
+        "full_doc": {
+          "purchase": [
+            {"fico_min": 720, "fico_max": 999, "max_loan": 4000000, "reserves": "24 months", "dti": "35%", "ltv": 75},
+            {"fico_min": 680, "fico_max": 719, "max_loan": 4000000, "reserves": "24 months", "dti": "35%", "ltv": 75},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 4000000, "reserves": "24 months", "dti": "35%", "ltv": 70},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 4000000, "reserves": "24 months", "dti": "35%", "ltv": 65},
+            {"fico_min": 720, "fico_max": 999, "max_loan": 5000000, "reserves": "24 months", "dti": "35%", "ltv": "See guidelines"}
+          ],
+          "refinance": [
+            {"fico_min": 720, "fico_max": 999, "max_loan": 4000000, "reserves": "24 months", "dti": "35%", "ltv": 65},
+            {"fico_min": 680, "fico_max": 719, "max_loan": 4000000, "reserves": "24 months", "dti": "35%", "ltv": 65},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 4000000, "reserves": "24 months", "dti": "35%", "ltv": "N/A"},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 4000000, "reserves": "24 months", "dti": "35%", "ltv": "N/A"}
+          ]
+        },
+        "alt_doc": {
+          "purchase": [
+            {"fico_min": 720, "fico_max": 999, "max_loan": 4000000, "reserves": "24 months", "dti": "35%", "ltv": 70},
+            {"fico_min": 680, "fico_max": 719, "max_loan": 4000000, "reserves": "24 months", "dti": "35%", "ltv": 70},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 4000000, "reserves": "24 months", "dti": "35%", "ltv": 65},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 4000000, "reserves": "24 months", "dti": "35%", "ltv": 65}
+          ],
+          "refinance": [
+            {"fico_min": 720, "fico_max": 999, "max_loan": 4000000, "reserves": "24 months", "dti": "35%", "ltv": 60},
+            {"fico_min": 680, "fico_max": 719, "max_loan": 4000000, "reserves": "24 months", "dti": "35%", "ltv": 60},
+            {"fico_min": 700, "fico_max": 999, "max_loan": 4000000, "reserves": "24 months", "dti": "35%", "ltv": "N/A"},
+            {"fico_min": 680, "fico_max": 699, "max_loan": 4000000, "reserves": "24 months", "dti": "35%", "ltv": "N/A"}
+          ]
+        }
+      }
+    },
+    "products": ["30Y Fixed", "5/6 ARM"],
+    "income_doc": {
+      "full_doc_methods": ["12 Month W-2s or Tax Returns"],
+      "alt_doc_methods": ["12 Month Personal Bank Statements", "12 Month Business Bank Statements", "12 Month 1099 Income"]
+    },
+    "citizenship": {
+      "us_citizen": "Eligible",
+      "permanent_resident": "Eligible",
+      "non_perm_resident": "Not Eligible",
+      "foreign_national": "Not Eligible",
+      "itin": "Not Eligible"
+    },
+    "credit_events": {
+      "mortgage_history": "0x30x24",
+      "bk_seasoning": "48 months",
+      "fc_dil_ss_seasoning": "48 months"
+    },
+    "other_details": {
+      "occupancy": "Primary Residence Only",
+      "max_cashout": "$1,000,000",
+      "cashout_for_reserves": "Not allowed",
+      "texas_cashout": "Not allowed",
+      "fthb": "Ineligible",
+      "subordinate_financing": "Not allowed",
+      "gift_funds": "Not allowed",
+      "declining_market_reduction": "5% LTV reduction",
+      "delayed_financing": "Allowed - treated as cash-out for eligibility & pricing",
+      "additional_reserves_other_reo": "2 months PITIA per additional financed property, max 36 months",
+      "valuation": "Two appraisals required on all loans; lower appraised value used",
+      "assets": "Sourced or seasoned for 30 days",
+      "credit_tradelines": "3 tradelines for 12+ months or 2 for 24+ months or 1 mortgage/installment for 36+ months. Max 0x60x12",
+      "escrow_waivers": "Not permitted unless required by state law",
+      "compliance": "All federal/state regulations; No Section 32 or state high cost",
+      "eligible_csa": "Must be in CSA with >2mm residents per 2020 census",
+      "eligible_csa_codes": "408 New York-Newark; 348 Los Angeles-Long Beach; 548 Washington-Baltimore-Arlington; 176 Chicago-Naperville; 488 San Jose-San Francisco-Oakland; 206 Dallas-Fort Worth; 148 Boston-Worcester-Providence; 288 Houston-Pasadena; 428 Philadelphia-Reading-Camden; 122 Atlanta-Athens Clarke-Sandy Springs; 370 Miami-Port St Lucie-Ft Lauderdale; 220 Detroit-Warren-Ann Arbor; 429 Phoenix-Mesa; 500 Seattle-Tacoma; 422 Orlando-Lakeland-Deltona; 378 Minneapolis-St Paul; 184 Cleveland-Akron-Canton; 216 Denver-Aurora-Greeley; 172 Charlotte-Concord; 440 Portland-Vancouver-Salem; 476 St Louis-St Charles-Farmington; 482 Salt Lake City-Provo-Orem; 484 San Antonio-New Braunfels-Kerrville; 430 Pittsburgh-Weirton-Steubenville; 472 Sacramento-Roseville; 405 New Haven-Hartford-Waterbury; 294 Indianapolis-Carmel-Muncie; 198 Columbus-Marion-Zanesville; 312 Kansas City-Overland Park; 332 Las Vegas-Henderson; 450 Raleigh-Durham-Cary; 400 Nashville-Davidson-Murfreesboro; 178 Cincinnati-Wilmington; 376 Milwaukee-Racine",
+      "seller_concessions": "Up to 6% towards closing",
+      "ineligible_geos": "NY, HI lava zones 1 & 2"
+    },
+    "tql_overlays": "See TQL_OVERLAYS_ALL_PROGRAMS entry at end of file"
+  },
+  {
+    "investor": "Deephaven",
+    "program": "DSCR 5-9 Unit",
+    "last_updated": "09/22/2025",
+    "general": {
+      "min_fico": 680,
+      "max_loan": 2500000,
+      "min_loan": 350000,
+      "max_dti": "N/A - DSCR program",
+      "property_types": ["5-9 Unit Residential Properties"],
+      "mixed_use_commercial": "No",
+      "rural_allowed": "No - Ineligible",
+      "condotel_allowed": "No",
+      "foreign_national": "No",
+      "io_available": "Yes - reduce max LTV by 5%",
+      "prepay_options": "Investment Only; 5yr (5/4/3/2/1%), 4yr (5/4/3/2%), 3yr (5/4/3%), 2yr (3%/3%), 1yr (3%)"
+    },
+    "ltv_grid": {
+      "investment": {
+        "purchase": [
+          {"fico_min": 720, "fico_max": 999, "max_loan": 2500000, "ltv": 75},
+          {"fico_min": 700, "fico_max": 719, "max_loan": 2500000, "ltv": 75},
+          {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "ltv": 70}
+        ],
+        "rate_term": [
+          {"fico_min": 720, "fico_max": 999, "max_loan": 2500000, "ltv": 75},
+          {"fico_min": 700, "fico_max": 719, "max_loan": 2500000, "ltv": 75},
+          {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "ltv": 70}
+        ],
+        "cashout": [
+          {"fico_min": 720, "fico_max": 999, "max_loan": 2500000, "ltv": 70},
+          {"fico_min": 700, "fico_max": 719, "max_loan": 2500000, "ltv": 70},
+          {"fico_min": 680, "fico_max": 699, "max_loan": 2500000, "ltv": 65}
+        ]
+      }
+    },
+    "products": ["5/6 ARM", "5/6 ARM-IO", "30Y Fixed", "30Y Fixed-IO"],
+    "io_terms": "10yr IO, 20yr Amort, 30yr Term",
+    "income_doc": {
+      "dscr_calc": "DSCR = Gross Rents / PITIA (fully amortizing) or Gross Rents / ITIA (interest only loans)",
+      "dscr_min": "1.15x"
+    },
+    "str": {
+      "allowed": "No - Short-term rental income not eligible"
+    },
+    "rural": {
+      "allowed": "No - Ineligible",
+      "acreage_limit": "Max 2 acres"
+    },
+    "credit_events": {
+      "mortgage_history": "0x30x24",
+      "fc_ss_dil_seasoning": "84 months",
+      "chapter_7_11_13_bk_seasoning": "84 months"
+    },
+    "other_details": {
+      "occupancy": "Business Purpose Investment Properties only",
+      "max_cashout": "$500,000",
+      "reserves": "6 Months PITIA",
+      "vacant_units_max": 2,
+      "vacant_unit_dscr_calc": "75% of market rents",
+      "lease_income": "Leased: lower of market rent or lease; Unleased: 75% of market rents",
+      "leases_required": "Copies of existing leases required for purchase and refi",
+      "first_time_investors": "Not Allowed",
+      "investor_experience": "12-month history of investment property ownership required",
+      "llc_borrowers": "Personal Guarantor required w/ min 25% ownership; Domestic LLCs only",
+      "subordinate_financing": "Not Allowed",
+      "assets": "Sourced or seasoned for 60 days",
+      "credit_tradelines": "3 tradelines for 12+ months or 2 for 24+ months or 1 mortgage/installment for 36+ months. 0x60 in 12 months. Limited Tradelines not allowed",
+      "qualifying_fico": "Lower mid score of all borrowers/guarantors",
+      "appraisal": "One full appraisal (FHLMC 71A, FNMA 1050, or similar) + Commercial BPO. Required attachments: Rent Roll, Income/Expense Statement, Photos, Aerial Photo, Sketch/Floor Plan, Map, Plot Plan/Survey, Appraiser Qualifications",
+      "seller_concessions": "Up to 3% towards closing",
+      "ineligible_states": "HI lava zones 1 & 2"
+    },
+    "tql_overlays": "See TQL_OVERLAYS_ALL_PROGRAMS entry at end of file"
+  },
+  {
+    "investor": "Deephaven",
+    "program": "Equity Advantage (HELOAN Second Mortgage)",
+    "last_updated": "09/22/2025",
+    "general": {
+      "min_fico": 660,
+      "max_loan": 750000,
+      "min_loan": 50000,
+      "max_dti": "50%",
+      "property_types": ["SFR", "PUD", "Townhome", "2-4 Units", "Warrantable Condos", "Non-Warrantable Condos"],
+      "rural_allowed": "No - Ineligible",
+      "condotel_allowed": "No",
+      "foreign_national": "Ineligible",
+      "io_available": "Yes - Max CLTV 70%; FICO 700+; Primary only; 1st Lien must be fully amortizing",
+      "prepay_options": "Not specified in matrix"
+    },
+    "ltv_grid": {
+      "primary": [
+        {"fico_min": 700, "fico_max": 999, "max_loan": 350000, "max_cltv": 90},
+        {"fico_min": 680, "fico_max": 699, "max_loan": 350000, "max_cltv": 85},
+        {"fico_min": 660, "fico_max": 679, "max_loan": 350000, "max_cltv": 80},
+        {"fico_min": 720, "fico_max": 999, "max_loan": 500000, "max_cltv": 90},
+        {"fico_min": 700, "fico_max": 719, "max_loan": 500000, "max_cltv": 85},
+        {"fico_min": 660, "fico_max": 699, "max_loan": 500000, "max_cltv": 75},
+        {"fico_min": 720, "fico_max": 999, "max_loan": 750000, "max_cltv": 80},
+        {"fico_min": 700, "fico_max": 719, "max_loan": 750000, "max_cltv": 75}
+      ],
+      "second_home": [
+        {"fico_min": 700, "fico_max": 999, "max_loan": 350000, "max_cltv": 85},
+        {"fico_min": 680, "fico_max": 699, "max_loan": 350000, "max_cltv": 80},
+        {"fico_min": 660, "fico_max": 679, "max_loan": 350000, "max_cltv": 70},
+        {"fico_min": 720, "fico_max": 999, "max_loan": 500000, "max_cltv": 80},
+        {"fico_min": 700, "fico_max": 719, "max_loan": 500000, "max_cltv": 80},
+        {"fico_min": 660, "fico_max": 699, "max_loan": 500000, "max_cltv": 70},
+        {"fico_min": 720, "fico_max": 999, "max_loan": 750000, "max_cltv": 75},
+        {"fico_min": 700, "fico_max": 719, "max_loan": 750000, "max_cltv": 70}
+      ],
+      "investment": [
+        {"fico_min": 700, "fico_max": 999, "max_loan": 350000, "max_cltv": 80},
+        {"fico_min": 680, "fico_max": 699, "max_loan": 350000, "max_cltv": 80},
+        {"fico_min": 660, "fico_max": 679, "max_loan": 350000, "max_cltv": 70},
+        {"fico_min": 720, "fico_max": 999, "max_loan": 500000, "max_cltv": 80},
+        {"fico_min": 700, "fico_max": 719, "max_loan": 500000, "max_cltv": 80},
+        {"fico_min": 660, "fico_max": 699, "max_loan": 500000, "max_cltv": 70},
+        {"fico_min": 720, "fico_max": 999, "max_loan": 750000, "max_cltv": "N/A"},
+        {"fico_min": 700, "fico_max": 719, "max_loan": 750000, "max_cltv": "N/A"}
+      ]
+    },
+    "products": ["10Y Fixed", "15Y Fixed", "20Y Fixed", "20Y Fixed-IO", "25Y Fixed", "30Y Fixed", "30Y Fixed-IO"],
+    "transaction_type": "Standalone Second only",
+    "income_doc": {
+      "full_doc_methods": ["1 or 2 Yrs W-2s or Tax Returns"],
+      "alt_doc_methods": ["12 Months Personal Bank Statements", "12 Months Business Bank Statements"],
+      "pnl_only": "Allowed w/ 5% CLTV Reduction; Max 80% CLTV"
+    },
+    "citizenship": {
+      "us_citizen": "Eligible",
+      "permanent_resident": "Eligible",
+      "non_perm_resident": "Eligible (with SSN)",
+      "foreign_national": "Ineligible",
+      "itin": "Ineligible"
+    },
+    "credit_events": {
+      "mortgage_history": "0x30x12",
+      "bk_fc_ss_dil_seasoning": "48 months"
+    },
+    "other_details": {
+      "max_cashout": "$750,000",
+      "reserves": "No Minimum Reserves",
+      "non_warrantable_condo_max_cltv": 75,
+      "ownership_seasoning_primary": "None required; <6 months = 10% CLTV reduction",
+      "ownership_seasoning_2nd_investment": "6 months required; min 6 months since most recent mortgage transaction",
+      "io_requirements": "Max CLTV 70%; FICO 700+; Primary only; 1st Lien must be fully amortizing",
+      "title_lte_400k": "Owner and Encumbrance Property Report",
+      "title_gt_400k": "Full Title Policy",
+      "credit_tradelines": "3 tradelines for 12+ months or 2 for 24+ months or 1 for 36+ months (must be mortgage/installment). 0x60 in 12 months. Limited Tradelines Allowed - Primary only, Max CLTV 75%",
+      "qualifying_fico": "Mid score of primary wage earner",
+      "assets": "No cash to close and/or reserves required",
+      "appraisal_lte_400k": "AVM + Property Condition Report OR Full interior appraisal (1004, 1073, 1025)",
+      "appraisal_gt_400k": "Full interior appraisal (1004, 1073, 1025)",
+      "appraisal_waivers": "Not acceptable",
+      "hpml": "Full interior appraisal required",
+      "avm_vendors": "ClearCapital, Collateral Analytics, CoreLogic, HouseCanary, Homegenius, Quantarium, Veros",
+      "avm_confidence": "90% confidence / FSD 0.10",
+      "listed_properties": "Listed for sale in prior 6 months = ineligible",
+      "flood_insurance": "Lesser of 1st + 2nd lien UPB or $250,000",
+      "declining_market_reduction": "5% LTV reduction",
+      "solar_panels": "Allowed per FNMA guidelines; lien against subject not eligible",
+      "leasehold": "Not eligible",
+      "hazard_coverage": "100% replacement cost covering both 1st and 2nd lien",
+      "state_limitations": "TN max 180 term; TX Cashout Primary max 80% CLTV",
+      "ineligible_geos": "Primary & Second Home - NY; All Occupancies: HI lava zones 1 & 2",
+      "ineligible_property_types": "Condotels, Commercial/Agricultural, Leasehold, Land Trusts, Age-Restricted Communities, Hobby Farms, Modular, Land Contract, Log Homes"
+    },
+    "tql_overlays": "See TQL_OVERLAYS_ALL_PROGRAMS entry at end of file"
+  },
+  {
+    "investor": "Deephaven",
+    "program": "Equity Advantage Elite (HELOAN Second Mortgage)",
+    "last_updated": "09/22/2025",
+    "general": {
+      "min_fico": 680,
+      "max_loan": 500000,
+      "min_loan": 50000,
+      "max_dti": "50%",
+      "property_types": ["SFR", "PUD", "Townhome", "2-4 Units", "Warrantable Condos"],
+      "rural_allowed": "No - Ineligible",
+      "condotel_allowed": "No",
+      "foreign_national": "Ineligible",
+      "io_available": "No - Not Allowed",
+      "prepay_options": "Not specified in matrix"
+    },
+    "ltv_grid": {
+      "primary": {
+        "rate_term": [
+          {"fico_min": 740, "fico_max": 999, "max_loan": 500000, "max_cltv": 90},
+          {"fico_min": 720, "fico_max": 739, "max_loan": 500000, "max_cltv": 90},
+          {"fico_min": 700, "fico_max": 719, "max_loan": 500000, "max_cltv": 85},
+          {"fico_min": 680, "fico_max": 699, "max_loan": 500000, "max_cltv": 75}
+        ],
+        "cashout": [
+          {"fico_min": 740, "fico_max": 999, "max_loan": 500000, "max_cltv": 90},
+          {"fico_min": 720, "fico_max": 739, "max_loan": 500000, "max_cltv": 85},
+          {"fico_min": 700, "fico_max": 719, "max_loan": 500000, "max_cltv": 75},
+          {"fico_min": 680, "fico_max": 699, "max_loan": 500000, "max_cltv": 75}
+        ]
+      },
+      "second_home_and_investment": {
+        "rate_term": [
+          {"fico_min": 740, "fico_max": 999, "max_loan": 500000, "max_cltv": 75},
+          {"fico_min": 720, "fico_max": 739, "max_loan": 500000, "max_cltv": 75},
+          {"fico_min": 700, "fico_max": 719, "max_loan": 500000, "max_cltv": 70},
+          {"fico_min": 680, "fico_max": 699, "max_loan": 500000, "max_cltv": 65}
+        ],
+        "cashout": [
+          {"fico_min": 740, "fico_max": 999, "max_loan": 500000, "max_cltv": 75},
+          {"fico_min": 720, "fico_max": 739, "max_loan": 500000, "max_cltv": 75},
+          {"fico_min": 700, "fico_max": 719, "max_loan": 500000, "max_cltv": 65},
+          {"fico_min": 680, "fico_max": 699, "max_loan": 500000, "max_cltv": "See matrix"}
+        ]
+      }
+    },
+    "products": ["10Y Fixed", "15Y Fixed", "20Y Fixed", "25Y Fixed", "30Y Fixed"],
+    "transaction_type": "Standalone Second only",
+    "income_doc": {
+      "full_doc_methods": ["1 or 2 Yrs W-2s or Tax Returns"],
+      "alt_doc_methods": ["Not specified - Full Doc only per matrix"]
+    },
+    "citizenship": {
+      "us_citizen": "Eligible",
+      "permanent_resident": "Eligible",
+      "non_perm_resident": "Eligible (with SSN)",
+      "foreign_national": "Ineligible",
+      "itin": "Ineligible"
+    },
+    "credit_events": {
+      "mortgage_history": "0x30x24",
+      "bk_fc_ss_dil_seasoning": "84 months"
+    },
+    "other_details": {
+      "max_cashout": "$500,000",
+      "reserves": "No Minimum Reserves",
+      "ownership_seasoning_primary": "None required; <6 months = 10% CLTV reduction",
+      "ownership_seasoning_2nd_investment": "6 months required",
+      "credit_tradelines": "3 tradelines for 12+ months or 2 for 24+ months or 1 for 36+ months (must be mortgage/installment). 0x60 in 12 months",
+      "qualifying_fico": "Mid score of primary wage earner",
+      "assets": "No cash to close and/or reserves required",
+      "appraisal_lte_400k": "AVM + Property Condition Report OR Full interior appraisal (1004, 1073, 1025)",
+      "appraisal_gt_400k": "Full interior appraisal (1004, 1073, 1025)",
+      "avm_vendors": "ClearCapital, Collateral Analytics, CoreLogic, HouseCanary, Homegenius, Quantarium, Veros",
+      "avm_confidence": "90% confidence / FSD 0.10",
+      "listed_properties": "Listed for sale in prior 6 months = ineligible",
+      "flood_insurance": "Lesser of 1st + 2nd lien UPB or $250,000",
+      "declining_market_reduction": "5% CLTV reduction",
+      "solar_panels": "Allowed per FNMA guidelines; lien against subject not eligible",
+      "leasehold": "Not eligible",
+      "hazard_coverage": "100% replacement cost covering both 1st and 2nd lien",
+      "state_limitations": "TN max 180 term; TX Cashout Primary max 80% CLTV",
+      "ineligible_geos": "Primary & Second Home - NY; All Occupancies: HI lava zones 1 & 2",
+      "ineligible_property_types": "Condotels, Commercial/Agricultural, Leasehold, Land Trusts, Age-Restricted Communities, Hobby Farms, Non-Warrantable Condos, Modular, Land Contracts, Rural, Log Homes"
+    },
+    "tql_overlays": "See TQL_OVERLAYS_ALL_PROGRAMS entry at end of file"
+  },
+  {
+    "investor": "Deephaven",
+    "program": "Equity Advantage DSCR (HELOAN Second Mortgage)",
+    "last_updated": "09/22/2025",
+    "general": {
+      "min_fico": 680,
+      "max_loan": 500000,
+      "min_loan": 75000,
+      "max_dti": "N/A - DSCR program",
+      "property_types": ["SFR", "PUD", "Townhome", "2-4 Units"],
+      "rural_allowed": "No - Ineligible",
+      "condotel_allowed": "No",
+      "foreign_national": "No",
+      "io_available": "No - Not Allowed",
+      "prepay_options": "5yr (5/4/3/2/1%), 4yr (5/4/3/2%), 3yr (5/4/3%), 2yr (3%/3%), 1yr (3%)"
+    },
+    "ltv_grid": {
+      "investment": {
+        "rate_term": [
+          {"fico_min": 720, "fico_max": 999, "max_loan": 500000, "max_cltv": 80},
+          {"fico_min": 700, "fico_max": 719, "max_loan": 500000, "max_cltv": 75},
+          {"fico_min": 680, "fico_max": 699, "max_loan": 500000, "max_cltv": 65}
+        ],
+        "cashout": [
+          {"fico_min": 720, "fico_max": 999, "max_loan": 500000, "max_cltv": 80},
+          {"fico_min": 700, "fico_max": 719, "max_loan": 500000, "max_cltv": 75},
+          {"fico_min": 680, "fico_max": 699, "max_loan": 500000, "max_cltv": 65}
+        ]
+      }
+    },
+    "products": ["15Y Fixed", "20Y Fixed", "25Y Fixed", "30Y Fixed"],
+    "income_doc": {
+      "dscr_calc": "DSCR = Gross Rents / PITIA (fully amortizing). Min DSCR 1.00x",
+      "dscr_min": "1.00x",
+      "lease_income": "Lesser of Form 1007 or existing lease; higher lease with 3mo receipt. Lease required for all properties; 2+ unit: max 1 vacant unit"
+    },
+    "str": {
+      "allowed": "No - Not Allowed"
+    },
+    "rural": {
+      "allowed": "No - Ineligible"
+    },
+    "citizenship": {
+      "us_citizen": "Eligible",
+      "permanent_resident": "Eligible",
+      "non_perm_resident": "Eligible (with US Credit)"
+    },
+    "credit_events": {
+      "mortgage_history": "0x30x12",
+      "bk_fc_ss_dil_seasoning": "48 months"
+    },
+    "other_details": {
+      "occupancy": "Business Purpose Investment Properties only",
+      "two_to_four_units_cltv_reduction": "5% CLTV Reduction",
+      "reserves": "No reserves required",
+      "ownership_seasoning": "Min 6 months required",
+      "personal_guaranty": "Required on all Entity/LLC loans",
+      "eligible_borrowers": "Natural Persons, Corporations, LLC Entities",
+      "llc_requirements": "Domestic LLC required; US/Perm/Non-Perm guarantors allowed",
+      "credit_tradelines": "3 trades for 12+ months or 2 for 24+ months or 1 mortgage/installment for 36+ months. 0x60 in 12 months",
+      "qualifying_fico": "Higher middle score of 3 scores or lower of 2, all borrowers/guarantors",
+      "title_lte_400k": "Owner and Encumbrance Property Report",
+      "title_gt_400k": "Full Title Policy",
+      "appraisal_lte_400k": "AVM + Property Condition Report OR Full interior appraisal (1004 or 1025)",
+      "appraisal_gt_400k": "Full interior appraisal (1004 or 1025)",
+      "avm_vendor": "ClearCapital (90% / 0.10)",
+      "listed_properties": "Listed for sale in prior 6 months = ineligible",
+      "declining_market_reduction": "5% CLTV reduction",
+      "hazard_coverage": "100% replacement cost covering both 1st and 2nd lien",
+      "state_limitations": "TN max 180 term",
+      "ineligible_states": "HI lava zones 1 & 2",
+      "ineligible_property_types": "Condos, Non-Warrantable Condos, Rural, Condotels, Commercial/Agricultural, Leasehold, Land Trusts, Age-Restricted Communities, Hobby Farms, Modular, Land Contract, Log Homes"
+    },
+    "tql_overlays": "See TQL_OVERLAYS_ALL_PROGRAMS entry at end of file"
+  },
+  {
+    "investor": "Deephaven",
+    "program": "TQL_OVERLAYS_ALL_PROGRAMS",
+    "last_updated": "03/03/2026",
+    "note": "WARNING: The overlays document (Deephaven vs TQL Guideline OVERLAYS.txt) suffered severe encoding corruption during PDF-to-text extraction. Most text is garbled Unicode. Below are all overlays that could be reliably reconstructed from readable fragments. A clean PDF re-extraction of the overlays document is recommended for complete accuracy.",
+    "tql_overlays_reconstructed": {
+      "expanded_prime": {
+        "max_ltv_primary_purchase_rt": "Max 90% (89.99%); per matrix grids apply",
+        "max_ltv_investment": "Per matrix; no subordinate financing on investment",
+        "interest_only_max_ltv": "80%",
+        "pnl_with_2mo_bs": "Max 80% LTV Purchase, Max 70% LTV Refinance; qualify off Alt Doc grids",
+        "pnl_without_bs": "Max 70% LTV Purchase, Max 60% LTV Refinance; Min FICO 720; Max $2.0MM",
+        "asset_utilization": "Max 80% LTV Full Doc Matrix; Purchase & R/T Only",
+        "fthb": "Not eligible",
+        "declining_market": "5% LTV reduction per appraisal indication",
+        "cashout_lte_65_ltv": "Unlimited",
+        "cashout_gt_65_ltv": "$500,000 cap",
+        "cashout_noo": "$500,000 max",
+        "cashout_seasoning_lt_6mo": "Max 75% LTV; CDA or SSR <= 2.5 required",
+        "rural": "Purchase only; Max 75% LTV",
+        "condotel": "Ineligible",
+        "non_warrantable_condo_2_4_unit": "Max 80% LTV",
+        "subordinate_financing": "Max CLTV = Grid Max LTV; Institutional seconds only; No sub financing on investment",
+        "seller_concessions": "Up to 6%",
+        "dti_gt_50": "Primary only; Min 700 FICO; Max 80% LTV/CLTV; No FTHB"
+      },
+      "dscr": {
+        "str_allowed": "Yes - Property Guard required; Min DSCR 1.15x; 5% LTV reduction (75% max); Min FICO 720; No FTI/2+Unit/Rural/Unique",
+        "str_purchase_airdna": "80% of annual revenue / 12; Min 60% Occupancy Rate",
+        "str_refi": "12mo documented STR income history",
+        "rural_dscr": "Max 65% LTV; Purchase Only; Long-Term Rent only; DSCR > 1.0x; CFPB Rural check",
+        "foreign_national": "Eligible; Max $1.5M; Min DSCR 1.00x; 6 months PITIA reserves",
+        "dscr_below_1_min_loan": "$200,000",
+        "dscr_below_1_reserves": "6 Months PITIA",
+        "dscr_min": "0.75x",
+        "io_max_ltv": "80%; Min DSCR 1.00x",
+        "non_warrantable_condo": "Max 75% LTV",
+        "subordinate_financing": "Not Allowed",
+        "unleased_properties": "Ineligible for R/T or C/O refi",
+        "first_time_investor": "Not Eligible",
+        "rtl_renovation": "Appraised value w/ SSR <= 2.5 under 6mo ownership; 5% LTV reduction",
+        "cashout_lte_65_ltv": "$1,000,000 (overlays apply)",
+        "cashout_gt_65_ltv": "$500,000",
+        "cashout_for_reserves": "Allowed"
+      },
+      "non_prime": {
+        "recent_event_purchase_rt": "Max 70% LTV",
+        "recent_event_cashout": "N/A",
+        "mortgage_history_recent": "1x120x12",
+        "fc_ss_dil_recent": "Settled",
+        "bk_13_seasoning": "24 months discharged/dismissed",
+        "bk_7_11_seasoning": "24 months discharged/dismissed",
+        "pnl_only": "2 Mo BS required; Min FICO 660; Max 80% Purchase / 70% Refi",
+        "investment_subordinate": "Not allowed",
+        "investment_fthb": "Not allowed",
+        "io_max_ltv": "80%",
+        "max_cashout": "$500,000",
+        "residual_income": "$1,500 + $150/dependent"
+      },
+      "itin": {
+        "io": "Not permitted",
+        "subordinate_financing": "Not permitted",
+        "escrow_waivers": "Not permitted",
+        "two_to_four_2nd_home": "Ineligible",
+        "rural": "Ineligible",
+        "min_borrower_contribution": "5% from own funds",
+        "limited_tradelines": "Ineligible",
+        "pnl_only": "2 Mo BS; Max 80% Purchase / 75% Refi"
+      },
+      "super_jumbo": {
+        "occupancy": "Primary Only",
+        "max_dti": "35%",
+        "reserves": "24 months",
+        "fthb": "Ineligible",
+        "subordinate_financing": "Not allowed",
+        "gift_funds": "Not allowed",
+        "io": "Not permitted",
+        "texas_cashout": "Not allowed",
+        "cashout_for_reserves": "Not allowed",
+        "valuation": "Two full appraisals required; lower value used",
+        "eligible_csa": "CSA with >2mm residents required",
+        "rural": "Ineligible",
+        "citizenship": "US Citizens & Permanent Resident Aliens only"
+      },
+      "five_to_nine_unit": {
+        "min_loan": "$350,000",
+        "min_dscr": "1.15x",
+        "str": "Not eligible",
+        "rural": "Ineligible; Max 2 acres",
+        "io": "5% LTV reduction from matrix",
+        "first_time_investor": "Not Allowed",
+        "subordinate_financing": "Not Allowed",
+        "seasoning_assets": "60 days (vs 30 days on other programs)",
+        "seller_concessions": "3% (vs 6% on other programs)",
+        "credit_seasoning_fc_ss_dil": "84 months (vs 36-48 months on other programs)",
+        "bk_seasoning": "84 months (vs 48 months on other programs)",
+        "mortgage_history": "0x30x24 (vs 0x30x12 on other programs)"
+      },
+      "heloan_equity_advantage": {
+        "min_loan": "$50,000",
+        "transaction_type": "Standalone Second only",
+        "rural": "Ineligible",
+        "foreign_national": "Ineligible",
+        "itin": "Ineligible",
+        "io": "Max CLTV 70%; FICO 700+; Primary only; 1st lien fully amortizing",
+        "pnl_only": "5% CLTV reduction; Max 80% CLTV",
+        "non_warrantable_condo": "Max 75% CLTV",
+        "ownership_seasoning_primary_lt_6mo": "10% CLTV reduction",
+        "listed_properties": "Prior 6 months = ineligible"
+      },
+      "heloan_equity_advantage_elite": {
+        "min_loan": "$50,000",
+        "max_loan": "$500,000",
+        "io": "Not Allowed",
+        "non_warrantable_condo": "Ineligible",
+        "rural": "Ineligible",
+        "mortgage_history": "0x30x24",
+        "bk_fc_ss_dil": "84 months",
+        "listed_properties": "Prior 6 months = ineligible"
+      },
+      "heloan_equity_advantage_dscr": {
+        "min_loan": "$75,000",
+        "max_loan": "$500,000",
+        "min_dscr": "1.00x",
+        "io": "Not Allowed",
+        "str": "Not Allowed",
+        "rural": "Ineligible",
+        "two_to_four_unit": "5% CLTV reduction",
+        "reserves": "None required",
+        "ownership_seasoning": "Min 6 months"
+      },
+      "general_tql_notes": {
+        "investor_ineligibility_geos": "Baltimore City MD & Philadelphia PA for investor occupancy loans (all first lien programs)",
+        "ny_ineligibility": "Primary & Second Home in NY (delegated & non-delegated)",
+        "hi_ineligibility": "HI lava zones 1 & 2 (all occupancies, all programs)",
+        "fraud_report": "SDW/SDF required per current Verus/OnGenicy Seller Guide",
+        "condotel": "Ineligible across ALL Deephaven programs",
+        "declining_market": "5% LTV/CLTV reduction across all programs when appraisal indicates declining market"
+      }
+    }
+  }
+]

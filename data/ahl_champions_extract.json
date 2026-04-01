@@ -1,0 +1,743 @@
+[
+  {
+    "investor": "AHL",
+    "program": "INVEST STAR - Full & Alt Doc (Investment Only)",
+    "last_updated": "03/01/2026",
+    "general": {
+      "min_fico": 660,
+      "max_loan": 2000000,
+      "min_loan": 100000,
+      "max_dti": "50% when LTV <= 80%; 45% when LTV > 80%; 43% when living rent free; 45% when Interest Only",
+      "property_types": ["SFR 1-4 Units", "PUD", "Condo", "Non-Warrantable Condo", "Condotel", "Rural"],
+      "rural_allowed": "YES - 680 Min FICO, Max 80% Purchase / 75% R&T / 70% Cash-Out, Max 10 acres, at least 2 comps within 5 miles, property must be on paved road (no dirt roads)",
+      "condotel_allowed": "YES - 680 Min FICO, Max 75% Purchase / 70% R&T / 65% Cash-Out",
+      "foreign_national": "NO",
+      "io_available": "YES - Max 80% Purchase / 80% R&T / 75% Cash-Out",
+      "prepay_options": "Fixed percentage 1-5 year term with 5% fixed penalty; Declining structure starting at 5% with floor of 3%"
+    },
+    "ltv_grid": {
+      "primary": {
+        "purchase": [],
+        "rate_term": [],
+        "cashout": []
+      },
+      "second_home": {
+        "purchase": [],
+        "rate_term": [],
+        "cashout": []
+      },
+      "investment": {
+        "purchase": [
+          {"fico": "760+", "lt_1m": "85%", "lt_1.5m": "80%", "lt_2m": "80%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"},
+          {"fico": "740-759", "lt_1m": "85%", "lt_1.5m": "80%", "lt_2m": "80%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"},
+          {"fico": "720-739", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "80%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"},
+          {"fico": "700-719", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "80%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"},
+          {"fico": "680-699", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"},
+          {"fico": "660-679", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"}
+        ],
+        "rate_term": [
+          {"fico": "760+", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "80%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"},
+          {"fico": "740-759", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "80%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"},
+          {"fico": "720-739", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "80%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"},
+          {"fico": "700-719", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "80%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"},
+          {"fico": "680-699", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"},
+          {"fico": "660-679", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"}
+        ],
+        "cashout": [
+          {"fico": "760+", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "80%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"},
+          {"fico": "740-759", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "80%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"},
+          {"fico": "720-739", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "75%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"},
+          {"fico": "700-719", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "75%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"},
+          {"fico": "680-699", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "75%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"},
+          {"fico": "660-679", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "75%", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"}
+        ]
+      }
+    },
+    "product_type_restrictions": {
+      "2_4_unit": {"purchase": "80%", "rate_term": "75%", "cashout": "70%"},
+      "warrantable_condo": {"purchase": "85%", "rate_term": "80%", "cashout": "80%"},
+      "non_warrantable_condo": {"purchase": "75%", "rate_term": "75%", "cashout": "70%", "min_fico": 680},
+      "condotel": {"purchase": "75%", "rate_term": "70%", "cashout": "65%", "min_fico": 680},
+      "interest_only": {"purchase": "80%", "rate_term": "80%", "cashout": "75%"},
+      "non_permanent_resident": {"purchase": "75%", "rate_term": "70%", "cashout": "70%"},
+      "rural": {"purchase": "80%", "rate_term": "75%", "cashout": "70%", "min_fico": 680}
+    },
+    "income_doc": {
+      "full_doc": ["1 or 2 Years W-2 & Paystubs", "Tax Returns"],
+      "alt_doc": ["1 or 2 Years 1099", "12 or 24 Month Personal Bank Statements", "12 or 24 Month Business Bank Statements"],
+      "bank_statement_requirements": "2 Years self-employed in same business required",
+      "expense_ratio": {
+        "fixed_expense_ratio_service": {"0_3_fte": "20%", "4_9_fte": "40%", "10_plus_fte": "60%"},
+        "fixed_expense_ratio_product": {"0_3_fte": "40%", "4_9_fte": "60%", "10_plus_fte": "80%"},
+        "expense_letter": "Letter from CPA/accountant, IRS enrolled agent, or tax preparer subject to minimum total expense percentage of 10%",
+        "pnl_expense": "Expense factor provided on P&L prepared by CPA/accountant, IRS enrolled agent, or tax preparer subject to minimum total expense percentage of 10%"
+      },
+      "dscr_calc": "N/A - This is a Full/Alt Doc program, not DSCR",
+      "dscr_min": "N/A",
+      "sub1_allowed": "N/A",
+      "no_ratio": "N/A"
+    },
+    "str": {
+      "allowed": "NO - This is a Full/Alt Doc investment program, not DSCR. STR not applicable.",
+      "proof_requirements": "N/A",
+      "expense_factor": "N/A",
+      "fico_min": "N/A",
+      "ltv_adjustments": "N/A",
+      "dscr_min": "N/A"
+    },
+    "rural": {
+      "dscr": "N/A - Not a DSCR program",
+      "dscr_str": "N/A",
+      "full_doc": "YES - 680 Min FICO",
+      "alt_doc": "YES - 680 Min FICO",
+      "ltv_adjustments": "Max 80% Purchase / 75% R&T / 70% Cash-Out",
+      "acreage_limit": "10 acres max",
+      "conditions": "At least 2 comps must be within 5 miles of subject property. Property must be located on a paved road. No dirt roads."
+    },
+    "citizenship": {
+      "us_citizen": "YES",
+      "perm_resident": "YES",
+      "non_perm_resident": "YES - Max 75% LTV Purchase / 70% R&T / 70% Cash-Out",
+      "foreign_national": "NO",
+      "itin": "Not mentioned",
+      "daca": "Not mentioned"
+    },
+    "credit_events": {
+      "bk_seasoning": "36 months; 24 months by exception only (Max 75% LTV, Max $1,500,000 loan amount)",
+      "fc_seasoning": "36 months; 24 months by exception only (Max 75% LTV, Max $1,500,000 loan amount)",
+      "ss_seasoning": "36 months; 24 months by exception only (Max 75% LTV, Max $1,500,000 loan amount)",
+      "housing_event": "BK, FC, SS, FB, Mod all require 36 month seasoning; 24 month exception at Max 75% LTV / Max $1.5M",
+      "mortgage_lates": "0x30x12 required for all mortgages; 1x30x12 by exception only (Max 75% LTV, Max $1,500,000 loan amount)",
+      "covid_forbearance": "Eligible if all missed payments repaid or 3 regular payments over 90 days paid after forbearance ended"
+    },
+    "product": {
+      "fixed_products": "30 Year fixed or 40 Year fixed interest only",
+      "arm_products": "Not Allowed",
+      "io_term": "120 Months",
+      "prepay_restrictions": "Not mentioned for this program",
+      "escrows": "Escrow waiver allowed with conditions, see client guide. Max LTV 80% for stacking, Min FICO 720",
+      "cash_out_max": "$500,000 max cash in hand for LTV > 65%; No limit for LTV <= 65%",
+      "delayed_financing": "Eligible when property purchased for cash within 180 days of loan application; Purchase loan/LTV limits apply"
+    },
+    "reserves": {
+      "description": "0 Months PITIA when LTV <= 65%; 6 Months PITIA when LTV > 65%; Purchase - 3 Months PITIA with credit score >= 720 and LTV <= 80; 12 Months PITIA for loan amounts > $1,500,000 regardless of LTV"
+    },
+    "property": {
+      "min_sq_ft": {"sfr_pud": "600 sq ft", "condo": "500 sq ft", "2_4_unit": "400 sq ft"},
+      "acreage": "Max 10 acres",
+      "condition": "C4 or better",
+      "appraisal": "Approved AMC required, SSRs required unless transferred. SFR-1004, 2-4 Units-1025, Condo-1073. Dated within 120 days of Note. Desk review required on all loans or CU Score 2.5 or less with restrictions."
+    },
+    "borrower": {
+      "max_borrowers": 4,
+      "vesting": ["Natural persons", "US Domiciled Entity", "Living Trusts"],
+      "first_time_investor": "Must own primary residence for 12 months during last 3 years (Max 80% LTV)",
+      "exposure": "Max $5,000,000 or 15 properties to one single borrower",
+      "tradelines": "1 active tradeline rated 24 months AND 2 tradelines rated 12 months open or closed; OR 1 mortgage tradeline rated 12 months open/closed in last 24 months AND 1 additional tradeline"
+    }
+  },
+  {
+    "investor": "AHL",
+    "program": "ALL STAR - Full & Alt Doc (Primary & Second Home)",
+    "last_updated": "03/01/2026",
+    "general": {
+      "min_fico": 660,
+      "max_loan": 3000000,
+      "min_loan": 100000,
+      "max_dti": "50% when LTV <= 80%; 45% when LTV > 80%; 43% for Asset Qualifier; 45% for Income Lift; 43% when living rent free; 45% when Interest Only",
+      "property_types": ["SFR 1-4 Units", "PUD", "Condo", "Non-Warrantable Condo", "Condotel"],
+      "rural_allowed": "NO - Max 10 acres, no rural properties",
+      "condotel_allowed": "YES - 680 Min FICO, Max 70% Purchase / 70% R&T / 65% Cash-Out",
+      "foreign_national": "YES - 680 Min FICO, default score 680 when US credit unavailable, $150,000 min loan, 12 months reserves, Second Home only",
+      "io_available": "YES - Max 80% Purchase / 75% R&T / 70% Cash-Out",
+      "prepay_options": "Not Allowed"
+    },
+    "ltv_grid": {
+      "primary": {
+        "purchase": [
+          {"fico": "760+", "lt_1m": "90%", "lt_1.5m": "90%", "lt_2m": "85%", "lt_2.5m": "80%", "lt_3m": "75%", "lt_3.5m": "70%"},
+          {"fico": "740-759", "lt_1m": "90%", "lt_1.5m": "90%", "lt_2m": "85%", "lt_2.5m": "80%", "lt_3m": "75%", "lt_3.5m": "70%"},
+          {"fico": "720-739", "lt_1m": "90%", "lt_1.5m": "90%", "lt_2m": "85%", "lt_2.5m": "80%", "lt_3m": "75%", "lt_3.5m": "70%"},
+          {"fico": "700-719", "lt_1m": "90%", "lt_1.5m": "85%", "lt_2m": "85%", "lt_2.5m": "75%", "lt_3m": "75%", "lt_3.5m": "N/A"},
+          {"fico": "680-699", "lt_1m": "85%", "lt_1.5m": "85%", "lt_2m": "80%", "lt_2.5m": "70%", "lt_3m": "70%", "lt_3.5m": "N/A"},
+          {"fico": "660-679", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "80%", "lt_2.5m": "70%", "lt_3m": "70%", "lt_3.5m": "N/A"}
+        ],
+        "rate_term": [
+          {"fico": "760+", "lt_1m": "85%", "lt_1.5m": "85%", "lt_2m": "80%", "lt_2.5m": "75%", "lt_3m": "70%", "lt_3.5m": "70%"},
+          {"fico": "740-759", "lt_1m": "85%", "lt_1.5m": "85%", "lt_2m": "80%", "lt_2.5m": "75%", "lt_3m": "70%", "lt_3.5m": "70%"},
+          {"fico": "720-739", "lt_1m": "85%", "lt_1.5m": "85%", "lt_2m": "80%", "lt_2.5m": "75%", "lt_3m": "70%", "lt_3.5m": "70%"},
+          {"fico": "700-719", "lt_1m": "85%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_2.5m": "70%", "lt_3m": "70%", "lt_3.5m": "N/A"},
+          {"fico": "680-699", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_2.5m": "70%", "lt_3m": "70%", "lt_3.5m": "N/A"},
+          {"fico": "660-679", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_2.5m": "70%", "lt_3m": "70%", "lt_3.5m": "N/A"}
+        ],
+        "cashout": [
+          {"fico": "760+", "lt_1m": "80%", "lt_1.5m": "75%", "lt_2m": "75%", "lt_2.5m": "70%", "lt_3m": "65%", "lt_3.5m": "N/A"},
+          {"fico": "740-759", "lt_1m": "80%", "lt_1.5m": "75%", "lt_2m": "75%", "lt_2.5m": "70%", "lt_3m": "65%", "lt_3.5m": "N/A"},
+          {"fico": "720-739", "lt_1m": "80%", "lt_1.5m": "75%", "lt_2m": "75%", "lt_2.5m": "70%", "lt_3m": "65%", "lt_3.5m": "N/A"},
+          {"fico": "700-719", "lt_1m": "80%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%", "lt_3.5m": "N/A"},
+          {"fico": "680-699", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%", "lt_3.5m": "N/A"},
+          {"fico": "660-679", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "N/A", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"}
+        ]
+      },
+      "second_home": {
+        "purchase": [
+          {"fico": "760+", "lt_1m": "85%", "lt_1.5m": "85%", "lt_2m": "80%", "lt_2.5m": "75%", "lt_3m": "70%", "lt_3.5m": "N/A"},
+          {"fico": "740-759", "lt_1m": "85%", "lt_1.5m": "85%", "lt_2m": "80%", "lt_2.5m": "75%", "lt_3m": "70%", "lt_3.5m": "N/A"},
+          {"fico": "720-739", "lt_1m": "85%", "lt_1.5m": "85%", "lt_2m": "80%", "lt_2.5m": "75%", "lt_3m": "70%", "lt_3.5m": "N/A"},
+          {"fico": "700-719", "lt_1m": "80%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%", "lt_3.5m": "N/A"},
+          {"fico": "680-699", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%", "lt_3.5m": "N/A"},
+          {"fico": "660-679", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"}
+        ],
+        "rate_term": [
+          {"fico": "760+", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_2.5m": "70%", "lt_3m": "65%", "lt_3.5m": "N/A"},
+          {"fico": "740-759", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_2.5m": "70%", "lt_3m": "65%", "lt_3.5m": "N/A"},
+          {"fico": "720-739", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_2.5m": "70%", "lt_3m": "65%", "lt_3.5m": "N/A"},
+          {"fico": "700-719", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%", "lt_3.5m": "N/A"},
+          {"fico": "680-699", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%", "lt_3.5m": "N/A"},
+          {"fico": "660-679", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"}
+        ],
+        "cashout": [
+          {"fico": "760+", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%", "lt_3.5m": "N/A"},
+          {"fico": "740-759", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%", "lt_3.5m": "N/A"},
+          {"fico": "720-739", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%", "lt_3.5m": "N/A"},
+          {"fico": "700-719", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "65%", "lt_2.5m": "60%", "lt_3m": "60%", "lt_3.5m": "N/A"},
+          {"fico": "680-699", "lt_1m": "65%", "lt_1.5m": "65%", "lt_2m": "60%", "lt_2.5m": "60%", "lt_3m": "60%", "lt_3.5m": "N/A"},
+          {"fico": "660-679", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A", "lt_2.5m": "N/A", "lt_3m": "N/A", "lt_3.5m": "N/A"}
+        ]
+      },
+      "investment": {
+        "purchase": [],
+        "rate_term": [],
+        "cashout": [],
+        "note": "Investment not eligible under ALL STAR Full/Alt Doc. See INVEST STAR programs."
+      }
+    },
+    "product_type_restrictions": {
+      "non_warrantable_condo": {"purchase": "75%", "rate_term": "75%", "cashout": "70%", "min_fico": 680},
+      "condotel": {"purchase": "70%", "rate_term": "70%", "cashout": "65%"},
+      "interest_only": {"purchase": "80%", "rate_term": "75%", "cashout": "70%"},
+      "asset_qualifier": {"purchase": "85%", "rate_term": "80%", "cashout": "75%"},
+      "1yr_pnl": {"purchase": "75%", "rate_term": "75%", "cashout": "70%"},
+      "non_permanent_resident": {"purchase": "75%", "rate_term": "70%", "cashout": "70%"},
+      "foreign_national": {"purchase": "75%", "rate_term": "70%", "cashout": "70%"}
+    },
+    "income_doc": {
+      "full_doc": ["1 or 2 Years W-2 & Paystubs", "Tax Returns"],
+      "alt_doc": [
+        "1 or 2 Years 1099",
+        "12 or 24 Month Personal Bank Statements",
+        "12 or 24 Month Business Bank Statements",
+        "1 Year Profit & Loss (CPA/EA/CTEC/Tax Attorney prepared and signed)",
+        "Asset Qualifier (assets post-close > 110% of loan amount + reserves; income = qualified assets / 60 months)",
+        "Asset Income Lift (income = qualified assets / 120 months; must pair with Full Doc, Bank Statements, or 1099)"
+      ],
+      "bank_statement_requirements": "2 Years self-employed in same business required",
+      "expense_ratio": {
+        "fixed_expense_ratio_service": {"0_3_fte": "20%", "4_9_fte": "40%", "10_plus_fte": "60%"},
+        "fixed_expense_ratio_product": {"0_3_fte": "40%", "4_9_fte": "60%", "10_plus_fte": "80%"},
+        "expense_letter": "Letter from CPA/accountant, IRS enrolled agent, or tax preparer subject to minimum total expense percentage of 10%",
+        "pnl_expense": "Expense factor on P&L prepared by CPA/accountant, IRS enrolled agent, or tax preparer subject to minimum total expense percentage of 10%"
+      },
+      "1yr_pnl_requirements": "Min 700 FICO, Min $150,000 loan, Max $2,000,000 loan, 12 months PITIA reserves, Max 45% DTI, CPA/EA/CTEC/Tax Attorney must attest filing of most recent business tax return, 2 months recent bank statements to support P&L income, Primary Residence Only, No stacking LTV or Fees",
+      "dscr_calc": "N/A - Full/Alt Doc program",
+      "dscr_min": "N/A",
+      "sub1_allowed": "N/A",
+      "no_ratio": "N/A"
+    },
+    "str": {
+      "allowed": "NO - Not applicable for Full/Alt Doc owner-occupied/second home program",
+      "proof_requirements": "N/A",
+      "expense_factor": "N/A",
+      "fico_min": "N/A",
+      "ltv_adjustments": "N/A",
+      "dscr_min": "N/A"
+    },
+    "rural": {
+      "dscr": "N/A",
+      "dscr_str": "N/A",
+      "full_doc": "NO - No rural properties allowed on ALL STAR",
+      "alt_doc": "NO - No rural properties allowed on ALL STAR",
+      "ltv_adjustments": "N/A",
+      "acreage_limit": "10 acres max (but no rural)",
+      "conditions": "No rural properties"
+    },
+    "citizenship": {
+      "us_citizen": "YES",
+      "perm_resident": "YES",
+      "non_perm_resident": "YES - Max 75% Purchase / 70% R&T / 70% Cash-Out",
+      "foreign_national": "YES - 680 Min FICO, default 680 when US credit unavailable, $150,000 min loan, 12 months reserves, Second Home only. See guide for visa requirements.",
+      "itin": "Not mentioned",
+      "daca": "Not mentioned"
+    },
+    "credit_events": {
+      "bk_seasoning": "48 months",
+      "fc_seasoning": "48 months",
+      "ss_seasoning": "48 months",
+      "housing_event": "BK, FC, SS, FB, Mod all require 48 month seasoning",
+      "mortgage_lates": "0x30x12 required for all mortgages. All mortgages must be current at closing.",
+      "covid_forbearance": "Eligible if all missed payments repaid or 3 regular payments over 90 days paid after forbearance ended"
+    },
+    "product": {
+      "fixed_products": "30 Year fixed or 40 Year fixed interest only",
+      "arm_products": "Not Allowed",
+      "io_term": "120 Months",
+      "escrows": "Escrow waiver allowed with conditions",
+      "cash_out_max": "$500,000 max cash in hand for LTV > 65%; No limit for LTV <= 65%",
+      "texas_cashout": "Max 80% LTV, financed points cannot exceed 80% LTV, 12 day waiting period required",
+      "delayed_financing": "Eligible when property purchased for cash within 180 days of loan application; Purchase loan/LTV limits apply",
+      "occupancy": "Primary and Second Home only",
+      "secondary_financing": "Max CLTV restricted to max qualifying LTV"
+    },
+    "reserves": {
+      "description": "0 Months PITIA when LTV <= 65%; 6 Months PITIA when LTV > 65%; Purchase - 3 Months PITIA with credit score >= 720 and LTV <= 80; 12 Months PITIA for loan amounts > $1,500,000 regardless of LTV; 12 Months PITIA for foreign nationals; 12 Months PITIA for P&L income type"
+    },
+    "property": {
+      "types": ["SFR 1-4 Units", "PUD", "Condo", "Non-Warrantable Condo", "Condotel"],
+      "min_sq_ft": {"sfr_pud": "600 sq ft", "condo": "500 sq ft", "2_4_unit": "400 sq ft"},
+      "acreage": "Max 10 acres, no rural properties",
+      "condition": "C4 or better",
+      "appraisal": "Approved AMC required, SSRs required unless transferred. SFR-1004, 2-4 Units-1025, Condo-1073. Second appraisal required for loan amounts > $2,000,000. Dated within 120 days of Note. Desk review required on all loans or CU Score 2.5 or less with restrictions.",
+      "unavailable_states": ["AK", "HI", "MO", "ND", "NY", "SD"]
+    },
+    "borrower": {
+      "max_borrowers": 4,
+      "vesting": ["Natural persons", "US Domiciled Entity", "Living Trusts"],
+      "first_time_homebuyer": "See Client Guide",
+      "exposure": "Max $5,000,000 or 15 properties to one single borrower",
+      "tradelines": "1 active tradeline rated 24 months AND 2 tradelines rated 12 months open or closed; OR 1 mortgage tradeline rated 12 months open/closed in last 24 months AND 1 additional tradeline",
+      "concessions": "6% for LTV < 80%; 4% for LTV > 80%. Must be used for closing costs and prepaids.",
+      "gift_funds": "Allowed with min 5% borrower contribution at max 80% LTV; or no borrower contribution to max 75% LTV on Primary Home; min 10% borrower contribution for Second Home",
+      "gift_equity": "Allowed with min 5% borrower contribution at max 80% LTV; or no borrower contribution to max 75% LTV on Primary Home; min 10% borrower contribution for Second Home"
+    }
+  },
+  {
+    "investor": "AHL",
+    "program": "INVEST STAR DSCR",
+    "last_updated": "03/01/2026",
+    "general": {
+      "min_fico": 660,
+      "max_loan": 3000000,
+      "min_loan": 75000,
+      "max_dti": "N/A - DSCR program, no DTI calculation",
+      "property_types": ["SFR 1-4 Units", "PUD", "Condo", "Non-Warrantable Condo", "Condotel", "5-10 Units (Residential use only)"],
+      "rural_allowed": "NO - No rural properties on DSCR",
+      "condotel_allowed": "YES - 680 Min FICO, Max 75% Purchase / 70% R&T / 65% Cash-Out",
+      "foreign_national": "YES - US Citizen only required for 5-10 units; otherwise 680 Min FICO, default 680 when US credit unavailable, $150,000 min loan, 12 months reserves, Min DSCR 1.00",
+      "io_available": "YES - Requires 700 FICO and max 75% LTV (standard); 700 FICO max 70% LTV for sub-1 DSCR",
+      "prepay_options": "Fixed percentage 1-5 year term with 5% fixed penalty; Declining structure starting at 5% with floor of 3%. Not allowed in AK, KS, MN, NM, RI (no restrictions on 5-10 unit in KS, MN, NM, RI). Allowed with conditions in IL, MS, NJ, OH, PA."
+    },
+    "ltv_grid": {
+      "primary": {
+        "purchase": [],
+        "rate_term": [],
+        "cashout": [],
+        "note": "Investment only - no primary residence"
+      },
+      "second_home": {
+        "purchase": [],
+        "rate_term": [],
+        "cashout": [],
+        "note": "Investment only - no second home"
+      },
+      "investment": {
+        "dscr_above_1": {
+          "purchase": [
+            {"fico": "760+", "lt_1m": "85%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_3m": "70%", "note": "LTV > 80% see footnote 5"},
+            {"fico": "740-759", "lt_1m": "85%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_3m": "70%", "note": "LTV > 80% see footnote 5"},
+            {"fico": "720-739", "lt_1m": "80%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_3m": "65%"},
+            {"fico": "700-719", "lt_1m": "80%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_3m": "65%"},
+            {"fico": "680-699", "lt_1m": "75%", "lt_1.5m": "70%", "lt_2m": "65%", "lt_3m": "60%"},
+            {"fico": "660-679", "lt_1m": "70%", "lt_1.5m": "65%", "lt_2m": "60%", "lt_3m": "55%"}
+          ],
+          "rate_term": [
+            {"fico": "760+", "lt_1m": "80%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_3m": "65%"},
+            {"fico": "740-759", "lt_1m": "80%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_3m": "65%"},
+            {"fico": "720-739", "lt_1m": "80%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_3m": "65%"},
+            {"fico": "700-719", "lt_1m": "75%", "lt_1.5m": "70%", "lt_2m": "65%", "lt_3m": "60%"},
+            {"fico": "680-699", "lt_1m": "75%", "lt_1.5m": "70%", "lt_2m": "65%", "lt_3m": "60%"},
+            {"fico": "660-679", "lt_1m": "70%", "lt_1.5m": "65%", "lt_2m": "60%", "lt_3m": "55%"}
+          ],
+          "cashout": [
+            {"fico": "760+", "lt_1m": "75%", "lt_1.5m": "70%", "lt_2m": "65%", "lt_3m": "60%"},
+            {"fico": "740-759", "lt_1m": "75%", "lt_1.5m": "70%", "lt_2m": "65%", "lt_3m": "60%"},
+            {"fico": "720-739", "lt_1m": "75%", "lt_1.5m": "70%", "lt_2m": "65%", "lt_3m": "60%"},
+            {"fico": "700-719", "lt_1m": "75%", "lt_1.5m": "65%", "lt_2m": "60%", "lt_3m": "60%"},
+            {"fico": "680-699", "lt_1m": "70%", "lt_1.5m": "65%", "lt_2m": "60%", "lt_3m": "60%"},
+            {"fico": "660-679", "lt_1m": "65%", "lt_1.5m": "60%", "lt_2m": "55%", "lt_3m": "55%"}
+          ]
+        },
+        "dscr_075_to_099": {
+          "purchase": [
+            {"fico": "760+", "lt_1m": "75%", "lt_1.5m": "70%", "lt_2m": "65%"},
+            {"fico": "740-759", "lt_1m": "75%", "lt_1.5m": "70%", "lt_2m": "65%"},
+            {"fico": "720-739", "lt_1m": "75%", "lt_1.5m": "70%", "lt_2m": "65%"},
+            {"fico": "700-719", "lt_1m": "75%", "lt_1.5m": "70%", "lt_2m": "65%"},
+            {"fico": "680-699", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "65%"},
+            {"fico": "660-679", "lt_1m": "70%", "lt_1.5m": "65%", "lt_2m": "60%"}
+          ],
+          "rate_term": [
+            {"fico": "760+", "lt_1m": "70%", "lt_1.5m": "65%", "lt_2m": "60%"},
+            {"fico": "740-759", "lt_1m": "70%", "lt_1.5m": "65%", "lt_2m": "60%"},
+            {"fico": "720-739", "lt_1m": "70%", "lt_1.5m": "65%", "lt_2m": "60%"},
+            {"fico": "700-719", "lt_1m": "70%", "lt_1.5m": "65%", "lt_2m": "60%"},
+            {"fico": "680-699", "lt_1m": "65%", "lt_1.5m": "65%", "lt_2m": "60%"},
+            {"fico": "660-679", "lt_1m": "65%", "lt_1.5m": "65%", "lt_2m": "60%"}
+          ],
+          "cashout": [
+            {"fico": "760+", "lt_1m": "70%", "lt_1.5m": "65%", "lt_2m": "60%"},
+            {"fico": "740-759", "lt_1m": "70%", "lt_1.5m": "65%", "lt_2m": "60%"},
+            {"fico": "720-739", "lt_1m": "70%", "lt_1.5m": "65%", "lt_2m": "60%"},
+            {"fico": "700-719", "lt_1m": "70%", "lt_1.5m": "65%", "lt_2m": "60%"},
+            {"fico": "680-699", "lt_1m": "65%", "lt_1.5m": "60%", "lt_2m": "60%"},
+            {"fico": "660-679", "lt_1m": "65%", "lt_1.5m": "60%", "lt_2m": "60%"}
+          ],
+          "restrictions": "2-4 Units and Condos Max LTV Purchase 75% / Refinance 70%; IO requires 700 FICO and max 70% LTV; Vacant properties ineligible for refinances; 5% LTV reduction on declining markets; Min $150,000 loan; No Non-Warrantable Condo; No Condotel; 0x30x12 mortgage history; No first time investors; 12 months reserves required"
+        },
+        "dscr_below_075": {
+          "purchase": [
+            {"fico": "760+", "lt_1m": "75%", "lt_1.5m": "70%", "lt_2m": "65%"},
+            {"fico": "740-759", "lt_1m": "75%", "lt_1.5m": "70%", "lt_2m": "65%"},
+            {"fico": "720-739", "lt_1m": "70%", "lt_1.5m": "65%", "lt_2m": "N/A"},
+            {"fico": "700-719", "lt_1m": "65%", "lt_1.5m": "65%", "lt_2m": "N/A"},
+            {"fico": "680-699", "lt_1m": "65%", "lt_1.5m": "N/A", "lt_2m": "N/A"},
+            {"fico": "660-679", "lt_1m": "60%", "lt_1.5m": "N/A", "lt_2m": "N/A"}
+          ],
+          "rate_term": [
+            {"fico": "760+", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "65%"},
+            {"fico": "740-759", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "65%"},
+            {"fico": "720-739", "lt_1m": "70%", "lt_1.5m": "65%", "lt_2m": "N/A"},
+            {"fico": "700-719", "lt_1m": "65%", "lt_1.5m": "65%", "lt_2m": "N/A"},
+            {"fico": "680-699", "lt_1m": "60%", "lt_1.5m": "N/A", "lt_2m": "N/A"},
+            {"fico": "660-679", "lt_1m": "60%", "lt_1.5m": "N/A", "lt_2m": "N/A"}
+          ],
+          "cashout": [
+            {"fico": "760+", "lt_1m": "65%", "lt_1.5m": "60%", "lt_2m": "60%"},
+            {"fico": "740-759", "lt_1m": "65%", "lt_1.5m": "60%", "lt_2m": "60%"},
+            {"fico": "720-739", "lt_1m": "60%", "lt_1.5m": "60%", "lt_2m": "N/A"},
+            {"fico": "700-719", "lt_1m": "60%", "lt_1.5m": "60%", "lt_2m": "N/A"},
+            {"fico": "680-699", "lt_1m": "60%", "lt_1.5m": "N/A", "lt_2m": "N/A"},
+            {"fico": "660-679", "lt_1m": "60%", "lt_1.5m": "N/A", "lt_2m": "N/A"}
+          ],
+          "restrictions": "Same as DSCR 0.75-0.99 restrictions plus: LTV > 65% max cash out $500,000; LTV < 65% max cash out $1,000,000"
+        }
+      }
+    },
+    "product_type_restrictions": {
+      "2_4_unit": {"purchase": "80%", "rate_term": "80%", "cashout": "75%"},
+      "5_10_unit": {
+        "purchase": "75%",
+        "rate_term": "70%",
+        "cashout": "65%",
+        "restrictions": "Min 1.10 DSCR, Min FICO 680, Min unit size 500 sq ft, No STR, Max UPB $3MM (5% LTV reduction >$2MM), 6 mo min reserves (12 mo for >$1.5MM), 1 unit may be unleased/vacant on RT/CO (75% market rent for qualifying), No Mixed Use, US Citizen only, Min $250,000 loan, 0x30x12 mortgage history, Correspondent not eligible"
+      },
+      "str": {"purchase": "75%", "rate_term": "70%", "cashout": "70%"},
+      "non_warrantable_condo": {"purchase": "75%", "rate_term": "75%", "cashout": "70%"},
+      "condotel": {"purchase": "75%", "rate_term": "70%", "cashout": "65%"},
+      "interest_only": {"purchase": "75%", "rate_term": "70%", "cashout": "65%"},
+      "foreign_national": {"purchase": "75%", "rate_term": "70%", "cashout": "70%"},
+      "non_permanent_resident": {"purchase": "75%", "rate_term": "70%", "cashout": "70%"}
+    },
+    "income_doc": {
+      "full_doc": [],
+      "alt_doc": [],
+      "dscr_calc": "Rental income divided by PITIAA. Lesser of lease or Form 1007/1025. Vacant properties use 1007/1025 (no LTV restrictions). 1007/1025 may be used for gross rents if within 20% tolerance of actual lease. Lease may be used with 2 months canceled checks to support higher rent.",
+      "dscr_min": "No minimum - sub-0.75 DSCR and No Ratio both supported with LTV restrictions",
+      "sub1_allowed": "YES - DSCR 0.75-0.99 allowed with restrictions (see LTV grid); DSCR below 0.75 also allowed with further LTV reductions",
+      "no_ratio": "YES - Falls into DSCR < 0.75 tier"
+    },
+    "str": {
+      "allowed": "YES",
+      "proof_requirements": "Purchase and Refinance: 100% of income documented by 12-month history of deposits from eligible sources like Airbnb or VRBO. Purchase Only: 75% of income documented by 1007 or property management report.",
+      "expense_factor": "Not specified separately",
+      "fico_min": "700 for 75% max LTV purchase; 680 minimum for program entry",
+      "ltv_adjustments": "Max 75% Purchase / 70% R&T / 70% Cash-Out. Additional: 75% max LTV purchase requires 700 FICO.",
+      "dscr_min": "1.00 minimum STR DSCR ratio",
+      "additional_restrictions": "0x30x12 mortgage rating required; Max $1,500,000 loan amount; Not permitted on 5-10 unit properties",
+      "fico_ltv_limits_cashout": "FICO 680-719 and LTV > 70% OR FICO 660-679 and LTV > 65%: Max $750,000 loan / Max $100,000 cash out proceeds"
+    },
+    "rural": {
+      "dscr": "NO - No rural properties on DSCR",
+      "dscr_str": "NO",
+      "full_doc": "N/A - This is DSCR program",
+      "alt_doc": "N/A - This is DSCR program",
+      "ltv_adjustments": "N/A",
+      "acreage_limit": "10 acres max, no rural",
+      "conditions": "No rural properties"
+    },
+    "citizenship": {
+      "us_citizen": "YES",
+      "perm_resident": "YES",
+      "non_perm_resident": "YES - Max 75% Purchase / 70% R&T / 70% Cash-Out",
+      "foreign_national": "YES - 680 Min FICO, default 680 when US credit unavailable, $150,000 min loan, 12 months reserves, Min DSCR 1.00. Not eligible for 5-10 units or correspondent.",
+      "itin": "Not mentioned",
+      "daca": "Not mentioned"
+    },
+    "credit_events": {
+      "bk_seasoning": "36 months",
+      "fc_seasoning": "36 months",
+      "ss_seasoning": "36 months",
+      "housing_event": "36 months for BK, FC, SS, FB, Mod",
+      "mortgage_lates": "1x30x12 for primary and subject mortgage. 5-10 unit requires 0x30x12. 0x30x12 required on all cash-out refi with qualifying score below 700, all cash-out refi with LTV > 70%, and all DSCR ratios < 1.",
+      "covid_forbearance": "Eligible if all missed payments repaid or 3 regular payments over 90 days paid after forbearance ended"
+    },
+    "product": {
+      "fixed_products": "30 Year fixed or 40 Year fixed interest only",
+      "arm_products": "Not Allowed",
+      "io_term": "120 Months",
+      "loan_amount_5_10": "Min $250,000 / Max $3,000,000",
+      "occupancy": "Investment only",
+      "secondary_financing": "Not allowed",
+      "cash_out_max": "$500,000 max cash in hand for LTV > 65%; No limit for LTV <= 65%",
+      "delayed_financing": "Eligible when property purchased for cash within 180 days of loan application; R&T loan/LTV limits apply",
+      "cash_out_seasoning": "No seasoning for R&T appraised value. 3 months for cash-out (max lesser of $750,000 or purchase price + improvements, min 680 FICO). 6 months for cash-out with no additional restrictions. No seasoning for inheritance/divorce/separation.",
+      "land_contract": "Eligible as R&T refinance if seasoned 12 months with 0x30x12 payment history supported by canceled checks"
+    },
+    "reserves": {
+      "description": "6 Months PITIA unless: Purchase 3 Months PITIA with credit score >= 720 and LTV <= 80; 12 Months PITIA for loan amounts > $1,500,000; 12 Months PITIA for DSCR < 1.00; 12 Months PITIA for foreign nationals; 12 Months PITIA for > 80% LTV. Loan proceeds can be used for reserves."
+    },
+    "borrower": {
+      "max_borrowers": "4 individuals or 2 entities",
+      "vesting": ["Natural persons", "US Domiciled Entity", "Living Trusts"],
+      "experience": "Must own investment property for 12 months during last 3 years. 5-10 unit requires experience owning 2+ unit property on purchase (case-by-case exceptions).",
+      "first_time_investor": "Must own primary residence for 12 months during last 3 years (Max 75% LTV). 5-10 unit: first time investors not permitted.",
+      "first_time_homebuyer": "Ineligible",
+      "exposure": "Max $5,000,000 or 15 properties to one single borrower",
+      "ach_required": "ACH required on all loans",
+      "tradelines": "1 active tradeline rated 24 months AND 2 tradelines rated 12 months open or closed; OR 1 mortgage tradeline rated 12 months open/closed in last 24 months AND 1 additional tradeline. If reporting on credit for 12 months, most recent 60 days not required.",
+      "concessions": "Not to exceed 6%, must be used for closing costs and prepaids",
+      "gift_funds": "Permitted after minimum 10% borrower contribution",
+      "gift_equity": "Not eligible"
+    },
+    "property": {
+      "types": ["SFR 1-4 Units", "PUD", "Condo", "Non-Warrantable Condo", "Condotel", "5-10 Units (Residential use only)"],
+      "non_warrantable_condo": "1.00% Min DSCR, 680 Min FICO",
+      "min_sq_ft": {"sfr_pud": "600 sq ft", "condo": "500 sq ft", "2_4_unit": "400 sq ft", "5_10_unit": "500 sq ft"},
+      "acreage": "Max 10 acres, no rural properties",
+      "condition": "C4 or better",
+      "appraisal": "Approved AMC required, SSRs required unless transferred. SFR-1004/1007, 2-4 Units-1025, Condo-1073/1007, 5-10 unit-FHLMC 71A. Dated within 120 days of Note. Desk review required on all loans or CU Score 2.5 or less with restrictions.",
+      "two_appraisals": "Required for loan amounts > $2,000,000",
+      "insurance": "Rent loss coverage equal to 6 months qualifying rent; Liability coverage equal to $100,000",
+      "unavailable_states": ["ND", "SD"],
+      "unavailable_5_10_unit_states": ["NE", "AK"],
+      "nmls_required_states": ["AZ", "CA", "OR", "NV", "UT", "ID", "ND", "SD", "MN", "VT"]
+    }
+  },
+  {
+    "investor": "Champions Funding",
+    "program": "Accelerator DSCR 1-4 Unit",
+    "last_updated": "03/16/2026",
+    "general": {
+      "min_fico": 600,
+      "max_loan": 3000000,
+      "min_loan": 125000,
+      "max_dti": "N/A - DSCR program, no DTI calculation",
+      "property_types": ["Single Family Attached", "Single Family Detached", "2-4 Units", "Warrantable Condo", "Non-Warrantable Condo", "Condotel"],
+      "rural_allowed": "NO - Property up to 10 acres not meeting rural definition is eligible, but rural properties are not eligible",
+      "condotel_allowed": "YES - 5% LTV reduction from matrix. FL condos with LTV > 70% require Full Condo Review.",
+      "foreign_national": "NO - Not mentioned as eligible",
+      "io_available": "YES - Min 660 FICO, Max LTV Purchase/R&T 75%, Cash-Out 70%. IO DSCR calculated using ITIA.",
+      "prepay_options": "5% of unpaid principal balance. Not allowed in AK, KS, MD, MI, MN, NM, OH 1-2 Units, RI, VT. Additional state restrictions: IL natural person < 8% APR required; MS step down required; NJ titled owner must be entity; PA 1-2 Units > $329,411."
+    },
+    "ltv_grid": {
+      "primary": {
+        "purchase": [],
+        "rate_term": [],
+        "cashout": [],
+        "note": "Investment only"
+      },
+      "second_home": {
+        "purchase": [],
+        "rate_term": [],
+        "cashout": [],
+        "note": "Investment only"
+      },
+      "investment": {
+        "dscr_gte_1": {
+          "purchase": [
+            {"fico": "740+", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_2.5m": "70%", "lt_3m": "65%"},
+            {"fico": "720", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_2.5m": "70%", "lt_3m": "65%"},
+            {"fico": "700", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_2.5m": "70%", "lt_3m": "65%"},
+            {"fico": "680", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "660", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "640", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "60%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "620", "lt_1m": "65%", "lt_1.5m": "65%", "lt_2m": "55%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "600", "lt_1m": "60%", "lt_1.5m": "60%", "lt_2m": "55%", "lt_2.5m": "N/A", "lt_3m": "N/A"}
+          ],
+          "rate_term": [
+            {"fico": "740+", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_2.5m": "70%", "lt_3m": "65%"},
+            {"fico": "720", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_2.5m": "70%", "lt_3m": "65%"},
+            {"fico": "700", "lt_1m": "80%", "lt_1.5m": "80%", "lt_2m": "75%", "lt_2.5m": "70%", "lt_3m": "65%"},
+            {"fico": "680", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "660", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "640", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "60%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "620", "lt_1m": "65%", "lt_1.5m": "65%", "lt_2m": "55%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "600", "lt_1m": "60%", "lt_1.5m": "60%", "lt_2m": "55%", "lt_2.5m": "N/A", "lt_3m": "N/A"}
+          ],
+          "cashout": [
+            {"fico": "740+", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%"},
+            {"fico": "720", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%"},
+            {"fico": "700", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%"},
+            {"fico": "680", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "660", "lt_1m": "65%", "lt_1.5m": "65%", "lt_2m": "60%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "640", "lt_1m": "60%", "lt_1.5m": "60%", "lt_2m": "60%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "620", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "600", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A", "lt_2.5m": "N/A", "lt_3m": "N/A"}
+          ]
+        },
+        "dscr_099_to_075": {
+          "purchase": [
+            {"fico": "740+", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%"},
+            {"fico": "720", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%"},
+            {"fico": "700", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%"},
+            {"fico": "680", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "65%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "660", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "65%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "640", "lt_1m": "65%", "lt_1.5m": "65%", "lt_2m": "55%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "620", "lt_1m": "50%", "lt_1.5m": "50%", "lt_2m": "50%", "lt_2.5m": "N/A", "lt_3m": "N/A"}
+          ],
+          "rate_term": [
+            {"fico": "740+", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%"},
+            {"fico": "720", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%"},
+            {"fico": "700", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%", "lt_2.5m": "65%", "lt_3m": "60%"},
+            {"fico": "680", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "65%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "660", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "65%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "640", "lt_1m": "65%", "lt_1.5m": "65%", "lt_2m": "55%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "620", "lt_1m": "50%", "lt_1.5m": "50%", "lt_2m": "50%", "lt_2.5m": "N/A", "lt_3m": "N/A"}
+          ],
+          "cashout": [
+            {"fico": "740+", "lt_1m": "65%", "lt_1.5m": "65%", "lt_2m": "60%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "720", "lt_1m": "65%", "lt_1.5m": "65%", "lt_2m": "60%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "700", "lt_1m": "65%", "lt_1.5m": "65%", "lt_2m": "60%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "680", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "660", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "640", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "620", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A", "lt_2.5m": "N/A", "lt_3m": "N/A"}
+          ]
+        },
+        "no_ratio_below_075": {
+          "purchase": [
+            {"fico": "740+", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "65%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "700", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "65%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "680", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "65%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "660", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "65%", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "640", "lt_1m": "60%", "lt_1.5m": "60%", "lt_2m": "N/A", "lt_2.5m": "N/A", "lt_3m": "N/A"}
+          ],
+          "rate_term": [
+            {"fico": "740+", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "65%", "lt_2.5m": "60%", "lt_3m": "60%"},
+            {"fico": "720", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "65%", "lt_2.5m": "60%", "lt_3m": "60%"},
+            {"fico": "700", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "65%", "lt_2.5m": "60%", "lt_3m": "60%"},
+            {"fico": "680", "lt_1m": "65%", "lt_1.5m": "65%", "lt_2m": "N/A", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "660", "lt_1m": "65%", "lt_1.5m": "65%", "lt_2m": "N/A", "lt_2.5m": "N/A", "lt_3m": "N/A"},
+            {"fico": "640", "lt_1m": "60%", "lt_1.5m": "60%", "lt_2m": "N/A", "lt_2.5m": "N/A", "lt_3m": "N/A"}
+          ],
+          "cashout": [
+            {"fico": "740+", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A"},
+            {"fico": "700", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A"},
+            {"fico": "680", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A"},
+            {"fico": "660", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A"},
+            {"fico": "640", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A"}
+          ],
+          "note": "No Ratio / DSCR < 0.75 tier"
+        },
+        "asset_depletion": {
+          "purchase": [
+            {"fico": "740+", "lt_1m": "80%", "lt_1.5m": "75%", "lt_2m": "75%"},
+            {"fico": "720", "lt_1m": "80%", "lt_1.5m": "75%", "lt_2m": "75%"},
+            {"fico": "700", "lt_1m": "80%", "lt_1.5m": "75%", "lt_2m": "75%"},
+            {"fico": "680", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%"},
+            {"fico": "660", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%"},
+            {"fico": "640", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "60%"}
+          ],
+          "rate_term": [
+            {"fico": "740+", "lt_1m": "80%", "lt_1.5m": "75%", "lt_2m": "75%"},
+            {"fico": "720", "lt_1m": "80%", "lt_1.5m": "75%", "lt_2m": "75%"},
+            {"fico": "700", "lt_1m": "80%", "lt_1.5m": "75%", "lt_2m": "75%"},
+            {"fico": "680", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%"},
+            {"fico": "660", "lt_1m": "75%", "lt_1.5m": "75%", "lt_2m": "70%"},
+            {"fico": "640", "lt_1m": "65%", "lt_1.5m": "65%", "lt_2m": "55%"}
+          ],
+          "cashout": [
+            {"fico": "740+", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "65%"},
+            {"fico": "720", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "65%"},
+            {"fico": "700", "lt_1m": "70%", "lt_1.5m": "70%", "lt_2m": "65%"},
+            {"fico": "680", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A"},
+            {"fico": "660", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A"},
+            {"fico": "640", "lt_1m": "N/A", "lt_1.5m": "N/A", "lt_2m": "N/A"}
+          ]
+        }
+      }
+    },
+    "income_doc": {
+      "full_doc": [],
+      "alt_doc": ["Asset Depletion (separate LTV grid)"],
+      "dscr_calc": "Refer to Guidelines for Long Term Rental and Short Term Rental calculation methods",
+      "dscr_min": "No minimum - No Ratio / below 0.75 DSCR supported down to 600 FICO",
+      "sub1_allowed": "YES - DSCR 0.99-0.75 supported down to 620 FICO; No Ratio / below 0.75 supported down to 640 FICO",
+      "no_ratio": "YES - Supported with LTV restrictions (see grid)"
+    },
+    "str": {
+      "allowed": "YES",
+      "proof_requirements": "Refer to Guidelines for STR documentation",
+      "expense_factor": "Not specified in matrix",
+      "fico_min": "680 for Purchase (Max 80% LTV); 720 for R&T (Max 75%); 720 for Cash-Out (Max 70% for $1M-$1.5M); 680 for Purchase up to $1.5M at 75%",
+      "ltv_adjustments": "Purchase Max 80% (680 FICO); R&T Max 75% (720 FICO); Cash-Out Max 75% (720 FICO) for < $1M; Max 70% for $1.5M-$2M",
+      "dscr_min": "Not specified separately for STR"
+    },
+    "rural": {
+      "dscr": "NO - Not eligible for STR/DSCR",
+      "dscr_str": "NO",
+      "full_doc": "N/A",
+      "alt_doc": "N/A",
+      "ltv_adjustments": "N/A",
+      "acreage_limit": "10 acres max (property up to 10 acres not meeting rural definition is eligible)",
+      "conditions": "Rural properties not eligible. Property up to 10 acres not meeting the rural definition is eligible."
+    },
+    "citizenship": {
+      "us_citizen": "YES",
+      "perm_resident": "YES (Permanent Resident Alien)",
+      "non_perm_resident": "YES - With US Credit and acceptable VISA. Refinance Max 65% LTV.",
+      "foreign_national": "Not mentioned as eligible",
+      "itin": "Not mentioned",
+      "daca": "Not mentioned"
+    },
+    "credit_events": {
+      "bk_seasoning": ">=36 months no reduction; >=24 months: Purchase & R&T max 75% LTV, Cash-Out max 70% LTV",
+      "fc_seasoning": ">=36 months no reduction; >=24 months: Purchase & R&T max 75% LTV, Cash-Out max 70% LTV",
+      "ss_seasoning": ">=36 months no reduction; >=24 months: Purchase & R&T max 75% LTV, Cash-Out max 70% LTV",
+      "housing_event": "BK/FC/SS/DIL/Deferral/Modification: >=36 months no reduction; >=24 months with LTV caps",
+      "mortgage_lates": "1x30x12 no reduction. 0x60x12: Purchase Max 70% LTV, Refinance Max 65% LTV. Borrowers must have complete 12-month housing history. Rent free not permitted (see exceptions).",
+      "covid_forbearance": "Not specifically mentioned"
+    },
+    "product": {
+      "fixed_products": "30-Yr Fixed",
+      "arm_products": "5/6 ARM, 7/6 ARM, 10/6 ARM",
+      "io_available": "YES - Min 660 FICO, Max Purchase/R&T 75%, Cash-Out 70%",
+      "loan_purpose": "Purchase, Rate-Term, and Cash Out. Investment Business Purpose only.",
+      "occupancy": "Investment Property only. Borrower or family members not permitted to live in subject.",
+      "cash_out_max": "LTV > 65%: $600,000 max; 60% < LTV <= 65%: $1,000,000 max; LTV <= 60%: unlimited",
+      "appraisal": "Loan amounts >= $2,000,000 require 2 appraisals. Desk Review on all loans with CU Score over 2.5 (exception: full second appraisal). Transferred appraisals acceptable.",
+      "declining_market": "5% LTV reduction off Matrix Max LTV as identified by appraiser",
+      "high_cost": "State or Local High Cost not permitted",
+      "exceptions": "Considered on case-by-case basis"
+    },
+    "reserves": {
+      "description": "Loan <= $1.5M: No reserves. Loan > $1.5M: 2 months PITIA. Loan > $2.5M: 6 months PITIA. Cash-Out can be used to satisfy reserve requirements. Min 30-day asset verification required."
+    },
+    "first_time_investor": {
+      "definition": "First time investor is a borrower not meeting experienced investor definition of having history of owning and managing commercial or non-owner occupied residential real estate for at least 1 year in last 3 years.",
+      "eligibility": "Minimum credit score: per matrix. Housing history: no housing late payments in most recent 12 months. Living rent-free: not permitted."
+    },
+    "rent_free_exceptions": [
+      "Borrower lives in marital home (provide letter from spouse + evidence of spouse mortgage or lease)",
+      "Borrower sold primary home within past 6 months and purchasing primary home",
+      "Borrower owns primary home free and clear with proof taxes paid current",
+      "Documented 12-month payment history on other REO plus proof of ownership (not applicable for first time investor)"
+    ],
+    "geographic_restrictions": {
+      "ineligible_states": "Refer to State Licensing",
+      "ineligible_locations": ["Hawaii lava zones 1 & 2", "Puerto Rico", "Guam", "US Virgin Islands", "Baltimore MD", "Philadelphia PA"]
+    },
+    "tradelines": "3 scores; OR 1 open and reporting 24 months; OR 2 open and reporting 12 months",
+    "seller_contribution": "6% Max",
+    "gift_funds": "Permitted"
+  }
+]

@@ -1,0 +1,248 @@
+                                                           Effective 03/01/2026
+
+                                      INVEST STAR INCOME CREDIT MATRIX
+
+                                               INCOME
+
+Eligibility                                             Description
+
+Income Types           Full Document: 1 or 2 Years · W-2 & Paystubs · Tax Returns
+                       Alternative Document: 1 or 2 Years · 1099
+Bank Statement         Bank Statements: Personal or Business · 12 or 24 Months
+Expense Ratio          Bank Statements: 2 Years self-employed in same business required
+
+Debt Ratio                                     Number of FTE/Contractors                 0-3         4-9      10+
+Residual Income                                       Service Business
+                       Fixed Expense                 Product Business                    20%         40%      60%
+     Transaction Type       Ratio:
+
+        Purchase                                                                         40%         60%      80%
+
+     Transaction Type                        Letter from CPA/accountant, IRS enrolled agent, or tax preparer subject to a minimum total expense percentage of
+                       Expense Letter: 10%
+       Rate/Term
+        Refinance        Profit and Loss Expense factor provided on a profit and loss statement prepared by a CPA/accountant, IRS enrolled agent, or tax
+                           Statement: preparer subject to a minimum total expense percentage of 10%
+     Transaction Type
+                       45% Max DTI when LTV is greater than 80%
+        Cash Out       50% Max DTI when LTV is equal to or less than 80%
+        Refinance      43% Max DTI when living rent free
+                       45% Max DTI when Interest Only
+
+                       Minimum $1,250 plus $250 is required for the first dependent and then $125 for each additional dependent to a max requirement of
+                       $1,750.00
+
+                                      LOAN TYPE RESTRICTIONS
+
+                          Fico                                                           Investment
+
+                         760 +        < $1.0M  < $1.5M                    < $2.0M        < $2.5M     < $3.0M  < $3.5M
+                       740 - 759
+                       720 - 739       85%      80%                       80%            N/A          N/A      N/A
+                       700 - 719       85%      80%                                                   N/A      N/A
+                       680 - 699       80%      80%                       80%            N/A          N/A      N/A
+                       660 - 679       80%      80%                                                   N/A      N/A
+                                       80%      80%                       80%            N/A          N/A      N/A
+                          Fico         80%      80%                                                   N/A      N/A
+                                                                          80%            N/A
+                         760 +        < $1.0M  < $1.5M                                               < $3.0M  < $3.5M
+                       740 - 759                                          75%            N/A
+                       720 - 739       80%      80%                                                   N/A      N/A
+                       700 - 719       80%      80%                       75%            N/A          N/A      N/A
+                       680 - 699       80%      80%                                                   N/A      N/A
+                       660 - 679       80%      80%                                      Investment   N/A      N/A
+                                       80%      80%                                                   N/A      N/A
+                          Fico         80%      80%                       < $2.0M        < $2.5M      N/A      N/A
+
+                         760 +        < $1.0M  < $1.5M                    80%            N/A         < $3.0M  < $3.5M
+                       740 - 759
+                       720 - 739       80%      80%                       80%            N/A          N/A      N/A
+                       700 - 719       80%      80%                                                   N/A      N/A
+                       680 - 699       75%      75%                       80%            N/A          N/A      N/A
+                       660 - 679       75%      75%                                                   N/A      N/A
+                                       75%      75%                       80%            N/A          N/A      N/A
+                                       75%      75%                                                   N/A      N/A
+                                                                          75%            N/A
+
+                                                                          75%            N/A
+
+                                                                                         Investment
+
+                                                                          < $2.0M        < $2.5M
+
+                                                                          80%            N/A
+
+                                                                          80%            N/A
+
+                                                                          75%            N/A
+
+                                                                          75%            N/A
+
+                                                                          75%            N/A
+
+                                                                          75%            N/A
+                                                PRODUCT TYPE RESTRICTIONS
+
+                       Eligibility              Max LTV Purchase                 Max LTV Rate/Term             Max LTV Cash Out
+                                                        80%
+                          Interest Only                 75%                               80%                          75%
+                  Non-Permanent Resident                80%                               70%                          70%
+                                                        85%                               75%                          70%
+                             2-4 Unit                   75%                               80%                          80%
+                      Warrantable Condo                 75%                               75%                          70%
+         Non-Warrantable Condo (680 Min. FICO)          80%                               70%                          65%
+                  Condotel (680 Min. FICO)                                                75%                          70%
+              Rural Properties (680 Min. FICO)              PRODUCT
+
+Eligibility                                                                      Description
+
+Fixed Products           30 Year fixed or 40 Year fixed interest only
+
+Arm Products             Not Allowed
+Interest Only Term       120 Months
+
+Loan Amount              Minimum loan amount $100,000 · Maximum loan amount $2,000,000
+
+Prepayment Penalty       Fixed percentage 1-5 year term with a 5% fixed penalty
+                         Declining structure starting at 5% with a floor of 3%
+
+Escrows                  Escrow waiver allowed with conditions, see client guide for all details
+                           · Maximum LTV of 80% (Stacking allowed if loan qualifies)
+                           · Minimum Fico of 720
+
+Cash Out Proceeds        Max cash in hand limited to $500,000 for LTV greater than 65%
+                         There is no cash in hand limitation for loans equal to or less than 65% LTV
+
+                                                Guideline Continuation
+
+Seasoning                No seasoning to use appraised value for a Rate and Term Refinance
+Occupancy                3 months seasoning for a Cash Out Refinance
+
+                           · The max loan amount is the lessor of $750,000 or purchase price plus improvements
+                           · Minimum Fico of 680
+                         6 months seasoning for a Cash Out Refinance
+                           · No additional restrictions
+                         No seasoning required to use appraised value on properties obtained through inheritance, divorce, or separation
+
+                         Investment Only
+
+Secondary Financing      Max CLTV is restricted to the max qualifying LTV
+
+Land Contract · Lease with Option to Eligible as a rate and term refinance if seasoned for 12 months with a payment history of 0x30 for 12 months supported by canceled
+
+Purchase                 checks
+
+Texas Cash Out 50(a)(6)  Max 80% LTV · Financed points cannot exceed 80% LTV · 12 day waiting period required
+
+Delayed Financing        Eligible when a property was purchased by a borrower for cash with 180 days of the loan application · Purchase loan/LTV limits apply
+Eligibility                                                    BORROWER
+
+Eligible Borrowers           Description
+Foreign National
+Max Borrowers                US Citizen · Permanent Resident · Non-Permanent Resident
+Vesting                      Not Allowed
+First Time Homebuyer         Max 4 individuals
+First Time Investor          Natural persons · US Domiciled Entity · Living Trusts
+Exposure                     Max 75% LTV
+                             Must own primary residence for 12 months during the last 3 years (Max 80% LTV)
+Eligibility                  No more than $5,000,000 or 15 properties to one single borrower
+
+Qualifying Credit Score                                           CREDIT
+
+Mortgage Status              Description
+
+Mortgage Rating              Minimum score 660
+                             A minimum of two scores must be reporting
+Consumer Credit              Use the lower of two or middle of three credit scores to determine the decision score
+Credit Event Seasoning       Use the decision score for the primary wage earner
+                             All borrowers must meet the minimum credit score for the program
+Covid Forbearance            Primary and Subject Mortgage must be current at the time of closing
+Charge-Offs and Collections  0 x 30 x 12 months for all mortgages
+Judgements and Liens
+Tradelines                     · 1 x 30 x 12 by exception only:
+                                  - Max LTV 75%
+Eligibility                       - Max Loan Amount $1,500,000
+
+Assets                       No requirement
+                             BK, FC, SS, FB, Mod require 36 month seasoning, see credit guide for more details.
+Reserves
+                               · 24 month seasoning by exception only:
+Concessions                       - Max LTV 75%
+Gift Funds                        - Max Loan Amount $1,500,000
+Gift Equity
+                             Eligible if all missed payments are repaid or 3 regular payments over 90 days have been paid after forbearance has ended.
+                             Individual collection and non-mortgage charge-off accounts equal to or greater than $250, and accounts that total more than $2,000,
+                             must be paid in full prior to or at closing. Medical collections are excluded up to a cumulative balance of $10,000
+                             All open judgments, garnishments, and outstanding liens affecting title must be paid off prior to or at closing.
+                             One (1) active tradeline rated for 24 months and Two (2) tradelines rated 12 months open or closed · One (1) mortgage tradeline rated
+                             for 12 months open or closed in last 24 months and One (1) additional tradeline
+
+                                                           ASSETS / RESERVES
+
+                             Description
+
+                             Seasoned for 60 days
+                             Large deposits that exceed 50% of the qualifying income must be sourced
+                             Cash out loan proceeds can be used for reserves
+                             · 0 Months PITIA when LTV <= 65%
+                             · 6 Months PITIA when LTV > 65%
+
+                                   · Purchase Transations - 3 Months PITIA with a credit score >=720 and LTV <= 80
+                             · 12 Months PITIA for loan amounts greater than $1,500,000 regardless of LTV
+                             6% for LTV < 80% · 4% for LTV > 80% LTV
+                             Must be used for closings costs and prepaids
+                             Gift funds permitted after a minimum 10% borrower contribution
+                             Not eligible
+                                                                 PROPERTY
+
+Eligibility              Description
+
+Property Type            SFR 1 - 4 Units · PUD · Condo · Non-Warrantable Condo · Condotel · Rural
+Non - Warrantable Condo
+Condotel                 Minimum FICO - 680
+Property Condition
+Minimum Sq Ft            Minimum FICO - 680
+Acreage
+                         C4 or better
+Rural
+                         SFR & PUD 600 sq ft · Condo Units 500 sq ft · 2-4 Units 400 sq ft
+Appraisal Requirements
+                         Max 10 acres
+Appraisal Transfers
+Listed for Sale          · Max LTV - 80% LTV Purchase / 75% LTV RateTerm / 70% Cash-out
+                         · Minimum FICO - 680
+                         · Max 10 acres
+                         · At least two comps must be within 5 miles of the subject property.
+                         · Property must be located on a paved road. No dirt roads.
+                         Approved AMC required · SSRs required unless transferred
+                         SFR - 1004 · 2 to 4 Units - 1025 · Condo - 1073
+                         Appraisal must be dated within 120 days of the Note
+                         Desk review required on all loans or CU Score of 2.5 or less with restrictions
+                         Allowed with signed transfer letter from lender, invoice, and first generation report
+
+                         Listing must be canceled prior to the application date for a Rate and Term Refinance
+                         Listing must be canceled 90 days prior to the application date for a Cash Out Refinance
+                         The lessor of the recent list price or appraised value will be used within 6 months of the listing
+
+NMLS License Required    AZ, CA, OR, NV, UT, ID, ND, SD, MN, VT
+
+                                                                 COMPLIANCE
+
+Eligibility              Description
+
+                         · Loan Amounts < $150,000: Max broker compensation which includes borrower paid compensation, lender paid compensation,
+
+                         business purpose premium, and total fee compensation, which includes all other fees charged by the broker such as the credit report
+
+                         fee, processing fee, etc., is 5% in aggregate.
+
+Max Broker Fees          · Loan Amounts > $150,000: Max broker compensation which includes borrower paid compensation, lender paid compensation,
+
+                         business purpose premium is 3%. Total fee compensation which includes all other fees charged by the broker such as the credit report
+
+                         fee, processing fee, etc. is 5% in aggregate.
+
+                         · Stacking Fees does not affect or allow the broker to charge in excess of the above max compensation.
+
+This information is intended for the exclusive use of licensed real estate and mortgage lending professionals. Distribution to the general public is prohibited. This is not a
+

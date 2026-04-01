@@ -3,1310 +3,917 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>TQL Matrix — Non-QM Product Intelligence</title>
+<title>TQL Matrix -- Non-QM Product Intelligence</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23000000'/><text x='16' y='22' font-family='Inter,sans-serif' font-weight='700' font-size='12' fill='%23FFFFFF' text-anchor='middle'>TQL</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --navy:      #0D3B66;
-    --navy-hover:#0a2f52;
-    --navy-xs:   #e8f0fb;
-    --bg:        #F4F5EE;
-    --surface:   #FFFFFF;
-    --text:      #1A1A1A;
-    --muted:     #9CA3AF;
-    --border:    #E5E7EB;
-    --gold:      #C9A84C;
-    --gold-lt:   #FDF5E0;
-    --green:     #166534;
-    --green-lt:  #DCFCE7;
-    --red:       #991B1B;
-    --red-lt:    #FEF2F2;
-    --amber:     #92400E;
-    --amber-lt:  #FEF3C7;
-    --radius:    12px;
-    --radius-sm: 8px;
-    --radius-lg: 16px;
-    --shadow-sm: 0 1px 2px rgba(0,0,0,.04);
-    --shadow:    0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
-    --shadow-lg: 0 4px 16px rgba(0,0,0,.08);
-    --sidebar-w: 260px;
-    --topbar-h:  56px;
-    --transition: .2s cubic-bezier(.4,0,.2,1);
-  }
+:root {
+  --navy: #0D3B66;
+  --navy-hover: #0a2f52;
+  --navy-xs: #e8f0fb;
+  --bg: #F4F5EE;
+  --surface: #FFFFFF;
+  --text: #1A1A1A;
+  --muted: #6B7280;
+  --border: #E5E7EB;
+  --gold: #C9A84C;
+  --gold-lt: #FDF5E0;
+  --green: #166534;
+  --green-lt: #DCFCE7;
+  --red: #991B1B;
+  --red-lt: #FEF2F2;
+  --amber: #92400E;
+  --amber-lt: #FEF3C7;
+  --blue-lt: #EFF6FF;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.04);
+  --shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-lg: 0 4px 16px rgba(0,0,0,.08);
+  --sidebar-w: 260px;
+  --topbar-h: 56px;
+  --transition: .2s cubic-bezier(.4,0,.2,1);
+}
 
-  body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    font-size: 13px;
-    line-height: 1.55;
-    min-height: 100vh;
-    overflow: hidden;
-  }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.55;
+  min-height: 100vh;
+  overflow: hidden;
+}
 
-  /* ══════════════════════════════════════════════════
-     VAULT LANDING PAGE
-     ══════════════════════════════════════════════════ */
-  #vault-screen {
-    position: fixed; inset: 0; z-index: 9999;
-    background: linear-gradient(145deg, #060e1a 0%, #0a1628 40%, #0D3B66 100%);
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    overflow: hidden;
-    perspective: 1200px;
-  }
-  #vault-screen.opening { pointer-events: none; }
-  #vault-screen.gone { display: none !important; }
+/* ======== VAULT ======== */
+#vault-screen {
+  position: fixed; inset: 0; z-index: 9999;
+  background: linear-gradient(145deg, #060e1a 0%, #0a1628 40%, #0D3B66 100%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  overflow: hidden; perspective: 1200px;
+}
+#vault-screen.opening { pointer-events: none; }
+#vault-screen.gone { display: none !important; }
 
-  /* Ambient particles */
-  .vault-particles {
-    position: absolute; inset: 0; overflow: hidden; pointer-events: none;
-  }
-  .vault-particle {
-    position: absolute;
-    width: 2px; height: 2px;
-    background: rgba(201,168,76,.25);
-    border-radius: 50%;
-    animation: floatParticle linear infinite;
-  }
-  @keyframes floatParticle {
-    0%   { transform: translateY(100vh) translateX(0); opacity: 0; }
-    10%  { opacity: 1; }
-    90%  { opacity: 1; }
-    100% { transform: translateY(-10vh) translateX(40px); opacity: 0; }
-  }
+.vault-particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.vault-particle {
+  position: absolute; width: 2px; height: 2px;
+  background: rgba(201,168,76,.25); border-radius: 50%;
+  animation: floatParticle linear infinite;
+}
+@keyframes floatParticle {
+  0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+  10% { opacity: 1; } 90% { opacity: 1; }
+  100% { transform: translateY(-10vh) translateX(40px); opacity: 0; }
+}
 
-  /* Radial glow behind door */
-  .vault-glow {
-    position: absolute;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(201,168,76,.12) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    animation: pulseGlow 4s ease-in-out infinite alternate;
-  }
-  @keyframes pulseGlow { from { transform: scale(1); opacity: .6; } to { transform: scale(1.15); opacity: 1; } }
+.vault-glow {
+  position: absolute; width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(201,168,76,.12) 0%, transparent 70%);
+  border-radius: 50%; pointer-events: none;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+@keyframes pulseGlow { from { transform: scale(1); opacity: .6; } to { transform: scale(1.15); opacity: 1; } }
 
-  /* Door container — holds perspective pivot */
-  .vault-door-wrap {
-    position: relative;
-    transform-style: preserve-3d;
-    transform-origin: left center;
-    transition: none;
-  }
-  .vault-door-wrap.swing {
-    animation: swingOpen 1.6s cubic-bezier(.32,.94,.6,1) forwards;
-  }
-  @keyframes swingOpen {
-    0%   { transform: rotateY(0deg); }
-    100% { transform: rotateY(-115deg); }
-  }
+.vault-door-wrap {
+  position: relative; transform-style: preserve-3d;
+  transform-origin: left center; transition: none;
+}
+.vault-door-wrap.swing { animation: swingOpen 1.6s cubic-bezier(.32,.94,.6,1) forwards; }
+@keyframes swingOpen { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(-115deg); } }
 
-  /* The vault door itself */
-  .vault-door {
-    width: 300px; height: 300px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #2a3a50 0%, #1a2a3e 40%, #0f1f33 100%);
-    border: 8px solid transparent;
-    background-clip: padding-box;
-    position: relative;
-    box-shadow:
-      0 0 0 8px #C9A84C,
-      0 0 0 12px #a8893d,
-      0 0 0 14px rgba(201,168,76,.3),
-      0 0 60px rgba(201,168,76,.15),
-      inset 0 0 40px rgba(0,0,0,.5);
-  }
+.vault-door {
+  width: 280px; height: 280px; border-radius: 50%;
+  background: linear-gradient(135deg, #2a3a50 0%, #1a2a3e 40%, #0f1f33 100%);
+  border: 8px solid transparent; background-clip: padding-box;
+  position: relative;
+  box-shadow: 0 0 0 8px #C9A84C, 0 0 0 12px #a8893d, 0 0 0 14px rgba(201,168,76,.3),
+    0 0 60px rgba(201,168,76,.15), inset 0 0 40px rgba(0,0,0,.5);
+}
+.vault-door::before {
+  content: ''; position: absolute; inset: 18px; border-radius: 50%;
+  border: 3px solid rgba(201,168,76,.25); box-shadow: inset 0 0 20px rgba(0,0,0,.3);
+}
+.vault-door::after {
+  content: ''; position: absolute; inset: 40px; border-radius: 50%;
+  border: 1px solid rgba(201,168,76,.12);
+}
 
-  /* Inner ring */
-  .vault-door::before {
-    content: '';
-    position: absolute;
-    inset: 18px;
-    border-radius: 50%;
-    border: 3px solid rgba(201,168,76,.25);
-    box-shadow: inset 0 0 20px rgba(0,0,0,.3);
-  }
-  .vault-door::after {
-    content: '';
-    position: absolute;
-    inset: 40px;
-    border-radius: 50%;
-    border: 1px solid rgba(201,168,76,.12);
-  }
+.vault-bolt {
+  position: absolute; width: 14px; height: 14px;
+  background: radial-gradient(circle at 35% 35%, #d4b862, #8a7033, #5a4820);
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,.3), 0 1px 3px rgba(0,0,0,.5);
+}
 
-  /* Bolts around the perimeter */
-  .vault-bolt {
-    position: absolute;
-    width: 14px; height: 14px;
-    background: radial-gradient(circle at 35% 35%, #d4b862, #8a7033, #5a4820);
-    border-radius: 50%;
-    box-shadow: inset 0 1px 2px rgba(255,255,255,.3), 0 1px 3px rgba(0,0,0,.5);
-    /* positioned via inline styles in HTML */
-  }
+.vault-spoke-wrap {
+  position: absolute; inset: 60px;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .8s cubic-bezier(.4,0,.2,1);
+}
+.vault-spoke-wrap.rotate { transform: rotate(90deg); }
+.vault-spoke {
+  position: absolute;
+  background: linear-gradient(to right, #8a7033, #C9A84C, #8a7033);
+  border-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,.4);
+}
+.vault-spoke.h { width: 100%; height: 6px; top: calc(50% - 3px); }
+.vault-spoke.v { height: 100%; width: 6px; left: calc(50% - 3px); }
+.vault-spoke.d1 { width: 100%; height: 5px; top: calc(50% - 2.5px); transform: rotate(45deg); }
+.vault-spoke.d2 { width: 100%; height: 5px; top: calc(50% - 2.5px); transform: rotate(-45deg); }
 
-  /* Spoke wheel */
-  .vault-spoke-wrap {
-    position: absolute;
-    inset: 60px;
-    display: flex; align-items: center; justify-content: center;
-    transition: transform .8s cubic-bezier(.4,0,.2,1);
-  }
-  .vault-spoke-wrap.rotate { transform: rotate(90deg); }
+.vault-hub {
+  position: absolute; width: 60px; height: 60px;
+  top: calc(50% - 30px); left: calc(50% - 30px); border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #d4b862, #C9A84C, #8a7033);
+  box-shadow: 0 2px 8px rgba(0,0,0,.5), inset 0 1px 4px rgba(255,255,255,.2);
+  z-index: 2; display: flex; align-items: center; justify-content: center;
+}
+.vault-hub-inner {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #1a2a3e, #0f1f33);
+  border: 2px solid rgba(201,168,76,.4);
+}
 
-  .vault-spoke {
-    position: absolute;
-    background: linear-gradient(to right, #8a7033, #C9A84C, #8a7033);
-    border-radius: 4px;
-    box-shadow: 0 1px 4px rgba(0,0,0,.4);
-  }
-  .vault-spoke.h { width: 100%; height: 6px; top: calc(50% - 3px); }
-  .vault-spoke.v { height: 100%; width: 6px; left: calc(50% - 3px); }
-  .vault-spoke.d1 { width: 100%; height: 5px; top: calc(50% - 2.5px); transform: rotate(45deg); }
-  .vault-spoke.d2 { width: 100%; height: 5px; top: calc(50% - 2.5px); transform: rotate(-45deg); }
+.vault-brand {
+  position: absolute; bottom: 55px; left: 0; right: 0;
+  text-align: center; z-index: 3; pointer-events: none;
+}
+.vault-brand-tql { font-size: 28px; font-weight: 700; color: #C9A84C; letter-spacing: 6px; }
+.vault-brand-sub { font-size: 11px; color: rgba(201,168,76,.5); letter-spacing: 3px; margin-top: 4px; }
 
-  /* Center hub */
-  .vault-hub {
-    position: absolute;
-    width: 60px; height: 60px;
-    top: calc(50% - 30px); left: calc(50% - 30px);
-    border-radius: 50%;
-    background: radial-gradient(circle at 40% 35%, #d4b862, #C9A84C, #8a7033);
-    box-shadow: 0 2px 8px rgba(0,0,0,.5), inset 0 1px 4px rgba(255,255,255,.2);
-    z-index: 2;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .vault-hub-inner {
-    width: 30px; height: 30px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 40% 35%, #1a2a3e, #0f1f33);
-    border: 2px solid rgba(201,168,76,.4);
-  }
+.vault-input-area {
+  margin-top: 40px; display: flex; flex-direction: column; align-items: center;
+  z-index: 10; position: relative;
+}
+.vault-label { font-size: 11px; letter-spacing: 3px; color: rgba(255,255,255,.4); margin-bottom: 12px; text-transform: uppercase; }
+.vault-code-wrap { display: flex; gap: 8px; margin-bottom: 16px; }
+.vault-char {
+  width: 38px; height: 48px; border-radius: 8px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(201,168,76,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 700; color: #C9A84C;
+  transition: border-color .2s, background .2s;
+}
+.vault-char.active { border-color: #C9A84C; background: rgba(201,168,76,.08); }
+.vault-char.filled { background: rgba(201,168,76,.12); }
+.vault-hidden-input {
+  position: absolute; opacity: 0; width: 1px; height: 1px;
+}
+.vault-error {
+  font-size: 12px; color: #ef4444; min-height: 20px; margin-top: 4px;
+  transition: opacity .2s;
+}
+.vault-hint { font-size: 11px; color: rgba(255,255,255,.25); margin-top: 12px; }
 
-  /* Branding on door */
-  .vault-brand {
-    position: absolute;
-    bottom: 55px; left: 0; right: 0;
-    text-align: center;
-    z-index: 3;
-    pointer-events: none;
-  }
-  .vault-brand-tql {
-    font-size: 28px; font-weight: 700;
-    color: #C9A84C;
-    letter-spacing: 8px;
-    text-shadow: 0 2px 8px rgba(0,0,0,.5);
-  }
-  .vault-brand-sub {
-    font-size: 9px; font-weight: 600;
-    color: rgba(201,168,76,.5);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-top: 4px;
-  }
+/* ======== APP LAYOUT ======== */
+#app { display: none; height: 100vh; }
+#app.visible { display: flex; }
 
-  /* ACCESS GRANTED overlay */
-  .vault-granted {
-    position: absolute;
-    inset: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px; font-weight: 700;
-    color: #22c55e;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    opacity: 0;
-    z-index: 10;
-    text-shadow: 0 0 30px rgba(34,197,94,.6);
-    pointer-events: none;
-  }
-  .vault-granted.show {
-    animation: grantedFlash 1.2s ease forwards;
-  }
-  @keyframes grantedFlash {
-    0%   { opacity: 0; transform: scale(.8); }
-    30%  { opacity: 1; transform: scale(1.05); }
-    70%  { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(1); }
-  }
+/* Sidebar */
+.sidebar {
+  width: var(--sidebar-w); background: var(--surface);
+  border-right: 1px solid var(--border); display: flex; flex-direction: column;
+  flex-shrink: 0; overflow: hidden; z-index: 50;
+}
+.sidebar-header {
+  padding: 16px 20px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px;
+}
+.sidebar-logo {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--navy); display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 800; font-size: 11px; letter-spacing: 1px;
+}
+.sidebar-title { font-size: 14px; font-weight: 700; color: var(--navy); }
+.sidebar-subtitle { font-size: 10px; color: var(--muted); letter-spacing: .5px; }
 
-  /* Light flood from behind door */
-  .vault-light {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, rgba(255,255,255,.9) 0%, transparent 70%);
-    opacity: 0;
-    pointer-events: none;
-    z-index: 5;
-  }
-  .vault-light.flood {
-    animation: lightFlood 1.5s ease-in forwards;
-    animation-delay: 1.2s;
-  }
-  @keyframes lightFlood {
-    0%   { opacity: 0; transform: scale(.5); }
-    50%  { opacity: .6; transform: scale(1.2); }
-    100% { opacity: 1; transform: scale(3); }
-  }
+.sidebar-nav {
+  flex: 1; overflow-y: auto; padding: 8px 0;
+  scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+}
+.nav-section { padding: 8px 16px 4px; font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 16px; margin: 1px 8px; border-radius: var(--radius-sm);
+  cursor: pointer; transition: all var(--transition); font-size: 12.5px;
+  color: var(--text); font-weight: 500; text-decoration: none;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.nav-item:hover { background: var(--bg); }
+.nav-item.active { background: var(--navy); color: #fff; font-weight: 600; }
+.nav-item .nav-icon { font-size: 15px; flex-shrink: 0; width: 20px; text-align: center; }
+.nav-item .nav-badge {
+  margin-left: auto; font-size: 10px; font-weight: 600;
+  background: var(--gold-lt); color: var(--gold); padding: 1px 6px;
+  border-radius: 10px;
+}
+.nav-item.active .nav-badge { background: rgba(255,255,255,.2); color: #fff; }
 
-  /* Entire vault fade-out */
-  #vault-screen.fade-away {
-    animation: vaultFadeAway .8s ease-in forwards;
-    animation-delay: 2.6s;
-  }
-  @keyframes vaultFadeAway {
-    0%   { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(1.1); }
-  }
+/* Main Content */
+.main-content {
+  flex: 1; display: flex; flex-direction: column; overflow: hidden;
+}
+.topbar {
+  height: var(--topbar-h); background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; padding: 0 24px; gap: 16px;
+  flex-shrink: 0;
+}
+.topbar-title { font-size: 16px; font-weight: 700; color: var(--navy); }
+.topbar-subtitle { font-size: 12px; color: var(--muted); }
+.topbar-spacer { flex: 1; }
+.topbar-badge {
+  font-size: 10px; font-weight: 600; background: var(--gold-lt);
+  color: var(--gold); padding: 3px 10px; border-radius: 12px;
+}
+.mobile-toggle {
+  display: none; background: none; border: none; cursor: pointer;
+  font-size: 20px; color: var(--navy); padding: 4px;
+}
 
-  /* Passcode area */
-  .vault-passcode {
-    margin-top: 36px;
-    text-align: center;
-    z-index: 10;
-    position: relative;
-  }
-  .vault-passcode-label {
-    font-size: 10px; font-weight: 600;
-    color: rgba(201,168,76,.5);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .vault-code-boxes {
-    display: flex; gap: 6px;
-    justify-content: center;
-  }
-  .vault-code-box {
-    width: 38px; height: 46px;
-    background: rgba(255,255,255,.06);
-    border: 1.5px solid rgba(201,168,76,.25);
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Inter', monospace;
-    font-size: 18px; font-weight: 700;
-    color: #C9A84C;
-    transition: all .15s;
-  }
-  .vault-code-box.filled {
-    background: rgba(201,168,76,.1);
-    border-color: #C9A84C;
-    box-shadow: 0 0 12px rgba(201,168,76,.2);
-  }
-  .vault-code-box.correct {
-    background: rgba(34,197,94,.15);
-    border-color: #22c55e;
-    color: #22c55e;
-    box-shadow: 0 0 16px rgba(34,197,94,.3);
-  }
-  .vault-code-box.wrong {
-    background: rgba(239,68,68,.12);
-    border-color: #ef4444;
-    color: #ef4444;
-    animation: shakeBox .4s ease;
-  }
-  @keyframes shakeBox {
-    0%, 100% { transform: translateX(0); }
-    20% { transform: translateX(-6px); }
-    40% { transform: translateX(6px); }
-    60% { transform: translateX(-4px); }
-    80% { transform: translateX(4px); }
-  }
+.content-area {
+  flex: 1; overflow-y: auto; padding: 24px;
+  scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+}
 
-  /* Hidden real input */
-  .vault-hidden-input {
-    position: absolute;
-    opacity: 0;
-    width: 1px; height: 1px;
-    pointer-events: none;
-  }
+/* Panes */
+.pane { display: none; }
+.pane.active { display: block; }
 
-  .vault-hint {
-    margin-top: 20px;
-    font-size: 11px;
-    color: rgba(255,255,255,.2);
-    letter-spacing: 1px;
-  }
+/* Hero Cards */
+.hero-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px; margin-bottom: 24px;
+}
+.hero-card {
+  background: var(--surface); border-radius: var(--radius);
+  padding: 20px; border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.hero-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.hero-card-label { font-size: 10px; font-weight: 600; color: var(--muted); letter-spacing: .5px; text-transform: uppercase; margin-bottom: 6px; }
+.hero-card-value { font-size: 24px; font-weight: 800; color: var(--navy); }
+.hero-card-sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
+.hero-card.gold { border-left: 3px solid var(--gold); }
+.hero-card.green { border-left: 3px solid var(--green); }
+.hero-card.navy { border-left: 3px solid var(--navy); }
 
-  /* Mobile vault scaling */
-  @media (max-width: 480px) {
-    .vault-door { width: 220px; height: 220px; }
-    .vault-door-wrap { transform-origin: left center; }
-    .vault-spoke-wrap { inset: 45px; }
-    .vault-hub { width: 44px; height: 44px; top: calc(50% - 22px); left: calc(50% - 22px); }
-    .vault-hub-inner { width: 22px; height: 22px; }
-    .vault-brand { bottom: 40px; }
-    .vault-brand-tql { font-size: 20px; letter-spacing: 5px; }
-    .vault-code-box { width: 32px; height: 40px; font-size: 15px; }
-    .vault-bolt { width: 10px; height: 10px; }
-  }
+/* Tables */
+.table-wrap {
+  background: var(--surface); border-radius: var(--radius);
+  border: 1px solid var(--border); overflow-x: auto;
+  box-shadow: var(--shadow-sm); margin-bottom: 24px;
+}
+.table-title {
+  padding: 16px 20px; font-size: 14px; font-weight: 700;
+  color: var(--navy); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+.table-title .badge {
+  font-size: 10px; font-weight: 600; background: var(--navy);
+  color: #fff; padding: 2px 8px; border-radius: 10px;
+}
 
-  /* ── LAYOUT SHELL ── */
-  .app { display: flex; height: 100vh; display: none; }
-  .app.revealed { display: flex; }
+table {
+  width: 100%; border-collapse: collapse; font-size: 12px;
+}
+thead th {
+  padding: 10px 12px; text-align: left; font-weight: 600;
+  font-size: 10px; text-transform: uppercase; letter-spacing: .5px;
+  color: var(--navy); background: var(--bg);
+  border-bottom: 2px solid var(--border);
+  position: sticky; top: 0; z-index: 5;
+  white-space: nowrap;
+}
+tbody td {
+  padding: 10px 12px; border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: rgba(13,59,102,.02); }
 
-  /* ── SIDEBAR (Notion/Linear style) ── */
-  .sidebar {
-    width: var(--sidebar-w);
-    background: var(--surface);
-    border-right: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    transition: transform var(--transition), opacity var(--transition);
-    z-index: 50;
-  }
-  .sidebar-brand {
-    padding: 20px 20px 16px;
-    border-bottom: 1px solid var(--border);
-  }
-  .sidebar-brand-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .sidebar-logo {
-    width: 32px; height: 32px;
-    background: var(--navy);
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 11px; color: var(--gold);
-    letter-spacing: -.3px;
-    flex-shrink: 0;
-  }
-  .sidebar-brand-text h1 {
-    font-size: 14px; font-weight: 700; color: var(--text); letter-spacing: -.3px; line-height: 1.2;
-  }
-  .sidebar-brand-text span {
-    font-size: 11px; color: var(--muted); font-weight: 400;
-  }
+.cell-green { color: var(--green); font-weight: 600; }
+.cell-red { color: var(--red); font-weight: 600; }
+.cell-amber { color: var(--amber); font-weight: 600; }
+.cell-muted { color: var(--muted); }
+.cell-navy { color: var(--navy); font-weight: 600; }
 
-  .sidebar-section-label {
-    padding: 20px 20px 8px;
-    font-size: 10.5px;
-    font-weight: 600;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: .6px;
-  }
+.tag {
+  display: inline-block; padding: 2px 7px; border-radius: 6px;
+  font-size: 10px; font-weight: 600;
+}
+.tag-green { background: var(--green-lt); color: var(--green); }
+.tag-red { background: var(--red-lt); color: var(--red); }
+.tag-amber { background: var(--amber-lt); color: var(--amber); }
+.tag-blue { background: var(--blue-lt); color: var(--navy); }
+.tag-gold { background: var(--gold-lt); color: var(--gold); }
 
-  .sidebar-nav { flex: 1; overflow-y: auto; padding: 4px 8px; }
-  .sidebar-nav::-webkit-scrollbar { width: 4px; }
-  .sidebar-nav::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+.notes-cell { font-size: 11px; color: var(--muted); max-width: 300px; line-height: 1.5; }
+.str-proof { font-size: 11px; max-width: 280px; line-height: 1.5; }
 
-  .nav-item {
-    display: flex; align-items: center; gap: 10px;
-    padding: 9px 12px;
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    transition: all var(--transition);
-    border: none; background: none; width: 100%;
-    font-family: inherit; font-size: 13px; font-weight: 500;
-    color: var(--text);
-    text-align: left;
-    position: relative;
-  }
-  .nav-item:hover { background: var(--bg); }
-  .nav-item.active {
-    background: var(--navy);
-    color: #fff;
-  }
-  .nav-item.active .nav-icon { opacity: 1; }
-  .nav-item.active .nav-count { background: rgba(255,255,255,.15); color: rgba(255,255,255,.8); }
-  .nav-icon { font-size: 16px; width: 20px; text-align: center; opacity: .7; flex-shrink: 0; }
-  .nav-label { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .nav-count {
-    font-size: 10.5px; font-weight: 600;
-    background: var(--bg); color: var(--muted);
-    padding: 1px 7px; border-radius: 10px;
-    flex-shrink: 0;
-  }
+/* Search Form */
+.search-form {
+  background: var(--surface); border-radius: var(--radius);
+  border: 1px solid var(--border); padding: 24px; margin-bottom: 24px;
+}
+.search-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px; margin-bottom: 16px;
+}
+.form-group label {
+  display: block; font-size: 11px; font-weight: 600; color: var(--navy);
+  margin-bottom: 4px; text-transform: uppercase; letter-spacing: .5px;
+}
+.form-group select, .form-group input {
+  width: 100%; padding: 8px 12px; border: 1px solid var(--border);
+  border-radius: var(--radius-sm); font-size: 13px; font-family: inherit;
+  background: var(--bg); color: var(--text);
+  transition: border-color var(--transition);
+}
+.form-group select:focus, .form-group input:focus {
+  outline: none; border-color: var(--navy);
+}
+.btn-search {
+  background: var(--navy); color: #fff; border: none;
+  padding: 10px 24px; border-radius: var(--radius-sm);
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: background var(--transition);
+}
+.btn-search:hover { background: var(--navy-hover); }
 
-  .sidebar-footer {
-    padding: 16px 20px;
-    border-top: 1px solid var(--border);
-    font-size: 11px; color: var(--muted);
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .sidebar-footer .update-badge {
-    background: var(--gold-lt); color: var(--amber);
-    font-size: 10px; font-weight: 600;
-    padding: 2px 8px; border-radius: 10px;
-  }
+.section-desc {
+  font-size: 12px; color: var(--muted); margin-bottom: 16px;
+  line-height: 1.6; max-width: 800px;
+}
 
-  /* ── MAIN CONTENT ── */
-  .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+/* Mobile */
+@media (max-width: 768px) {
+  .sidebar { position: fixed; left: -280px; height: 100vh; z-index: 100; transition: left .3s; }
+  .sidebar.open { left: 0; }
+  .mobile-toggle { display: block; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .content-area { padding: 16px; }
+  .search-grid { grid-template-columns: 1fr; }
+}
 
-  .topbar {
-    height: var(--topbar-h);
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 0 28px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-shrink: 0;
-  }
-  .topbar-left { display: flex; align-items: center; gap: 12px; }
-  .topbar-title { font-size: 16px; font-weight: 700; color: var(--navy); letter-spacing: -.3px; }
-  .topbar-desc { font-size: 12px; color: var(--muted); }
-
-  .topbar-right { display: flex; align-items: center; gap: 10px; }
-  .search-box {
-    display: flex; align-items: center; gap: 8px;
-    background: var(--bg); border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 0 12px; height: 34px; width: 220px;
-    transition: all var(--transition);
-  }
-  .search-box:focus-within { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(13,59,102,.08); }
-  .search-box svg { color: var(--muted); flex-shrink: 0; }
-  .search-box input {
-    border: none; outline: none; background: transparent;
-    font-family: inherit; font-size: 12.5px; color: var(--text);
-    width: 100%;
-  }
-  .search-box input::placeholder { color: var(--muted); }
-
-  .disclaimer-pill {
-    display: flex; align-items: center; gap: 5px;
-    background: var(--amber-lt); border: 1px solid #FDE047;
-    color: #713F12; font-size: 10.5px; font-weight: 500;
-    padding: 5px 12px; border-radius: 20px; white-space: nowrap;
-  }
-
-  .menu-toggle {
-    display: none;
-    background: none; border: none; cursor: pointer;
-    color: var(--text); padding: 4px;
-  }
-
-  /* ── SCROLL AREA ── */
-  .scroll-area {
-    flex: 1; overflow-y: auto; overflow-x: hidden;
-    padding: 24px 28px 48px;
-    scroll-behavior: smooth;
-  }
-  .scroll-area::-webkit-scrollbar { width: 6px; }
-  .scroll-area::-webkit-scrollbar-thumb { background: var(--border); border-radius: 6px; }
-  .scroll-area::-webkit-scrollbar-thumb:hover { background: var(--muted); }
-
-  /* ── PANE TRANSITIONS ── */
-  .pane {
-    display: none;
-    animation: fadeSlideIn .3s cubic-bezier(.4,0,.2,1);
-  }
-  .pane.active { display: block; }
-  @keyframes fadeSlideIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── LEGEND ROW ── */
-  .legend-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
-
-  .inv-badge {
-    display: inline-flex; align-items: center; gap: 5px;
-    font-size: 11px; font-weight: 600;
-    padding: 3px 10px; border-radius: 6px; white-space: nowrap;
-  }
-  .inv-badge.ACC  { background: #DBEAFE; color: #1E40AF; }
-  .inv-badge.DEEP { background: #DCFCE7; color: #166534; }
-  .inv-badge.LS   { background: #EDE9FE; color: #5B21B6; }
-  .inv-badge.AD   { background: #CCFBF1; color: #0F766E; }
-  .inv-badge.VER  { background: #FCE7F3; color: #9D174D; }
-  .inv-badge.ELI  { background: #FEF3C7; color: #92400E; }
-  .inv-badge.TQL  { background: #FEE2E2; color: #991B1B; }
-  .inv-badge.BEST { background: var(--gold-lt); color: #78350F; }
-  .inv-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
-  .dot-ACC  { background: #1F4E79; }
-  .dot-DEEP { background: #1E6B3C; }
-  .dot-LS   { background: #4B0082; }
-  .dot-AD   { background: #007777; }
-  .dot-VER  { background: #8B1A4A; }
-  .dot-ELI  { background: #B8860B; }
-  .dot-TQL  { background: #C0392B; }
-  .dot-BEST { background: #C9A84C; }
-
-  /* ── HERO GRID ── */
-  .hero-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-  .hero-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px;
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition);
-  }
-  .hero-card:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
-  .hero-card-label { font-size: 10.5px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
-  .hero-card-value { font-size: 22px; font-weight: 700; color: var(--navy); letter-spacing: -.5px; line-height: 1.1; }
-  .hero-card-sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
-  .hero-card-winner {
-    display: inline-flex; align-items: center; gap: 4px;
-    background: var(--navy-xs); color: var(--navy);
-    font-size: 10.5px; font-weight: 600;
-    padding: 3px 8px; border-radius: 6px; margin-top: 8px;
-  }
-
-  /* ── COMP GRID ── */
-  .comp-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 14px;
-    margin-bottom: 24px;
-  }
-  .comp-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 18px;
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition);
-    position: relative; overflow: hidden;
-  }
-  .comp-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
-  .comp-card::before {
-    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
-  }
-  .comp-card.ACC::before  { background: #1F4E79; }
-  .comp-card.DEEP::before { background: #1E6B3C; }
-  .comp-card.LS::before   { background: #4B0082; }
-  .comp-card.AD::before   { background: #007777; }
-  .comp-card.VER::before  { background: #8B1A4A; }
-  .comp-card.ELI::before  { background: #B8860B; }
-  .comp-card.TQL::before  { background: #C0392B; }
-  .comp-card.MULTI::before { background: linear-gradient(#1F4E79, #4B0082); }
-
-  .comp-card-cat { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 10px; }
-  .comp-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
-  .metric-box {
-    background: var(--bg); border: 1px solid var(--border);
-    border-radius: var(--radius-sm); padding: 8px 10px;
-  }
-  .metric-box .m-label { font-size: 10px; color: var(--muted); font-weight: 500; margin-bottom: 3px; }
-  .metric-box .m-val { font-size: 15px; font-weight: 700; color: var(--navy); line-height: 1.2; }
-  .metric-box .m-src { font-size: 10px; color: var(--muted); margin-top: 2px; }
-  .comp-winner-row { display: flex; align-items: flex-start; gap: 8px; margin-top: 8px; }
-  .comp-winner-label { font-size: 10px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; padding-top: 2px; white-space: nowrap; }
-  .comp-winner-val { font-size: 12px; font-weight: 600; color: var(--text); }
-
-  /* ── TABLE CARD ── */
-  .table-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
-    margin-bottom: 24px;
-  }
-  .table-card-header {
-    padding: 14px 18px;
-    border-bottom: 1px solid var(--border);
-    display: flex; align-items: center; gap: 10px;
-  }
-  .table-card-header .label { font-size: 13px; font-weight: 600; color: var(--text); }
-  .table-card-header .count {
-    background: var(--bg); border: 1px solid var(--border);
-    color: var(--muted); font-size: 11px; font-weight: 500;
-    padding: 1px 7px; border-radius: 20px;
-  }
-
-  .tbl-wrap { overflow-x: auto; }
-  .tbl-wrap::-webkit-scrollbar { height: 6px; }
-  .tbl-wrap::-webkit-scrollbar-thumb { background: var(--border); border-radius: 6px; }
-
-  table { width: 100%; border-collapse: collapse; min-width: 900px; }
-  thead tr { background: var(--navy); }
-  thead th {
-    padding: 10px 12px; text-align: left;
-    font-size: 10.5px; font-weight: 600;
-    color: rgba(255,255,255,.85);
-    letter-spacing: .3px; white-space: nowrap;
-    border-right: 1px solid rgba(255,255,255,.08);
-  }
-  thead th:last-child { border-right: none; }
-
-  tbody tr { border-bottom: 1px solid var(--border); transition: background .15s; }
-  tbody tr:hover { background: #F0F4FF; }
-  tbody tr.row-best { background: var(--gold-lt); }
-  tbody tr.row-best:hover { background: #FAE8B0; }
-
-  td {
-    padding: 10px 12px; font-size: 12px;
-    color: var(--text); vertical-align: top;
-    border-right: 1px solid var(--border);
-  }
-  td:last-child { border-right: none; }
-  td.td-prog { font-weight: 600; font-size: 12px; color: var(--navy); min-width: 180px; }
-  td.td-notes { font-size: 11px; color: #555; min-width: 260px; max-width: 360px; }
-
-  .win-cell {
-    background: var(--green-lt); color: var(--green);
-    font-weight: 700; border-radius: 6px;
-    padding: 2px 6px; display: inline-block; font-size: 11.5px;
-  }
-  .sub-cell { font-size: 11px; color: var(--muted); display: block; margin-top: 1px; }
-  .tag-yes  { display: inline-flex; align-items: center; gap: 3px; background: #DCFCE7; color: #166534; font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 6px; }
-  .tag-no   { display: inline-flex; align-items: center; gap: 3px; background: #FEE2E2; color: #991B1B; font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 6px; }
-  .tag-cond { display: inline-flex; align-items: center; gap: 3px; background: #FEF3C7; color: #92400E; font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 6px; }
-
-  .bold { font-weight: 700; }
-  .text-navy { color: var(--navy); }
-
-  /* ── MOBILE ── */
-  .mobile-overlay {
-    display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,.3); z-index: 40;
-    opacity: 0; transition: opacity var(--transition);
-  }
-  .mobile-overlay.show { opacity: 1; }
-
-  @media (max-width: 768px) {
-    .sidebar {
-      position: fixed; left: 0; top: 0; bottom: 0;
-      transform: translateX(-100%); z-index: 50;
-      box-shadow: var(--shadow-lg);
-    }
-    .sidebar.open { transform: translateX(0); }
-    .mobile-overlay { display: block; pointer-events: none; }
-    .mobile-overlay.show { pointer-events: auto; }
-    .menu-toggle { display: block; }
-    .scroll-area { padding: 16px 14px 48px; }
-    .topbar { padding: 0 14px; }
-    .hero-grid { grid-template-columns: 1fr 1fr; }
-    .comp-grid { grid-template-columns: 1fr; }
-    .search-box { width: 160px; }
-  }
-  @media (max-width: 480px) {
-    .hero-grid { grid-template-columns: 1fr; }
-    .search-box { display: none; }
-  }
+.mobile-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,.3);
+  z-index: 99;
+}
+.mobile-overlay.show { display: block; }
 </style>
 </head>
 <body>
 
-<!-- ══════════ VAULT LANDING PAGE ══════════ -->
-<div id="vault-screen" onclick="focusVault()">
-  <!-- Particles -->
-  <div class="vault-particles" id="vaultParticles"></div>
-
-  <!-- Glow -->
+<!-- ======== VAULT SCREEN ======== -->
+<div id="vault-screen">
+  <div class="vault-particles" id="vault-particles"></div>
   <div class="vault-glow"></div>
-
-  <!-- Light flood (triggered on unlock) -->
-  <div class="vault-light" id="vaultLight"></div>
-
-  <!-- ACCESS GRANTED text -->
-  <div class="vault-granted" id="vaultGranted">ACCESS GRANTED</div>
-
-  <!-- Vault door wrapper (for 3D swing) -->
-  <div class="vault-door-wrap" id="vaultDoorWrap">
+  <div class="vault-door-wrap" id="vault-door-wrap">
     <div class="vault-door">
-      <!-- 12 bolts around perimeter -->
-      <div class="vault-bolt" style="top:8px;left:50%;transform:translateX(-50%)"></div>
-      <div class="vault-bolt" style="top:22px;right:38px"></div>
-      <div class="vault-bolt" style="top:68px;right:12px"></div>
-      <div class="vault-bolt" style="bottom:68px;right:12px"></div>
-      <div class="vault-bolt" style="bottom:22px;right:38px"></div>
-      <div class="vault-bolt" style="bottom:8px;left:50%;transform:translateX(-50%)"></div>
-      <div class="vault-bolt" style="bottom:22px;left:38px"></div>
-      <div class="vault-bolt" style="bottom:68px;left:12px"></div>
-      <div class="vault-bolt" style="top:68px;left:12px"></div>
-      <div class="vault-bolt" style="top:22px;left:38px"></div>
-      <div class="vault-bolt" style="top:40px;right:18px"></div>
-      <div class="vault-bolt" style="top:40px;left:18px"></div>
-
-      <!-- Spoke wheel -->
-      <div class="vault-spoke-wrap" id="vaultSpoke">
+      <div class="vault-bolt" style="top:12%;left:50%;transform:translateX(-50%)"></div>
+      <div class="vault-bolt" style="bottom:12%;left:50%;transform:translateX(-50%)"></div>
+      <div class="vault-bolt" style="left:12%;top:50%;transform:translateY(-50%)"></div>
+      <div class="vault-bolt" style="right:12%;top:50%;transform:translateY(-50%)"></div>
+      <div class="vault-bolt" style="top:18%;left:18%"></div>
+      <div class="vault-bolt" style="top:18%;right:18%"></div>
+      <div class="vault-bolt" style="bottom:18%;left:18%"></div>
+      <div class="vault-bolt" style="bottom:18%;right:18%"></div>
+      <div class="vault-spoke-wrap" id="vault-spokes">
         <div class="vault-spoke h"></div>
         <div class="vault-spoke v"></div>
         <div class="vault-spoke d1"></div>
         <div class="vault-spoke d2"></div>
         <div class="vault-hub"><div class="vault-hub-inner"></div></div>
       </div>
-
-      <!-- Branding -->
       <div class="vault-brand">
         <div class="vault-brand-tql">TQL</div>
-        <div class="vault-brand-sub">Non-QM Product Intelligence</div>
+        <div class="vault-brand-sub">MATRIX</div>
       </div>
     </div>
   </div>
-
-  <!-- Passcode input -->
-  <div class="vault-passcode">
-    <div class="vault-passcode-label">Enter Access Code</div>
-    <div class="vault-code-boxes" id="codeBoxes">
-      <div class="vault-code-box" id="cb0"></div>
-      <div class="vault-code-box" id="cb1"></div>
-      <div class="vault-code-box" id="cb2"></div>
-      <div class="vault-code-box" id="cb3"></div>
-      <div class="vault-code-box" id="cb4"></div>
-      <div class="vault-code-box" id="cb5"></div>
-      <div class="vault-code-box" id="cb6"></div>
-      <div class="vault-code-box" id="cb7"></div>
-    </div>
-    <input type="text" class="vault-hidden-input" id="vaultInput" maxlength="8" autocomplete="off" autocapitalize="characters" autofocus />
+  <div class="vault-input-area">
+    <div class="vault-label">Enter Access Code</div>
+    <div class="vault-code-wrap" id="vault-code-wrap"></div>
+    <input class="vault-hidden-input" id="vault-input" type="text" autocomplete="off" maxlength="8" autofocus />
+    <div class="vault-error" id="vault-error"></div>
     <div class="vault-hint">Authorized personnel only</div>
   </div>
 </div>
 
-<div class="app" id="dashboardApp">
-  <!-- MOBILE OVERLAY -->
-  <div class="mobile-overlay" id="mobileOverlay" onclick="toggleSidebar()"></div>
-
-  <!-- SIDEBAR -->
+<!-- ======== APP ======== -->
+<div id="app">
+  <div class="mobile-overlay" id="mobileOverlay"></div>
   <aside class="sidebar" id="sidebar">
-    <div class="sidebar-brand">
-      <div class="sidebar-brand-row">
-        <div class="sidebar-logo">TQL</div>
-        <div class="sidebar-brand-text">
-          <h1>TQL Matrix</h1>
-          <span>Non-QM Product Intelligence</span>
-        </div>
+    <div class="sidebar-header">
+      <div class="sidebar-logo">TQL</div>
+      <div>
+        <div class="sidebar-title">TQL Matrix</div>
+        <div class="sidebar-subtitle">Non-QM Intelligence</div>
       </div>
     </div>
-
-    <div class="sidebar-section-label">Views</div>
-    <nav class="sidebar-nav">
-      <button class="nav-item active" onclick="showTab('comp')" id="nav-comp">
-        <span class="nav-icon">&#x1F3C6;</span>
-        <span class="nav-label">Competitive Summary</span>
-        <span class="nav-count">9</span>
-      </button>
-      <button class="nav-item" onclick="showTab('str')" id="nav-str">
-        <span class="nav-icon">&#x2708;&#xFE0F;</span>
-        <span class="nav-label">STR - Short Term Rental</span>
-        <span class="nav-count">7</span>
-      </button>
-      <button class="nav-item" onclick="showTab('dscr')" id="nav-dscr">
-        <span class="nav-icon">&#x1F3E0;</span>
-        <span class="nav-label">DSCR - Standard LTR</span>
-        <span class="nav-count">7</span>
-      </button>
-      <button class="nav-item" onclick="showTab('fulldoc')" id="nav-fulldoc">
-        <span class="nav-icon">&#x1F4C4;</span>
-        <span class="nav-label">Non-QM Full Doc</span>
-        <span class="nav-count">6</span>
-      </button>
-      <button class="nav-item" onclick="showTab('altdoc')" id="nav-altdoc">
-        <span class="nav-icon">&#x1F3E6;</span>
-        <span class="nav-label">Alt Doc / Bank Statement</span>
-        <span class="nav-count">6</span>
-      </button>
-    </nav>
-
-    <div class="sidebar-section-label">Investors</div>
-    <div style="padding: 4px 12px 16px; display:flex; flex-wrap:wrap; gap:5px;">
-      <span class="inv-badge ACC"><span class="inv-dot dot-ACC"></span>Accelerator</span>
-      <span class="inv-badge DEEP"><span class="inv-dot dot-DEEP"></span>Deephaven</span>
-      <span class="inv-badge LS"><span class="inv-dot dot-LS"></span>LoanStream</span>
-      <span class="inv-badge AD"><span class="inv-dot dot-AD"></span>AD Mortgage</span>
-      <span class="inv-badge VER"><span class="inv-dot dot-VER"></span>Verus</span>
-      <span class="inv-badge ELI"><span class="inv-dot dot-ELI"></span>Ellington</span>
-      <span class="inv-badge TQL"><span class="inv-dot dot-TQL"></span>TQL Own</span>
-    </div>
-
-    <div class="sidebar-footer">
-      <span>v1.0 &middot; TQL TPO</span>
-      <span class="update-badge">Updated 03/28/2026</span>
-    </div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
   </aside>
-
-  <!-- MAIN -->
-  <div class="main">
+  <main class="main-content">
     <header class="topbar">
-      <div class="topbar-left">
-        <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-        </button>
-        <div>
-          <div class="topbar-title" id="topbar-title">Competitive Summary</div>
-          <div class="topbar-desc" id="topbar-desc">Best-in-class across 8 investors by program type</div>
-        </div>
+      <button class="mobile-toggle" id="mobileToggle">&#9776;</button>
+      <div>
+        <div class="topbar-title" id="topbarTitle">Dashboard</div>
+        <div class="topbar-subtitle" id="topbarSubtitle">Overview of all investor programs</div>
       </div>
-      <div class="topbar-right">
-        <div class="search-box">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input type="text" placeholder="Search programs..." id="searchInput" oninput="filterTable()" />
-        </div>
-        <div class="disclaimer-pill">Verify with Secondary</div>
-      </div>
+      <div class="topbar-spacer"></div>
+      <div class="topbar-badge">Last Updated: Mar 2026</div>
     </header>
-
-    <div class="scroll-area">
-
-      <!-- ══════════ COMPETITIVE SUMMARY ══════════ -->
-      <div class="pane active" id="pane-comp">
-        <div class="comp-grid">
-
-          <div class="comp-card TQL">
-            <div class="comp-card-cat">STR - Short Term Rental</div>
-            <div class="comp-metrics">
-              <div class="metric-box"><div class="m-label">Highest LTV (Purchase)</div><div class="m-val">80%</div><div class="m-src">ACC DSCR + TQL Own</div></div>
-              <div class="metric-box"><div class="m-label">Best Min FICO</div><div class="m-val">620</div><div class="m-src">LS Core / AD</div></div>
-              <div class="metric-box"><div class="m-label">Min Loan</div><div class="m-val">$50K</div><div class="m-src">AD Mortgage</div></div>
-              <div class="metric-box"><div class="m-label">Max Loan</div><div class="m-val">$3.5M</div><div class="m-src">TQL / LS / VER</div></div>
-            </div>
-            <div class="comp-winner-row">
-              <div class="comp-winner-label">Winners</div>
-              <div class="comp-winner-val">TQL DSCR (80% P, AirDNA, 75% C/O) + ACC (0.75 floor, No Ratio)</div>
-            </div>
-            <div style="margin-top:10px; display:flex; gap:5px; flex-wrap:wrap;">
-              <span class="inv-badge TQL"><span class="inv-dot dot-TQL"></span>TQL</span>
-              <span class="inv-badge ACC"><span class="inv-dot dot-ACC"></span>ACC</span>
-              <span class="tag-yes">IO</span><span class="tag-yes">AirDNA</span>
-            </div>
-          </div>
-
-          <div class="comp-card LS">
-            <div class="comp-card-cat">DSCR - Standard Long-Term Rental</div>
-            <div class="comp-metrics">
-              <div class="metric-box"><div class="m-label">Highest LTV (Purchase)</div><div class="m-val">85%</div><div class="m-src">LS Core (720+)</div></div>
-              <div class="metric-box"><div class="m-label">Best Min FICO</div><div class="m-val">620</div><div class="m-src">LS Core / AD</div></div>
-              <div class="metric-box"><div class="m-label">Min Loan</div><div class="m-val">$50K</div><div class="m-src">AD Mortgage</div></div>
-              <div class="metric-box"><div class="m-label">Max Loan</div><div class="m-val">$3.5M</div><div class="m-src">TQL / LS / DEEP</div></div>
-            </div>
-            <div class="comp-winner-row">
-              <div class="comp-winner-label">Winners</div>
-              <div class="comp-winner-val">LS Core (85% LTV) + ACC (0.75 + No Ratio) + AD ($50K min)</div>
-            </div>
-            <div style="margin-top:10px; display:flex; gap:5px; flex-wrap:wrap;">
-              <span class="inv-badge LS"><span class="inv-dot dot-LS"></span>LS</span>
-              <span class="inv-badge ACC"><span class="inv-dot dot-ACC"></span>ACC</span>
-              <span class="tag-yes">Sub-1</span><span class="tag-yes">No Ratio</span>
-            </div>
-          </div>
-
-          <div class="comp-card LS">
-            <div class="comp-card-cat">Bank Statement - Alt Doc</div>
-            <div class="comp-metrics">
-              <div class="metric-box"><div class="m-label">Highest LTV (Purchase)</div><div class="m-val">90%</div><div class="m-src">LS Core / ELI (Prim)</div></div>
-              <div class="metric-box"><div class="m-label">Best Min FICO</div><div class="m-val">620</div><div class="m-src">ACC / AD / VER</div></div>
-              <div class="metric-box"><div class="m-label">Min Loan</div><div class="m-val">$100K</div><div class="m-src">DEEP / ELI / LS</div></div>
-              <div class="metric-box"><div class="m-label">Max Loan</div><div class="m-val">$5M</div><div class="m-src">AD Power Jumbo</div></div>
-            </div>
-            <div class="comp-winner-row">
-              <div class="comp-winner-label">Winners</div>
-              <div class="comp-winner-val">LS Core (90% LTV, $4M) + AD Power Jumbo ($5M, IO 120mo)</div>
-            </div>
-            <div style="margin-top:10px; display:flex; gap:5px; flex-wrap:wrap;">
-              <span class="inv-badge LS"><span class="inv-dot dot-LS"></span>LS</span>
-              <span class="inv-badge AD"><span class="inv-dot dot-AD"></span>AD</span>
-              <span class="tag-yes">P&amp;L</span><span class="tag-yes">1099</span>
-            </div>
-          </div>
-
-          <div class="comp-card LS">
-            <div class="comp-card-cat">Non-QM Full Doc</div>
-            <div class="comp-metrics">
-              <div class="metric-box"><div class="m-label">Highest LTV (Purchase)</div><div class="m-val">90%</div><div class="m-src">LS Core / DEEP / ELI</div></div>
-              <div class="metric-box"><div class="m-label">Best Min FICO</div><div class="m-val">600</div><div class="m-src">LS Core (Prim/2nd)</div></div>
-              <div class="metric-box"><div class="m-label">Min Loan</div><div class="m-val">$100K</div><div class="m-src">Multiple lenders</div></div>
-              <div class="metric-box"><div class="m-label">Max Loan</div><div class="m-val">$5M</div><div class="m-src">AD Power Jumbo</div></div>
-            </div>
-            <div class="comp-winner-row">
-              <div class="comp-winner-label">Winners</div>
-              <div class="comp-winner-val">LS Core (600 FICO, 90% LTV) + AD Power Jumbo ($5M, IO 120mo)</div>
-            </div>
-            <div style="margin-top:10px; display:flex; gap:5px; flex-wrap:wrap;">
-              <span class="inv-badge LS"><span class="inv-dot dot-LS"></span>LS</span>
-              <span class="inv-badge AD"><span class="inv-dot dot-AD"></span>AD</span>
-              <span class="tag-yes">DTI 55%</span><span class="tag-yes">Rural</span>
-            </div>
-          </div>
-
-          <div class="comp-card DEEP">
-            <div class="comp-card-cat">P&amp;L Only (No Tax Returns)</div>
-            <div class="comp-metrics">
-              <div class="metric-box"><div class="m-label">Highest LTV (Purchase)</div><div class="m-val">85%</div><div class="m-src">DEEP / ACC</div></div>
-              <div class="metric-box"><div class="m-label">Best Min FICO</div><div class="m-val">660</div><div class="m-src">DEEP / ACC</div></div>
-              <div class="metric-box"><div class="m-label">Min Loan</div><div class="m-val">$100K</div><div class="m-src">DEEP</div></div>
-              <div class="metric-box"><div class="m-label">Max Loan</div><div class="m-val">$3.5M</div><div class="m-src">DEEP / LS</div></div>
-            </div>
-            <div class="comp-winner-row">
-              <div class="comp-winner-label">Winner</div>
-              <div class="comp-winner-val">Deephaven Expanded Prime -- P&amp;L + 2mo BS, 85% P, 55% DTI, IO to 80%</div>
-            </div>
-            <div style="margin-top:10px; display:flex; gap:5px; flex-wrap:wrap;">
-              <span class="inv-badge DEEP"><span class="inv-dot dot-DEEP"></span>DEEP</span>
-              <span class="tag-yes">No Tax Returns</span><span class="tag-yes">IO</span>
-            </div>
-          </div>
-
-          <div class="comp-card VER">
-            <div class="comp-card-cat">Asset Depletion (High Net Worth)</div>
-            <div class="comp-metrics">
-              <div class="metric-box"><div class="m-label">Highest LTV (Purchase)</div><div class="m-val">90%</div><div class="m-src">VER Prime Ascent</div></div>
-              <div class="metric-box"><div class="m-label">Best Min FICO</div><div class="m-val">620</div><div class="m-src">VER Prime Ascent</div></div>
-              <div class="metric-box"><div class="m-label">Min Loan</div><div class="m-val">$100K</div><div class="m-src">ELI</div></div>
-              <div class="metric-box"><div class="m-label">Max Loan</div><div class="m-val">$4M</div><div class="m-src">VER Prime Ascent</div></div>
-            </div>
-            <div class="comp-winner-row">
-              <div class="comp-winner-label">Winner</div>
-              <div class="comp-winner-val">Verus Prime Ascent (assets / 84mo, 90% P) + ELI (separate program)</div>
-            </div>
-            <div style="margin-top:10px; display:flex; gap:5px; flex-wrap:wrap;">
-              <span class="inv-badge VER"><span class="inv-dot dot-VER"></span>VER</span>
-              <span class="inv-badge ELI"><span class="inv-dot dot-ELI"></span>ELI</span>
-              <span class="tag-yes">IO</span>
-            </div>
-          </div>
-
-          <div class="comp-card ACC">
-            <div class="comp-card-cat">Foreign National DSCR</div>
-            <div class="comp-metrics">
-              <div class="metric-box"><div class="m-label">Highest LTV (Purchase)</div><div class="m-val">70%</div><div class="m-src">ACC / LS</div></div>
-              <div class="metric-box"><div class="m-label">Min FICO</div><div class="m-val">No FICO</div><div class="m-src">Most lenders</div></div>
-              <div class="metric-box"><div class="m-label">Min Loan</div><div class="m-val">$100K</div><div class="m-src">LS / ELI</div></div>
-              <div class="metric-box"><div class="m-label">Max Loan</div><div class="m-val">$3M</div><div class="m-src">ACC / ELI</div></div>
-            </div>
-            <div class="comp-winner-row">
-              <div class="comp-winner-label">Winner</div>
-              <div class="comp-winner-val">ACC Ambassador DSCR (70%, $3M, No FICO) + LS FN DSCR ($2.5M)</div>
-            </div>
-            <div style="margin-top:10px; display:flex; gap:5px; flex-wrap:wrap;">
-              <span class="inv-badge ACC"><span class="inv-dot dot-ACC"></span>ACC</span>
-              <span class="tag-cond">DSCR &ge;1.00</span>
-            </div>
-          </div>
-
-          <div class="comp-card ACC">
-            <div class="comp-card-cat">ITIN Programs</div>
-            <div class="comp-metrics">
-              <div class="metric-box"><div class="m-label">Highest LTV (Purchase)</div><div class="m-val">85%</div><div class="m-src">ACC Activator (Prim)</div></div>
-              <div class="metric-box"><div class="m-label">Best Min FICO</div><div class="m-val">620</div><div class="m-src">AD ITIN / DEEP ITIN</div></div>
-              <div class="metric-box"><div class="m-label">Min Loan</div><div class="m-val">$100K</div><div class="m-src">DEEP / ACC</div></div>
-              <div class="metric-box"><div class="m-label">Max Loan</div><div class="m-val">$3M</div><div class="m-src">AD / DEEP</div></div>
-            </div>
-            <div class="comp-winner-row">
-              <div class="comp-winner-label">Winner</div>
-              <div class="comp-winner-val">ACC Activator ITIN (85% Prim, $1M) + DEEP ITIN (680 FICO)</div>
-            </div>
-            <div style="margin-top:10px; display:flex; gap:5px; flex-wrap:wrap;">
-              <span class="inv-badge ACC"><span class="inv-dot dot-ACC"></span>ACC</span>
-              <span class="inv-badge DEEP"><span class="inv-dot dot-DEEP"></span>DEEP</span>
-            </div>
-          </div>
-
-          <div class="comp-card ACC">
-            <div class="comp-card-cat">DSCR 5-8 Unit Multifamily</div>
-            <div class="comp-metrics">
-              <div class="metric-box"><div class="m-label">Highest LTV (Purchase)</div><div class="m-val">75%</div><div class="m-src">ACC 5-8 Unit</div></div>
-              <div class="metric-box"><div class="m-label">Min FICO</div><div class="m-val">680</div><div class="m-src">ACC</div></div>
-              <div class="metric-box"><div class="m-label">Min Loan</div><div class="m-val">$400K</div><div class="m-src">ACC</div></div>
-              <div class="metric-box"><div class="m-label">Max Loan</div><div class="m-val">$2M</div><div class="m-src">ACC</div></div>
-            </div>
-            <div class="comp-winner-row">
-              <div class="comp-winner-label">Winner</div>
-              <div class="comp-winner-val">ACC 5-8 Unit -- only major program; DSCR &ge;1.00</div>
-            </div>
-            <div style="margin-top:10px; display:flex; gap:5px; flex-wrap:wrap;">
-              <span class="inv-badge ACC"><span class="inv-dot dot-ACC"></span>ACC</span>
-              <span class="tag-cond">DSCR &ge;1.00</span>
-              <span class="tag-no">No STR</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ══════════ STR TABLE ══════════ -->
-      <div class="pane" id="pane-str">
-        <div class="hero-grid">
-          <div class="hero-card"><div class="hero-card-label">Best STR LTV</div><div class="hero-card-value">80%</div><div class="hero-card-sub">Purchase (ACC + TQL)</div><div class="hero-card-winner">ACC DSCR + TQL Own</div></div>
-          <div class="hero-card"><div class="hero-card-label">Best Min FICO</div><div class="hero-card-value">620</div><div class="hero-card-sub">LS Core / AD Mortgage</div><div class="hero-card-winner">LoanStream Core</div></div>
-          <div class="hero-card"><div class="hero-card-label">Lowest Min Loan</div><div class="hero-card-value">$50K</div><div class="hero-card-sub">AD Mortgage DSCR</div><div class="hero-card-winner">AD Mortgage</div></div>
-          <div class="hero-card"><div class="hero-card-label">Highest Max Loan</div><div class="hero-card-value">$3.5M</div><div class="hero-card-sub">TQL / LS / VER</div><div class="hero-card-winner">TQL + LoanStream</div></div>
-          <div class="hero-card"><div class="hero-card-label">Best DSCR Floor</div><div class="hero-card-value">0.75</div><div class="hero-card-sub">ACC / VER / TQL</div><div class="hero-card-winner">ACC + VER + TQL</div></div>
-          <div class="hero-card"><div class="hero-card-label">C/O Allowed STR</div><div class="hero-card-value">75%</div><div class="hero-card-sub">TQL Own Program</div><div class="hero-card-winner">TQL (only C/O STR)</div></div>
-        </div>
-        <div class="table-card">
-          <div class="table-card-header"><span class="label">All Eligible STR Investors</span><span class="count">7 investors</span></div>
-          <div class="tbl-wrap">
-            <table>
-              <thead><tr><th>Investor / Program</th><th>Min FICO</th><th>Min Loan</th><th>Max Loan</th><th>LTV Purchase</th><th>LTV R&amp;T</th><th>LTV C/O</th><th>STR Income Method</th><th>AirDNA?</th><th>Expense Factor</th><th>DSCR Min</th><th>IO Eligible</th><th>Key STR Notes</th></tr></thead>
-              <tbody>
-                <tr class="row-best"><td class="td-prog"><span class="inv-badge BEST">TQL Best-Of</span></td><td><span class="win-cell">620</span><span class="sub-cell">LS/AD</span></td><td><span class="win-cell">$50K</span><span class="sub-cell">AD</span></td><td><span class="win-cell">$3.5M</span><span class="sub-cell">TQL/LS/VER</span></td><td><span class="win-cell">80%</span><span class="sub-cell">ACC/TQL</span></td><td>75%<span class="sub-cell">DEEP/TQL</span></td><td><span class="win-cell">75%</span><span class="sub-cell">TQL only</span></td><td>AirDNA (purchase)<br/>12mo history (refi)</td><td><span class="tag-yes">YES</span></td><td>20% standard</td><td><span class="win-cell">&ge;0.75</span><span class="sub-cell">ACC/VER/TQL</span></td><td><span class="tag-yes">YES</span></td><td class="td-notes">Best STR: ACC/TQL 80% P &middot; DEEP/TQL/ELI IO &middot; C/O: TQL only &middot; No Ratio: ACC</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge ACC"><span class="inv-dot dot-ACC"></span>ACC</span><br/>Accelerator DSCR 1-4</td><td>680</td><td>$125K</td><td>$3M</td><td class="bold text-navy">75%</td><td>70%</td><td>&mdash;</td><td>AirDNA (purchase)<br/>12mo history (refi)</td><td><span class="tag-yes">YES</span></td><td>~20%</td><td>&ge;0.75 (No Ratio OK)</td><td><span class="tag-yes">YES</span><span class="sub-cell">&le;$2.5M: 75%</span></td><td class="td-notes">Rev 02.09.26 | STR: 75%P/70%Refi &middot; No Ratio eligible &middot; BK/FC: 36mo</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge DEEP"><span class="inv-dot dot-DEEP"></span>DEEP</span><br/>Deephaven DSCR 1-4</td><td>640<span class="sub-cell">720 for STR</span></td><td>$100K</td><td>$2.5M</td><td>75%<span class="sub-cell">&ndash;5% overlay</span></td><td>70%</td><td>65%</td><td>AirDNA (purchase only)</td><td><span class="tag-yes">YES</span></td><td>Implied 20%</td><td>&ge;1.15 (STR min)</td><td><span class="tag-yes">YES</span><span class="sub-cell">DSCR &ge;1.00</span></td><td class="td-notes">03.03.26 | STR &ndash;5% LTV &middot; 720 FICO min &middot; CDA required</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge LS"><span class="inv-dot dot-LS"></span>LS</span><br/>LoanStream Core DSCR</td><td><span class="win-cell">620</span></td><td>$100K</td><td>$3.5M</td><td>75%<span class="sub-cell">&rarr;80% &ndash;5%</span></td><td>75%</td><td>70%</td><td>20% mgmt fee<br/>12mo+ history req</td><td><span class="tag-yes">YES</span></td><td>20% mgmt fee</td><td>&ge;1.00<span class="sub-cell">>80% &rarr; &ge;1.20</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">max 80%</span></td><td class="td-notes">02.10.26 | Exp Inv ONLY &middot; 20% mgmt fee &middot; 12mo+ history</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge AD"><span class="inv-dot dot-AD"></span>AD</span><br/>AD Mortgage DSCR</td><td><span class="win-cell">620</span><span class="sub-cell">No FICO: FN</span></td><td><span class="win-cell">$50K</span></td><td>$1.5M</td><td>80%</td><td>75%</td><td>70%</td><td>Per AD guidelines<br/>(AirDNA likely)</td><td><span class="tag-cond">Likely</span></td><td>20% standard</td><td>DSCR = Gross &divide; PITIA</td><td><span class="tag-yes">YES</span><span class="sub-cell">40yr term</span></td><td class="td-notes">02.19.26 | STR eligible &middot; DSCR &lt;1: 680 FICO &middot; FN: &ge;1.00</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge VER"><span class="inv-dot dot-VER"></span>VER</span><br/>Verus Investor DSCR Standard</td><td>680</td><td>$150K</td><td>$3.5M</td><td>80%</td><td>75%</td><td>70%</td><td>AirDNA (purchase)<br/>12mo history (refi)</td><td><span class="tag-yes">YES</span></td><td>20%</td><td>&ge;0.75 (DSCR&lt;1 OK)</td><td><span class="tag-yes">YES</span></td><td class="td-notes">STR eligible Standard only &middot; DSCR Plus = LTR ONLY</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge ELI"><span class="inv-dot dot-ELI"></span>ELI</span><br/>Ellington EMG DSCR</td><td>660</td><td>$75K</td><td>$3M</td><td>80%<span class="sub-cell">760+, DSCR&ge;1.00</span></td><td>75%</td><td>70%</td><td>Per EMG guidelines<br/>20% expense factor</td><td><span class="tag-yes">YES</span></td><td>20%</td><td>&ge;0.75<span class="sub-cell">&lt;1.00 band OK</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">700 FICO, 75%</span></td><td class="td-notes">5/1/25 | STR 20% exp factor &middot; DSCR&lt;1: P&amp;RT only</td></tr>
-                <tr style="background:#FFF5F5;"><td class="td-prog"><span class="inv-badge TQL"><span class="inv-dot dot-TQL"></span>TQL</span><br/>TQL DSCR STR Own Program</td><td>680</td><td>$100K</td><td><span class="win-cell">$3.5M</span></td><td><span class="win-cell">80%</span></td><td>75%</td><td><span class="win-cell">75%</span><span class="sub-cell">C/O!</span></td><td>AirDNA Rentalizer<br/>(purchase)<br/>12mo history (refi)</td><td><span class="tag-yes">YES</span></td><td><span class="win-cell">20% always</span></td><td>DSCR=(Gross&times;0.80) &divide; PITIA</td><td><span class="tag-yes">YES</span><span class="sub-cell">680, 75%</span></td><td class="td-notes">01.31.26 | AirDNA: 90-day, 3 comps, score &ge;60 &middot; C/O: 75% &middot; Condotel: 75%P</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <!-- ══════════ DSCR LTR TABLE ══════════ -->
-      <div class="pane" id="pane-dscr">
-        <div class="hero-grid">
-          <div class="hero-card"><div class="hero-card-label">Best LTV Purchase</div><div class="hero-card-value">85%</div><div class="hero-card-sub">LoanStream Core (720+)</div><div class="hero-card-winner">LoanStream Core</div></div>
-          <div class="hero-card"><div class="hero-card-label">Best Min FICO</div><div class="hero-card-value">620</div><div class="hero-card-sub">LS Core / AD Mortgage</div><div class="hero-card-winner">LS Core + AD</div></div>
-          <div class="hero-card"><div class="hero-card-label">Lowest Min Loan</div><div class="hero-card-value">$50K</div><div class="hero-card-sub">AD Mortgage DSCR</div><div class="hero-card-winner">AD Mortgage</div></div>
-          <div class="hero-card"><div class="hero-card-label">Best DSCR Floor</div><div class="hero-card-value">0.75</div><div class="hero-card-sub">ACC / VER / ELI / TQL</div><div class="hero-card-winner">Multiple investors</div></div>
-          <div class="hero-card"><div class="hero-card-label">No Ratio Available</div><div class="hero-card-value">YES</div><div class="hero-card-sub">ACC + LS + TQL</div><div class="hero-card-winner">ACC / LS / TQL</div></div>
-          <div class="hero-card"><div class="hero-card-label">Best Max Loan</div><div class="hero-card-value">$3.5M</div><div class="hero-card-sub">TQL / LS / DEEP</div><div class="hero-card-winner">TQL + LS + DEEP</div></div>
-        </div>
-        <div class="table-card">
-          <div class="table-card-header"><span class="label">All DSCR Standard LTR Investors</span><span class="count">7 investors</span></div>
-          <div class="tbl-wrap">
-            <table>
-              <thead><tr><th>Investor / Program</th><th>Min FICO</th><th>Min Loan</th><th>Max Loan</th><th>LTV Purchase</th><th>LTV R&amp;T</th><th>LTV C/O</th><th>DSCR Min</th><th>Sub-1?</th><th>No Ratio?</th><th>IO Eligible</th><th>LTV 2-4 Unit</th><th>Key Notes</th></tr></thead>
-              <tbody>
-                <tr class="row-best"><td class="td-prog"><span class="inv-badge BEST">TQL Best-Of</span></td><td><span class="win-cell">620</span></td><td><span class="win-cell">$50K</span><span class="sub-cell">AD</span></td><td><span class="win-cell">$3.5M</span></td><td><span class="win-cell">85%</span><span class="sub-cell">LS Core</span></td><td>80%</td><td>75%</td><td><span class="win-cell">&ge;0.75</span></td><td><span class="tag-yes">YES</span></td><td><span class="tag-yes">YES</span></td><td><span class="tag-yes">YES</span></td><td>80% (LS)</td><td class="td-notes">LS Core 85% P &middot; AD $50K min &middot; ACC 0.75+No Ratio &middot; TQL IO+DSCR</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge ACC"><span class="inv-dot dot-ACC"></span>ACC</span><br/>Accelerator DSCR 1-4</td><td>680</td><td>$125K</td><td>$3M</td><td>80%</td><td>80%</td><td>70%</td><td>&ge;0.75</td><td><span class="tag-yes">YES</span><span class="sub-cell">0.75&ndash;0.99</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">&lt;0.75 OK</span></td><td><span class="tag-yes">YES</span></td><td>Per matrix</td><td class="td-notes">02.09.26 | FTI: 680 &middot; Declining &ndash;5% &middot; BK/FC: 36mo</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge DEEP"><span class="inv-dot dot-DEEP"></span>DEEP</span><br/>Deephaven DSCR 1-4</td><td>640</td><td>$100K</td><td>$2.5M</td><td>80%</td><td>75%</td><td>70%</td><td>&ge;0.75<span class="sub-cell">P&amp;RT if &lt;1</span></td><td><span class="tag-cond">P&amp;RT only</span></td><td><span class="tag-no">NO</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">80%, DSCR&ge;1</span></td><td>Per matrix</td><td class="td-notes">03.03.26 | CDA required &middot; FTI: DSCR&ge;1, 700 &middot; Rural: 65%</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge LS"><span class="inv-dot dot-LS"></span>LS</span><br/>LoanStream Core DSCR</td><td><span class="win-cell">620</span></td><td>$100K</td><td><span class="win-cell">$3.5M</span></td><td><span class="win-cell">85%</span><span class="sub-cell">720+</span></td><td>85%</td><td>75%</td><td>&ge;1.00<span class="sub-cell">>80% &rarr; &ge;1.20</span></td><td><span class="tag-cond">Sub1 tier</span><span class="sub-cell">0.75&ndash;0.99</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">No Ratio tier</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">max 80%</span></td><td>2-4U: 80%</td><td class="td-notes">02.10.26 | Sub1: 75%P &middot; No Ratio: 65%P &middot; DSCR Fusion</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge AD"><span class="inv-dot dot-AD"></span>AD</span><br/>AD Mortgage DSCR</td><td><span class="win-cell">620</span></td><td><span class="win-cell">$50K</span></td><td>$1.5M</td><td>80%</td><td>75%</td><td>70%</td><td>Gross &divide; PITIA</td><td><span class="tag-yes">YES</span><span class="sub-cell">680 if &lt;1</span></td><td><span class="tag-no">N/S</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">40yr</span></td><td>Per matrix</td><td class="td-notes">02.19.26 | $50K min &middot; FN DSCR: &ge;1.00 &middot; Residual $2K</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge VER"><span class="inv-dot dot-VER"></span>VER</span><br/>Verus DSCR Standard</td><td>680</td><td>$150K</td><td>$3.5M</td><td>80%</td><td>75%</td><td>70%</td><td>&ge;0.75</td><td><span class="tag-yes">YES</span></td><td><span class="tag-no">N/S</span></td><td><span class="tag-yes">YES</span></td><td>Per matrix</td><td class="td-notes">STR + LTR on Standard &middot; DSCR Plus = LTR only, better pricing</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge ELI"><span class="inv-dot dot-ELI"></span>ELI</span><br/>Ellington EMG DSCR</td><td>660</td><td>$75K</td><td>$3M</td><td>80%<span class="sub-cell">760+</span></td><td>75%</td><td>70%</td><td>&ge;0.75<span class="sub-cell">&lt;1 band OK</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">0.75&ndash;0.99</span></td><td><span class="tag-no">NO</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">700, 75%</span></td><td>2-4U: 80%P</td><td class="td-notes">5/1/25 | DSCR&lt;1: P&amp;RT only &middot; FTI NOT allowed &middot; 6mo reserves</td></tr>
-                <tr style="background:#FFF5F5;"><td class="td-prog"><span class="inv-badge TQL"><span class="inv-dot dot-TQL"></span>TQL</span><br/>TQL DSCR Own Program</td><td>640</td><td>$100K</td><td><span class="win-cell">$3.5M</span></td><td>80%</td><td>80%</td><td>80%</td><td>&ge;0.75<span class="sub-cell">&lt;1: P&amp;RT</span></td><td><span class="tag-yes">YES</span></td><td><span class="tag-cond">Partial</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">680, 75%</span></td><td>Per matrix</td><td class="td-notes">01.31.26 | FTI: 700, DSCR>1 &middot; Rural: 75%P &middot; IO 40yr &middot; Condotel: 75%P</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <!-- ══════════ FULL DOC TABLE ══════════ -->
-      <div class="pane" id="pane-fulldoc">
-        <div class="hero-grid">
-          <div class="hero-card"><div class="hero-card-label">Best LTV Primary</div><div class="hero-card-value">90%</div><div class="hero-card-sub">LS Core / DEEP / ELI</div><div class="hero-card-winner">LoanStream Core</div></div>
-          <div class="hero-card"><div class="hero-card-label">Best Min FICO</div><div class="hero-card-value">600</div><div class="hero-card-sub">LS Core (Prim/2nd)</div><div class="hero-card-winner">LoanStream Core</div></div>
-          <div class="hero-card"><div class="hero-card-label">Best Max Loan</div><div class="hero-card-value">$5M</div><div class="hero-card-sub">AD Power Jumbo</div><div class="hero-card-winner">AD Mortgage</div></div>
-          <div class="hero-card"><div class="hero-card-label">Best Max DTI</div><div class="hero-card-value">55%</div><div class="hero-card-sub">Deephaven (Primary)</div><div class="hero-card-winner">Deephaven</div></div>
-          <div class="hero-card"><div class="hero-card-label">Rural Eligible</div><div class="hero-card-value">YES</div><div class="hero-card-sub">ACC / AD / LS Core</div><div class="hero-card-winner">Multiple</div></div>
-          <div class="hero-card"><div class="hero-card-label">Condotel Eligible</div><div class="hero-card-value">YES</div><div class="hero-card-sub">AD (Inv/2nd) / VER</div><div class="hero-card-winner">AD + VER</div></div>
-        </div>
-        <div class="table-card">
-          <div class="table-card-header"><span class="label">Non-QM Full Doc Investors</span><span class="count">6 investors</span></div>
-          <div class="tbl-wrap">
-            <table>
-              <thead><tr><th>Investor / Program</th><th>Min FICO</th><th>Min Loan</th><th>Max Loan</th><th>LTV Prim (P)</th><th>LTV Inv (P)</th><th>LTV Prim (C/O)</th><th>LTV Inv (C/O)</th><th>Doc Types</th><th>IO</th><th>Max DTI</th><th>Rural</th><th>Condotel</th><th>Key Notes</th></tr></thead>
-              <tbody>
-                <tr class="row-best"><td class="td-prog"><span class="inv-badge BEST">TQL Best-Of</span></td><td><span class="win-cell">600</span><span class="sub-cell">LS</span></td><td>$100K</td><td><span class="win-cell">$5M</span><span class="sub-cell">AD</span></td><td><span class="win-cell">90%</span><span class="sub-cell">LS/DEEP/ELI</span></td><td>85%</td><td>80%</td><td>80%</td><td>W2, Tax, 1yr SE</td><td><span class="tag-yes">YES</span></td><td><span class="win-cell">55%</span><span class="sub-cell">DEEP</span></td><td><span class="tag-yes">YES</span></td><td><span class="tag-yes">YES</span></td><td class="td-notes">LS 600 FICO / 90% &middot; AD $5M / IO 120mo &middot; DEEP 55% DTI</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge ACC"><span class="inv-dot dot-ACC"></span>ACC</span><br/>Accelerator Full Doc</td><td>620</td><td>$150K</td><td>$3M</td><td>90%<span class="sub-cell">740+</span></td><td>85%<span class="sub-cell">740+</span></td><td>80%</td><td>80%</td><td>W2, Tax, Retirement</td><td><span class="tag-yes">YES</span><span class="sub-cell">Inv</span></td><td>50%<span class="sub-cell">55% w/$3K</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">&le;20ac</span></td><td><span class="tag-no">N/A</span></td><td class="td-notes">02.09.26 | FTI: Inv 680+ &middot; BK/FC 36mo &middot; Declining &ndash;5%</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge DEEP"><span class="inv-dot dot-DEEP"></span>DEEP</span><br/>Deephaven Expanded Prime</td><td>660</td><td>$100K</td><td>$3.5M</td><td>90%<span class="sub-cell">720+</span></td><td>80%</td><td>80%</td><td>75%</td><td>W2, Tax Return</td><td><span class="tag-yes">YES</span><span class="sub-cell">80%</span></td><td><span class="win-cell">55%</span><span class="sub-cell">Prim</span></td><td><span class="tag-cond">75% P</span></td><td><span class="tag-no">N/A</span></td><td class="td-notes">03.03.26 | NY ineligible &middot; CDA+appraisal &middot; Residual $2,500</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge LS"><span class="inv-dot dot-LS"></span>LS</span><br/>LoanStream Core Non-QM</td><td><span class="win-cell">600</span><span class="sub-cell">Prim/2nd</span></td><td>$125K</td><td><span class="win-cell">$4M</span></td><td><span class="win-cell">90%</span><span class="sub-cell">680+</span></td><td>85%</td><td>80%</td><td>80%</td><td>W2, Tax, 1yr SE</td><td><span class="tag-yes">YES</span><span class="sub-cell">80%</span></td><td>50%<span class="sub-cell">45% if >85%</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">70%</span></td><td><span class="tag-no">N/A</span></td><td class="td-notes">02.10.26 | IO 40yr + ARM &middot; 1x30x12: &ndash;5% &middot; FTHB OK</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge AD"><span class="inv-dot dot-AD"></span>AD</span><br/>AD Super Prime / Power Jumbo</td><td>620</td><td>$100K</td><td><span class="win-cell">$5M</span><span class="sub-cell">Power Jumbo</span></td><td>80%</td><td>80%</td><td>80%</td><td>80%</td><td>1yr/2yr Full Doc, W2</td><td><span class="tag-yes">YES</span><span class="sub-cell">120mo</span></td><td>50%<span class="sub-cell">55% Power</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">SFR</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">Inv/2nd</span></td><td class="td-notes">02.19.26 | IO: 120mo, 240/360 amort &middot; Condotel OK</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge VER"><span class="inv-dot dot-VER"></span>VER</span><br/>Verus Prime Ascent</td><td>620</td><td>$150K</td><td>$4M</td><td>90%<span class="sub-cell">Prim &lt;$1.5M</span></td><td>85%</td><td>80%</td><td>75%</td><td>W2, Tax Return</td><td><span class="tag-yes">YES</span><span class="sub-cell">90%, 660</span></td><td>50%<span class="sub-cell">55% cond.</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">&le;20ac</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">85%, $2.5M</span></td><td class="td-notes">BK/FC: 36mo &middot; Declining: 85%/$2M &middot; 2nd appraisal >$2M</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge ELI"><span class="inv-dot dot-ELI"></span>ELI</span><br/>Ellington EMG Prime</td><td>660</td><td>$100K</td><td>$3.5M</td><td>90%<span class="sub-cell">720+, &lt;$1M</span></td><td>85%<span class="sub-cell">760+</span></td><td>80%</td><td>80%</td><td>Standard Doc, Full Doc</td><td><span class="tag-yes">YES</span><span class="sub-cell">680, 85%P</span></td><td>50%</td><td><span class="tag-cond">80%</span></td><td><span class="tag-no">N/A</span></td><td class="td-notes">3.20 matrix | 760+=90% to $1.5M &middot; BK/FC: 48mo</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <!-- ══════════ ALT DOC / BS TABLE ══════════ -->
-      <div class="pane" id="pane-altdoc">
-        <div class="hero-grid">
-          <div class="hero-card"><div class="hero-card-label">Best LTV Primary</div><div class="hero-card-value">90%</div><div class="hero-card-sub">LS Core / ELI (Prim)</div><div class="hero-card-winner">LS Core + ELI</div></div>
-          <div class="hero-card"><div class="hero-card-label">Best Min FICO</div><div class="hero-card-value">620</div><div class="hero-card-sub">ACC / AD / VER</div><div class="hero-card-winner">Multiple</div></div>
-          <div class="hero-card"><div class="hero-card-label">Best Max Loan</div><div class="hero-card-value">$5M</div><div class="hero-card-sub">AD Power Jumbo</div><div class="hero-card-winner">AD Mortgage</div></div>
-          <div class="hero-card"><div class="hero-card-label">Best DTI</div><div class="hero-card-value">55%</div><div class="hero-card-sub">AD Power Jumbo</div><div class="hero-card-winner">AD Mortgage</div></div>
-          <div class="hero-card"><div class="hero-card-label">P&amp;L Allowed</div><div class="hero-card-value">5 of 6</div><div class="hero-card-sub">All except ELI</div><div class="hero-card-winner">ACC / DEEP / LS / AD / VER</div></div>
-          <div class="hero-card"><div class="hero-card-label">Asset Depletion</div><div class="hero-card-value">YES</div><div class="hero-card-sub">ACC / DEEP / LS / AD / VER</div><div class="hero-card-winner">VER assets / 84mo</div></div>
-        </div>
-        <div class="table-card">
-          <div class="table-card-header"><span class="label">Alt Doc / Bank Statement Investors</span><span class="count">6 investors</span></div>
-          <div class="tbl-wrap">
-            <table>
-              <thead><tr><th>Investor / Program</th><th>Min FICO</th><th>Min Loan</th><th>Max Loan</th><th>LTV Prim (P)</th><th>LTV Inv (P)</th><th>LTV Prim (C/O)</th><th>BS Options</th><th>P&amp;L</th><th>1099</th><th>Asset Dep.</th><th>IO</th><th>Max DTI</th><th>Key Alt Doc Notes</th></tr></thead>
-              <tbody>
-                <tr class="row-best"><td class="td-prog"><span class="inv-badge BEST">TQL Best-Of</span></td><td><span class="win-cell">620</span></td><td>$100K</td><td><span class="win-cell">$5M</span><span class="sub-cell">AD</span></td><td><span class="win-cell">90%</span><span class="sub-cell">LS/ELI</span></td><td>85%</td><td>80%</td><td>12mo or 24mo<br/>Biz or Personal</td><td><span class="tag-yes">YES</span></td><td><span class="tag-yes">YES</span></td><td><span class="tag-yes">YES</span></td><td><span class="tag-yes">YES</span></td><td><span class="win-cell">55%</span><span class="sub-cell">AD</span></td><td class="td-notes">LS/ELI 90% Prim &middot; AD $5M + IO 120mo &middot; VER assets&divide;84</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge ACC"><span class="inv-dot dot-ACC"></span>ACC</span><br/>Activator Alt Doc</td><td>620</td><td>$150K</td><td>$3M</td><td>85%</td><td>85%</td><td>80%</td><td>12mo BS<span class="sub-cell">SE: 2yr</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">CPA signed</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">10% exp</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">$1M/150%</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">Inv</span></td><td>50%<span class="sub-cell">55% w/$3K</span></td><td class="td-notes">02.09.26 | P&amp;L CPA signed &middot; WVOE: 80%P/70%CO &middot; Asset: $1M or 150%</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge DEEP"><span class="inv-dot dot-DEEP"></span>DEEP</span><br/>Deephaven Alt Doc</td><td>660</td><td>$100K</td><td>$3.5M</td><td>90%<span class="sub-cell">89.99%</span></td><td>80%</td><td>80%</td><td>12mo or 24mo BS<br/>Biz or Personal</td><td><span class="tag-cond">YES</span><span class="sub-cell">P&amp;L+2moBS</span></td><td><span class="tag-yes">YES</span></td><td><span class="tag-yes">YES</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">80%</span></td><td>55%<span class="sub-cell">Prim</span></td><td class="td-notes">03.03.26 | P&amp;L: 2moBS req, 660+ &middot; WVOE eligible &middot; Residual $2,500</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge LS"><span class="inv-dot dot-LS"></span>LS</span><br/>LoanStream Core Alt Doc</td><td><span class="win-cell">600</span><span class="sub-cell">Prim/2nd</span></td><td>$125K</td><td>$4M</td><td><span class="win-cell">90%</span></td><td>85%</td><td>80%</td><td>12mo or 24mo BS<br/>Biz or Personal</td><td><span class="tag-yes">YES</span></td><td><span class="tag-yes">YES</span></td><td><span class="tag-yes">YES</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">40yr, ARM</span></td><td>50%</td><td class="td-notes">02.10.26 | 1yr SE Full Doc &middot; WVOE: P/R&amp;T &middot; FTHB: BS only</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge AD"><span class="inv-dot dot-AD"></span>AD</span><br/>AD Power Jumbo Alt Doc</td><td>660<span class="sub-cell">Power Jumbo</span></td><td>$1 over CLL</td><td><span class="win-cell">$5M</span></td><td>89.99%<span class="sub-cell">Full Doc</span></td><td>80%</td><td>80%</td><td>12mo or 24mo BS<br/>Biz or Personal</td><td><span class="tag-yes">YES</span></td><td><span class="tag-yes">YES</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">$1M/150%</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">120mo</span></td><td><span class="win-cell">55%</span></td><td class="td-notes">02.19.26 | IO: 120mo, 240/360 amort &middot; $500K C/O if >65%</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge VER"><span class="inv-dot dot-VER"></span>VER</span><br/>Verus Prime Ascent Alt Doc</td><td>620</td><td>$150K</td><td>$4M</td><td>90%<span class="sub-cell">&lt;$1.5M</span></td><td>85%</td><td>80%</td><td>12mo or 24mo BS<br/>Biz or Personal</td><td><span class="tag-yes">YES</span><span class="sub-cell">P&amp;L+2moBS</span></td><td><span class="tag-yes">YES</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">assets&divide;84</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">90%, 660</span></td><td>50%<span class="sub-cell">55% cond.</span></td><td class="td-notes">BK/FC: 36mo &middot; Asset&divide;84 &middot; P&amp;L+2moBS &middot; IO 40yr ARM</td></tr>
-                <tr><td class="td-prog"><span class="inv-badge ELI"><span class="inv-dot dot-ELI"></span>ELI</span><br/>Ellington EMG Bank Statement</td><td>660</td><td>$100K</td><td>$3.5M</td><td><span class="win-cell">90%</span><span class="sub-cell">720+, &lt;$1M</span></td><td>85%</td><td>80%</td><td>12mo or 24mo BS<br/>Biz or Personal</td><td><span class="tag-no">No P&amp;L</span></td><td><span class="tag-yes">YES</span></td><td><span class="tag-cond">Separate</span></td><td><span class="tag-yes">YES</span><span class="sub-cell">680, 85%P</span></td><td>50%</td><td class="td-notes">3.20 matrix | 760+=90% to $1.5M &middot; WVOE eligible &middot; BK/FC: 48mo</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /scroll-area -->
-  </div><!-- /main -->
-</div><!-- /app -->
+    <div class="content-area" id="contentArea"></div>
+  </main>
+</div>
 
 <script>
-const tabMeta = {
-  comp:    { title: 'Competitive Summary', desc: 'Best-in-class across 8 investors by program type' },
-  str:     { title: 'STR - Short Term Rental', desc: 'AirDNA methodology, expense factor overlays, 7 investors' },
-  dscr:    { title: 'DSCR - Standard LTR', desc: 'DSCR = Gross Monthly Rent / PITIA, Sub-1, No-Ratio, IO tiers' },
-  fulldoc: { title: 'Non-QM Full Doc', desc: 'W2, Tax Returns, 1yr SE, non-conforming scenarios' },
-  altdoc:  { title: 'Alt Doc / Bank Statement', desc: '12-24mo BS, P&L, 1099, Asset Depletion, WVOE' },
-};
+// ======== VAULT LOGIC ========
+(function(){
+  const CODE='TQLFAITH', LEN=CODE.length;
+  const wrap=document.getElementById('vault-code-wrap');
+  const inp=document.getElementById('vault-input');
+  const err=document.getElementById('vault-error');
+  const particles=document.getElementById('vault-particles');
 
-function showTab(id) {
-  document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  document.getElementById('pane-' + id).classList.add('active');
-  document.getElementById('nav-' + id).classList.add('active');
-  document.getElementById('topbar-title').textContent = tabMeta[id].title;
-  document.getElementById('topbar-desc').textContent = tabMeta[id].desc;
-  document.querySelector('.scroll-area').scrollTop = 0;
-  // Close mobile sidebar
+  // particles
+  for(let i=0;i<30;i++){
+    const p=document.createElement('div');
+    p.className='vault-particle';
+    p.style.left=Math.random()*100+'%';
+    p.style.animationDuration=(6+Math.random()*8)+'s';
+    p.style.animationDelay=Math.random()*6+'s';
+    particles.appendChild(p);
+  }
+
+  // char boxes
+  for(let i=0;i<LEN;i++){
+    const d=document.createElement('div');
+    d.className='vault-char';
+    d.id='vc'+i;
+    wrap.appendChild(d);
+  }
+
+  wrap.addEventListener('click',()=>inp.focus());
+  inp.addEventListener('input',function(){
+    const v=this.value.toUpperCase().slice(0,LEN);
+    this.value=v;
+    for(let i=0;i<LEN;i++){
+      const c=document.getElementById('vc'+i);
+      c.textContent=v[i]||'';
+      c.className='vault-char'+(i===v.length?' active':'')+(v[i]?' filled':'');
+    }
+    err.textContent='';
+    if(v.length===LEN){
+      if(v===CODE) openVault();
+      else { err.textContent='Invalid code'; this.value=''; for(let i=0;i<LEN;i++){const c=document.getElementById('vc'+i);c.textContent='';c.className='vault-char'+(i===0?' active':'');} }
+    }
+  });
+  inp.focus();
+
+  function openVault(){
+    const vs=document.getElementById('vault-screen');
+    vs.classList.add('opening');
+    document.getElementById('vault-spokes').classList.add('rotate');
+    setTimeout(()=>document.getElementById('vault-door-wrap').classList.add('swing'),600);
+    setTimeout(()=>{
+      vs.style.opacity='0';
+      vs.style.transition='opacity .5s';
+      setTimeout(()=>{vs.classList.add('gone');document.getElementById('app').classList.add('visible');},500);
+    },1800);
+  }
+})();
+
+// ======== NAVIGATION ========
+const NAV = [
+  {id:'dashboard', icon:'\u2302', label:'Dashboard', sub:'Overview of all investor programs'},
+  {id:'dscr-ltr', icon:'\uD83C\uDFE0', label:'DSCR Standard (LTR)', sub:'Long-term rental DSCR programs', section:'DSCR'},
+  {id:'dscr-str', icon:'\u2708', label:'DSCR Short Term Rental', sub:'STR programs with proof requirements', section:'DSCR'},
+  {id:'fulldoc-primary', icon:'\uD83D\uDC64', label:'Full/Alt Doc - Primary', sub:'Primary residence programs', section:'FULL DOC'},
+  {id:'fulldoc-second', icon:'\uD83C\uDFD6', label:'Full/Alt Doc - 2nd Home', sub:'Second home programs', section:'FULL DOC'},
+  {id:'fulldoc-invest', icon:'\uD83D\uDCBC', label:'Full/Alt Doc - Investment', sub:'Investment property programs', section:'FULL DOC'},
+  {id:'fulldoc-str', icon:'\u2600', label:'Full/Alt Doc - STR', sub:'Full doc programs allowing STR', section:'FULL DOC'},
+  {id:'fulldoc-rural', icon:'\uD83C\uDF3E', label:'Full/Alt Doc - Rural', sub:'Rural property programs', section:'SPECIALTY'},
+  {id:'dscr-rural', icon:'\uD83C\uDF3F', label:'DSCR - Rural', sub:'DSCR rural property programs', section:'SPECIALTY'},
+  {id:'str-rural', icon:'\uD83C\uDFD5', label:'STR on Rural', sub:'Combined STR + Rural programs', section:'SPECIALTY'},
+  {id:'foreign-national', icon:'\uD83C\uDF0D', label:'Foreign National', sub:'FN-eligible programs', section:'SPECIALTY'},
+  {id:'multi-unit', icon:'\uD83C\uDFE2', label:'5-8 Unit / Mixed Use', sub:'Multi-family DSCR programs', section:'SPECIALTY'},
+  {id:'closed-second', icon:'\uD83D\uDD11', label:'Closed End 2nd / HELOC', sub:'Second lien programs', section:'SPECIALTY'},
+  {id:'program-search', icon:'\uD83D\uDD0D', label:'Program Search', sub:'Interactive LTV lookup', section:'TOOLS'},
+];
+
+const sidebarNav = document.getElementById('sidebarNav');
+let currentSection = '';
+NAV.forEach(n => {
+  if (n.section && n.section !== currentSection) {
+    currentSection = n.section;
+    const sec = document.createElement('div');
+    sec.className = 'nav-section';
+    sec.textContent = n.section;
+    sidebarNav.appendChild(sec);
+  }
+  const div = document.createElement('div');
+  div.className = 'nav-item' + (n.id === 'dashboard' ? ' active' : '');
+  div.dataset.pane = n.id;
+  div.innerHTML = '<span class="nav-icon">' + n.icon + '</span><span>' + n.label + '</span>';
+  div.addEventListener('click', () => switchPane(n.id));
+  sidebarNav.appendChild(div);
+});
+
+function switchPane(id) {
+  document.querySelectorAll('.nav-item').forEach(el => el.classList.toggle('active', el.dataset.pane === id));
+  document.querySelectorAll('.pane').forEach(el => el.classList.toggle('active', el.id === 'pane-' + id));
+  const n = NAV.find(x => x.id === id);
+  document.getElementById('topbarTitle').textContent = n.label;
+  document.getElementById('topbarSubtitle').textContent = n.sub;
   document.getElementById('sidebar').classList.remove('open');
   document.getElementById('mobileOverlay').classList.remove('show');
 }
 
-function toggleSidebar() {
-  const sb = document.getElementById('sidebar');
-  const ov = document.getElementById('mobileOverlay');
-  sb.classList.toggle('open');
-  ov.classList.toggle('show');
-}
-
-function filterTable() {
-  const q = document.getElementById('searchInput').value.toLowerCase();
-  document.querySelectorAll('.pane.active tbody tr').forEach(tr => {
-    tr.style.display = tr.textContent.toLowerCase().includes(q) ? '' : 'none';
-  });
-  document.querySelectorAll('.pane.active .comp-card').forEach(card => {
-    card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
-  });
-}
-
-// Keyboard shortcut: Cmd/Ctrl+K to focus search
-document.addEventListener('keydown', e => {
-  if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-    e.preventDefault();
-    document.getElementById('searchInput').focus();
-  }
+document.getElementById('mobileToggle').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('mobileOverlay').classList.toggle('show');
 });
-</script>
+document.getElementById('mobileOverlay').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('mobileOverlay').classList.remove('show');
+});
 
-<!-- ══════════ VAULT LOGIC ══════════ -->
-<script>
-(function() {
-  const PASSCODE = 'TQLFAITH';
-  const input = document.getElementById('vaultInput');
-  const boxes = Array.from({length: 8}, (_, i) => document.getElementById('cb' + i));
-  let unlocked = false;
+// ======== BUILD ALL PANES ========
+const CA = document.getElementById('contentArea');
 
-  // Generate floating particles
-  const particleContainer = document.getElementById('vaultParticles');
-  for (let i = 0; i < 30; i++) {
-    const p = document.createElement('div');
-    p.className = 'vault-particle';
-    p.style.left = Math.random() * 100 + '%';
-    p.style.animationDuration = (6 + Math.random() * 10) + 's';
-    p.style.animationDelay = (Math.random() * 8) + 's';
-    p.style.width = p.style.height = (1 + Math.random() * 2) + 'px';
-    particleContainer.appendChild(p);
-  }
+function h(tag, cls, html) { return '<' + tag + (cls ? ' class="' + cls + '"' : '') + '>' + (html || '') + '</' + tag + '>'; }
+function card(label, value, sub, cls) {
+  return '<div class="hero-card ' + (cls||'') + '">' +
+    h('div','hero-card-label',label) + h('div','hero-card-value',value) +
+    (sub ? h('div','hero-card-sub',sub) : '') + '</div>';
+}
+function tableWrap(title, badge, thead, tbody) {
+  return '<div class="table-wrap">' +
+    '<div class="table-title">' + title + (badge ? ' <span class="badge">' + badge + '</span>' : '') + '</div>' +
+    '<table><thead><tr>' + thead + '</tr></thead><tbody>' + tbody + '</tbody></table></div>';
+}
+function th(t) { return '<th>' + t + '</th>'; }
+function td(t, cls) { return '<td' + (cls ? ' class="' + cls + '"' : '') + '>' + (t || '--') + '</td>'; }
+function tag(t, cls) { return '<span class="tag ' + cls + '">' + t + '</span>'; }
 
-  // Focus input on click anywhere on vault
-  window.focusVault = function() {
-    if (!unlocked) input.focus();
-  };
+// ===== DASHBOARD =====
+CA.innerHTML += '<div class="pane active" id="pane-dashboard">' +
+  '<div class="hero-grid">' +
+  card('Total Investors', '10', 'AHL, Champions, Deephaven, LoanStream, Verus, Inv Solutions, AD, Ellington, Onslow, Prime Time', 'gold') +
+  card('DSCR Programs', '9', 'Including STR, 5-9 Unit, Mixed Use', 'navy') +
+  card('Full/Alt Doc Programs', '12', 'Primary, 2nd Home, Investment', 'green') +
+  card('Best Purchase LTV', '90%', 'Verus Prime Ascent / Deephaven Expanded / LoanStream Core', 'gold') +
+  card('Lowest FICO', '600', 'LoanStream Select & Core Non-QM', 'navy') +
+  card('Max Loan Amount', '$5M', 'AD Power Jumbo / Deephaven Super Jumbo', 'green') +
+  card('Foreign National', '4', 'AHL, AD Mortgage, Deephaven DSCR, Ellington', 'gold') +
+  card('Rural Programs', '11', 'AHL, Verus, Inv Solutions, Deephaven, LoanStream, AD, Prime Time, Ellington', 'navy') +
+  '</div>' +
+  '<div class="table-wrap"><div class="table-title">Quick Comparison: DSCR Programs at a Glance <span class="badge">6 investors</span></div>' +
+  '<table><thead><tr>' + th('Investor/Program') + th('Min FICO') + th('Max Loan') + th('Best LTV P') + th('DSCR Min') + th('Sub-1?') + th('IO?') + th('STR?') + th('Rural?') + th('FN?') + '</tr></thead><tbody>' +
+  '<tr>' + td('AHL Invest Star DSCR','cell-navy') + td('660') + td('$3M') + td('85%','cell-green') + td('0.75') + td(tag('Yes','tag-green')) + td(tag('Yes','tag-green')) + td(tag('Yes','tag-green')) + td(tag('No','tag-red')) + td(tag('Yes','tag-green')) + '</tr>' +
+  '<tr>' + td('Champions Accelerator','cell-navy') + td('660') + td('$3M') + td('85%','cell-green') + td('0.75') + td(tag('Yes','tag-green')) + td(tag('Yes','tag-green')) + td(tag('Yes','tag-green')) + td(tag('No','tag-red')) + td(tag('No','tag-red')) + '</tr>' +
+  '<tr>' + td('Deephaven DSCR','cell-navy') + td('640') + td('$2.5M') + td('80%','cell-green') + td('0.75') + td(tag('Yes','tag-green')) + td(tag('Yes','tag-green')) + td(tag('Yes','tag-amber')) + td(tag('65%','tag-amber')) + td(tag('Yes','tag-green')) + '</tr>' +
+  '<tr>' + td('LoanStream Core DSCR','cell-navy') + td('620') + td('$3.5M') + td('85%','cell-green') + td('1.0') + td(tag('No','tag-red')) + td(tag('Yes','tag-green')) + td(tag('Yes','tag-green')) + td(tag('65%','tag-amber')) + td(tag('No','tag-red')) + '</tr>' +
+  '<tr>' + td('Inv Solutions DSCR 1-4','cell-navy') + td('640') + td('$3.5M') + td('85%','cell-green') + td('Sub-1') + td(tag('Yes','tag-green')) + td(tag('Yes','tag-green')) + td(tag('Yes','tag-green')) + td(tag('75%','tag-amber')) + td(tag('No','tag-red')) + '</tr>' +
+  '<tr>' + td('Ellington DSCR','cell-navy') + td('660') + td('$3M') + td('85%','cell-green') + td('0.75') + td(tag('Yes','tag-green')) + td(tag('Yes','tag-green')) + td(tag('Yes','tag-green')) + td(tag('No','tag-red')) + td(tag('No','tag-red')) + '</tr>' +
+  '<tr>' + td('Verus/IS DSCR','cell-navy') + td('640') + td('$3.5M') + td('80%','cell-green') + td('Sub-1') + td(tag('Yes','tag-green')) + td(tag('Yes','tag-green')) + td(tag('Yes','tag-green')) + td(tag('75%','tag-amber')) + td(tag('No','tag-red')) + '</tr>' +
+  '<tr>' + td('AD Mortgage DSCR','cell-navy') + td('660') + td('$3M') + td('80%','cell-green') + td('Sub-1') + td(tag('Yes','tag-green')) + td(tag('Yes','tag-green')) + td(tag('Yes','tag-green')) + td(tag('Yes','tag-green')) + td(tag('Yes','tag-green')) + '</tr>' +
+  '</tbody></table></div>' +
+  '</div>';
 
-  // Auto-focus on load
-  setTimeout(() => input.focus(), 100);
+// ===== DSCR STANDARD (LTR) =====
+CA.innerHTML += '<div class="pane" id="pane-dscr-ltr">' +
+  '<p class="section-desc">All investors offering DSCR programs for long-term rental (LTR) investment properties. Compare FICO, LTV, loan limits, sub-1 eligibility, and interest-only availability.</p>' +
+  '<div class="hero-grid">' +
+  card('Best Purchase LTV', '85%', 'AHL / Champions / LoanStream / Inv Solutions / Ellington', 'gold') +
+  card('Lowest FICO', '620', 'LoanStream Core DSCR', 'navy') +
+  card('Max Loan', '$3.5M', 'LoanStream Core / Inv Solutions DSCR', 'green') +
+  card('Sub-1 DSCR', '6 of 8', 'AHL, Champions, Deephaven, Inv Solutions, Ellington, Verus', 'gold') +
+  '</div>' +
+  tableWrap('DSCR Standard (Long-Term Rental) Comparison', '8 programs',
+    th('Investor / Program') + th('Min FICO') + th('Min/Max Loan') + th('LTV Purchase') + th('LTV R&T') + th('LTV C/O') + th('DSCR Min') + th('Sub-1?') + th('No Ratio?') + th('IO?') + th('Key Notes'),
+    '<tr>' + td('AHL Invest Star DSCR','cell-navy') + td('660') + td('$75K-$3M') + td('85% (760+)') + td('80%') + td('75%') + td('0.75') + td(tag('Yes','tag-green')) + td(tag('No','tag-red')) + td(tag('Yes','tag-green')+'<br><small>700 FICO, 75% LTV</small>') + td('<span class="notes-cell">5-10 units eligible; Condotel OK at 680; Prepay 1-5yr</span>') + '</tr>' +
+    '<tr>' + td('Champions Accelerator','cell-navy') + td('660') + td('$75K-$3M') + td('85% (760+)') + td('80%') + td('75%') + td('0.75') + td(tag('Yes','tag-green')) + td(tag('No','tag-red')) + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Similar to AHL DSCR grid; Condo/NWC eligible</span>') + '</tr>' +
+    '<tr>' + td('Deephaven DSCR','cell-navy') + td('640') + td('$100K-$2.5M') + td('80% (720+)') + td('80%') + td('80% (720+)') + td('0.75') + td(tag('Yes','tag-green')) + td(tag('No','tag-red')) + td(tag('Yes','tag-green')+'<br><small>DSCR 1.0+, 80% LTV</small>') + td('<span class="notes-cell">FN eligible $1.5M max; 5-9 Unit separate program; CDA required</span>') + '</tr>' +
+    '<tr>' + td('LoanStream Select DSCR','cell-navy') + td('620') + td('$250K-$3.5M') + td('75% (720+)') + td('75%') + td('70%') + td('1.25') + td(tag('No','tag-red')) + td(tag('No','tag-red')) + td(tag('No','tag-red')) + td('<span class="notes-cell">SFR/PUD only; 3yr min PPP; Experienced investor required</span>') + '</tr>' +
+    '<tr>' + td('LoanStream Core DSCR','cell-navy') + td('620') + td('$100K-$3.5M') + td('85% (720+)') + td('85%') + td('75%') + td('1.0 (1.2 >80%)') + td(tag('No','tag-red')) + td(tag('No','tag-red')) + td(tag('Yes','tag-green')+'<br><small>700 FICO, $1.5M, 75%</small>') + td('<span class="notes-cell">Rural 65% max; NWC 75%; ARM available; 2-4 units 80%</span>') + '</tr>' +
+    '<tr>' + td('Inv Solutions DSCR 1-4','cell-navy') + td('640') + td('$100K-$3.5M') + td('85% (740+)') + td('85%') + td('80%') + td('Sub-1 OK') + td(tag('Yes','tag-green')) + td(tag('No','tag-red')) + td(tag('Yes','tag-green')+'<br><small>680 FICO, 75% P/RT</small>') + td('<span class="notes-cell">Condotel 75%P/65%R; Rural 75%P/70%R; 5ac max</span>') + '</tr>' +
+    '<tr>' + td('Verus/IS DSCR','cell-navy') + td('640') + td('$100K-$3.5M') + td('80% (700+)') + td('75%') + td('75%') + td('Sub-1 OK') + td(tag('Yes','tag-green')) + td(tag('No','tag-red')) + td(tag('Yes','tag-green')+'<br><small>680 FICO</small>') + td('<span class="notes-cell">Condotel 75%P/65%R max $1.5M; Rural 75%P/70%R 5ac</span>') + '</tr>' +
+    '<tr>' + td('Ellington DSCR','cell-navy') + td('660') + td('$75K-$3M') + td('85% (760+)') + td('80%') + td('75%') + td('0.75') + td(tag('Yes','tag-green')) + td(tag('No','tag-red')) + td(tag('Yes','tag-green')+'<br><small>700 FICO, 75% LTV</small>') + td('<span class="notes-cell">Condotel OK; No rural; STR with restrictions; 36mo credit event</span>') + '</tr>' +
+    '<tr>' + td('AD Mortgage DSCR','cell-navy') + td('660/No Score') + td('$100K-$3M') + td('80%') + td('80%') + td('80%') + td('Sub-1 OK') + td(tag('Yes','tag-green')+'<br><small>680 FICO</small>') + td(tag('No','tag-red')) + td(tag('Yes','tag-green')) + td('<span class="notes-cell">FN eligible; ITIN OK; Rural SFR; Multifamily; Mixed Use; Condotel</span>') + '</tr>'
+  ) + '</div>';
 
-  // Handle typing
-  input.addEventListener('input', function() {
-    const val = this.value.toUpperCase().replace(/[^A-Z]/g, '').slice(0, 8);
-    this.value = val;
+// ===== DSCR STR =====
+CA.innerHTML += '<div class="pane" id="pane-dscr-str">' +
+  '<p class="section-desc">Short-Term Rental (STR) eligibility across DSCR investors. Critical focus on STR proof of rent documentation requirements per investor -- the exact method each investor accepts to document STR income.</p>' +
+  '<div class="hero-grid">' +
+  card('STR Investors', '7', 'AHL, Champions, Deephaven, LoanStream, Inv Solutions, Ellington, AD', 'gold') +
+  card('AirDNA Required', '2', 'Deephaven always; Inv Solutions Purchase-only', 'navy') +
+  card('Lowest STR FICO', '660', 'Ellington / AD Mortgage', 'green') +
+  '</div>' +
+  tableWrap('DSCR Short-Term Rental (STR) Comparison', '7 programs',
+    th('Investor / Program') + th('FICO Min STR') + th('DSCR Min STR') + th('LTV Purchase') + th('LTV Refi') + th('Expense Factor') + th('AirDNA Required?') + th('STR Proof of Rent Requirements') + th('Key Restrictions'),
+    '<tr>' + td('AHL Invest Star DSCR','cell-navy') + td('700 (75% LTV)') + td('1.0') + td('75%') + td('70%') + td('N/A') + td(tag('No','tag-amber')) +
+    td('<div class="str-proof"><strong>Purchase &amp; Refi:</strong> 12-month history of deposits from Airbnb/VRBO<br><strong>Purchase Only:</strong> 75% of income from 1007 or property management report</div>') +
+    td('<span class="notes-cell">700 FICO for 75% max LTV purchase; No condotel for STR</span>') + '</tr>' +
+    '<tr>' + td('Champions Accelerator','cell-navy') + td('680') + td('N/A') + td('80% (680)') + td('75% R&T (720)<br>70% C/O (720)') + td('N/A') + td(tag('See Guide','tag-amber')) +
+    td('<div class="str-proof">Refer to guidelines for STR documentation requirements</div>') +
+    td('<span class="notes-cell">STR LTV: P 80% (680), R&T 75% (720), C/O 70% (720)</span>') + '</tr>' +
+    '<tr>' + td('Deephaven DSCR','cell-navy') + td('720') + td('1.15') + td('75% max') + td('70% max') + td('20%') + td(tag('Required','tag-blue')) +
+    td('<div class="str-proof"><strong>AirDNA required on all STR</strong><br>Min 60% occupancy rate<br>Property income = 80% of annual revenue / 12<br>Purchase: AirDNA report<br>Refi: 12mo documented STR history<br>Must document ST rental operator experience (12mo)</div>') +
+    td('<span class="notes-cell">5% LTV reduction from grid; CDA required; No rural STR; No 2+ unit; No unique properties</span>') + '</tr>' +
+    '<tr>' + td('LoanStream Core DSCR','cell-navy') + td('N/A') + td('1.0') + td('Per grid') + td('Per grid') + td('20% mgmt fee') + td(tag('Supported','tag-amber')) +
+    td('<div class="str-proof"><strong>Rent docs:</strong> 1007/1025 supported by 12mo history of payments OR AirDNA/Overview Report<br>12+ months STR history required<br>&lt;12mo: additional 5% LTV reduction<br>20% management fee reduction applied<br><strong>Experienced investors only</strong></div>') +
+    td('<span class="notes-cell">No rural STR; No DSCR Fusion; No Sub-1; No FN; Experienced only</span>') + '</tr>' +
+    '<tr>' + td('Inv Solutions / Verus DSCR','cell-navy') + td('Per grid') + td('1.0') + td('70%') + td('65%') + td('20% min') + td(tag('Purchase Only','tag-gold')) +
+    td('<div class="str-proof"><strong>4 accepted methods:</strong><br>1. STR Analysis Form or 1007/1025 by licensed appraiser (comps, daily rate, occupancy %, seasonality)<br>2. 12-month rental history from 3rd party management service (net of fees)<br>3. 12-month bank statements showing STR deposits + rental records<br>4. <strong>AirDNA Rentalizer</strong> (Purchase ONLY, 12mo forecast, 3 comps, Market Score >= 60, within 90 days of Note)</div>') +
+    td('<span class="notes-cell">12mo average income for seasonality; Lowest source if multiple; 20% expense factor min</span>') + '</tr>' +
+    '<tr>' + td('Ellington DSCR','cell-navy') + td('700+') + td('1.0') + td('75%') + td('70%') + td('N/A') + td(tag('See Guide','tag-amber')) +
+    td('<div class="str-proof">STR allowed with restrictions<br>No condotel for STR<br>No non-warrantable condo<br>Max $1.5M loan<br>12mo reserves required<br>No first-time investors</div>') +
+    td('<span class="notes-cell">Min $150K; 0x30x12 mortgage history; 5% LTV reduction declining markets</span>') + '</tr>' +
+    '<tr>' + td('AD Mortgage DSCR','cell-navy') + td('660/No Score') + td('Sub-1 OK (680)') + td('80%') + td('80%') + td('N/A') + td(tag('See Guide','tag-amber')) +
+    td('<div class="str-proof">Short Term Rentals listed as eligible property type under DSCR program<br>Refer to full guidelines for documentation requirements</div>') +
+    td('<span class="notes-cell">Also eligible on Super Prime, Prime, FN DSCR, ITIN programs</span>') + '</tr>'
+  ) + '</div>';
 
-    // Update boxes
-    boxes.forEach((box, i) => {
-      box.textContent = val[i] || '';
-      box.className = 'vault-code-box' + (val[i] ? ' filled' : '');
+// ===== FULL DOC PRIMARY =====
+CA.innerHTML += '<div class="pane" id="pane-fulldoc-primary">' +
+  '<p class="section-desc">Full Doc and Alt Doc programs for primary residence occupancy. Compare FICO, LTV, max loan, doc types, DTI limits, and IO availability.</p>' +
+  '<div class="hero-grid">' +
+  card('Best Purchase LTV', '90%', 'AHL All Star / Verus Prime Ascent / Deephaven EP / LoanStream Core / Prime Time', 'gold') +
+  card('Lowest FICO', '600', 'LoanStream Core Non-QM', 'navy') +
+  card('Max Loan', '$5M', 'AD Power Jumbo', 'green') +
+  '</div>' +
+  tableWrap('Full Doc & Alt Doc -- Primary Residence', '9 programs',
+    th('Investor / Program') + th('Min FICO') + th('Max Loan') + th('LTV P') + th('LTV R&T') + th('LTV C/O') + th('Doc Types') + th('Max DTI') + th('IO?') + th('Key Notes'),
+    '<tr>' + td('AHL All Star','cell-navy') + td('660') + td('$3M') + td('90%') + td('85%') + td('80%') + td('Full, BS, 1099, P&L, Asset Qual') + td('50%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">No rural; Condotel 2nd home only</span>') + '</tr>' +
+    '<tr>' + td('AHL Invest Star Full/Alt','cell-navy') + td('660') + td('$2M') + td('85%') + td('80%') + td('80%') + td('Full, BS, 1099') + td('50%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Investment only program; Rural OK 680 FICO</span>') + '</tr>' +
+    '<tr>' + td('Deephaven Expanded Prime','cell-navy') + td('660') + td('$3.5M') + td('90%') + td('90%') + td('80%') + td('Full 1yr, BS, 1099, P&L, Asset Util') + td('55%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Rural purchase 75%; NWC 80%; 2yr S/E for alt doc</span>') + '</tr>' +
+    '<tr>' + td('Deephaven Non-Prime','cell-navy') + td('620') + td('$2M') + td('80%') + td('80%') + td('80%') + td('Full 1yr, BS, 1099, P&L') + td('50%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Recent credit events OK; Rural purchase 75%</span>') + '</tr>' +
+    '<tr>' + td('LoanStream Core Non-QM','cell-navy') + td('600') + td('$4M') + td('90%') + td('85%') + td('80%') + td('Full, BS, 1099, WVOE, P&L, Asset Util') + td('50%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">NWC 75%; ARM available; Rural 70%</span>') + '</tr>' +
+    '<tr>' + td('Verus Prime Ascent','cell-navy') + td('620') + td('$4M') + td('90%') + td('85%') + td('80%') + td('Full, BS, 1099, P&L, WVOE, Asset Util') + td('50-55%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Rural 80%P/75%R 20ac; Condotel 85%; 2-4 units 85%</span>') + '</tr>' +
+    '<tr>' + td('Verus Prime Ascent Plus','cell-navy') + td('680') + td('$2.5M') + td('90%') + td('80%') + td('80%') + td('Full, BS') + td('43%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Rural 80%P/75%R 20ac; SFA/SFD + Condo only</span>') + '</tr>' +
+    '<tr>' + td('AD Super Prime','cell-navy') + td('620') + td('$4M') + td('90%') + td('85%') + td('Per grid') + td('Full, BS, P&L, Asset Util, WVOE, 1099') + td('55%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Rural SFR OK; STR OK; $2.5M max P&L; Residual $2K</span>') + '</tr>' +
+    '<tr>' + td('Prime Time (Inv Solutions)','cell-navy') + td('620') + td('$4M') + td('90%') + td('85%') + td('80%') + td('Full, BS, 1099, P&L, WVOE, Asset Util') + td('50-55%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Rural 80%P/75%R 20ac; Condotel 85% max $2.5M</span>') + '</tr>'
+  ) + '</div>';
+
+// ===== FULL DOC 2ND HOME =====
+CA.innerHTML += '<div class="pane" id="pane-fulldoc-second">' +
+  '<p class="section-desc">Full Doc and Alt Doc programs available for second home occupancy.</p>' +
+  '<div class="hero-grid">' +
+  card('Best Purchase LTV', '85%', 'AHL All Star / Deephaven EP / Verus Prime Ascent / LoanStream Core', 'gold') +
+  card('Programs Available', '7', 'Most Full Doc programs allow 2nd home', 'navy') +
+  '</div>' +
+  tableWrap('Full Doc & Alt Doc -- Second Home', '7 programs',
+    th('Investor / Program') + th('Min FICO') + th('Max Loan') + th('LTV P') + th('LTV R&T') + th('LTV C/O') + th('Doc Types') + th('Max DTI') + th('IO?') + th('Key Notes'),
+    '<tr>' + td('AHL All Star','cell-navy') + td('680') + td('$3M') + td('85%') + td('80%') + td('75%') + td('Full, BS, 1099, P&L, Asset Qual') + td('50%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">FN eligible 2nd home; Condotel 70%P/70%R&T/65%CO</span>') + '</tr>' +
+    '<tr>' + td('Deephaven Expanded Prime','cell-navy') + td('660') + td('$3.5M') + td('85%') + td('80%') + td('80%') + td('Full, BS, 1099, P&L, Asset Util') + td('55%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Same grid as investment</span>') + '</tr>' +
+    '<tr>' + td('LoanStream Core Non-QM','cell-navy') + td('600') + td('$4M') + td('90%') + td('85%') + td('80%') + td('Full, BS, 1099, WVOE, P&L, Asset Util') + td('50%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Same as OO grid</span>') + '</tr>' +
+    '<tr>' + td('Verus Prime Ascent','cell-navy') + td('620') + td('$4M') + td('85%') + td('80%') + td('75%') + td('Full, BS, 1099, P&L, WVOE, Asset Util') + td('50%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Rural 80%P/75%R 20ac</span>') + '</tr>' +
+    '<tr>' + td('AD Super Prime','cell-navy') + td('620') + td('$4M') + td('Per grid') + td('Per grid') + td('Per grid') + td('Full, BS, P&L, Asset Util, WVOE, 1099') + td('55%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">1 unit only for 2nd home</span>') + '</tr>' +
+    '<tr>' + td('Prime Time (Inv Solutions)','cell-navy') + td('620') + td('$4M') + td('85%') + td('80%') + td('75%') + td('Full, BS, 1099, P&L, WVOE, Asset Util') + td('50%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Rural 80%P/75%R 20ac; Condotel $2.5M max</span>') + '</tr>' +
+    '<tr>' + td('Ellington Non-QM BS','cell-navy') + td('660') + td('$3.5M') + td('85%') + td('80%') + td('75%') + td('Full, BS, 1099, WVOE, P&L, Asset Util') + td('45-50%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Rural 80% 10ac; NWC eligible; ITIN/DACA eligible</span>') + '</tr>'
+  ) + '</div>';
+
+// ===== FULL DOC INVESTMENT =====
+CA.innerHTML += '<div class="pane" id="pane-fulldoc-invest">' +
+  '<p class="section-desc">Full Doc and Alt Doc programs available for investment property occupancy (non-DSCR, income-qualified).</p>' +
+  '<div class="hero-grid">' +
+  card('Best Purchase LTV', '85%', 'AHL Invest Star / Deephaven EP / Verus / LoanStream Core', 'gold') +
+  card('Programs Available', '8', 'Most investors offer investment Full Doc', 'navy') +
+  '</div>' +
+  tableWrap('Full Doc & Alt Doc -- Investment Property', '8 programs',
+    th('Investor / Program') + th('Min FICO') + th('Max Loan') + th('LTV P') + th('LTV R&T') + th('LTV C/O') + th('Doc Types') + th('Max DTI') + th('IO?') + th('Key Notes'),
+    '<tr>' + td('AHL Invest Star Full/Alt','cell-navy') + td('660') + td('$2M') + td('85% (760+)') + td('80%') + td('80%') + td('Full, BS, 1099') + td('50%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Rural 80%P 680 FICO; Condotel 75%P 680</span>') + '</tr>' +
+    '<tr>' + td('Deephaven Expanded Prime','cell-navy') + td('660') + td('$3.5M') + td('85% (720+)') + td('80%') + td('80%') + td('Full, BS, 1099, P&L, Asset Util') + td('55%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Prepay investment only; NWC 80%</span>') + '</tr>' +
+    '<tr>' + td('LoanStream Core Non-QM','cell-navy') + td('600') + td('$4M') + td('85%') + td('85%') + td('75%') + td('Full, BS, 1099, WVOE, P&L, Asset Util') + td('50%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">NWC 75%; 2-unit 85%; 3-4 unit 80%</span>') + '</tr>' +
+    '<tr>' + td('Verus Prime Ascent','cell-navy') + td('620') + td('$4M') + td('85%') + td('80%') + td('75%') + td('Full, BS, 1099, P&L, WVOE, Asset Util') + td('50%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Rural 80%P/75%R 20ac; Condotel 85%</span>') + '</tr>' +
+    '<tr>' + td('AD Super Prime','cell-navy') + td('620') + td('$4M') + td('Per grid') + td('Per grid') + td('Per grid') + td('Full, BS, P&L, Asset Util, WVOE, 1099') + td('55%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Condotel Inv/2nd Home; Rural SFR; STR eligible</span>') + '</tr>' +
+    '<tr>' + td('AD Power Jumbo','cell-navy') + td('660') + td('$5M') + td('Per AUS') + td('Per AUS') + td('Per AUS') + td('Full Doc (AUS)') + td('50%') + td(tag('No','tag-red')) + td('<span class="notes-cell">Jumbo Agency overlay; VOE within 10 days; No rural</span>') + '</tr>' +
+    '<tr>' + td('Prime Time (Inv Solutions)','cell-navy') + td('620') + td('$4M') + td('85%') + td('80%') + td('75%') + td('Full, BS, 1099, P&L, WVOE, Asset Util') + td('50%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Same as Verus PA grid; Condotel $2.5M</span>') + '</tr>' +
+    '<tr>' + td('Ellington Non-QM BS','cell-navy') + td('660') + td('$3.5M') + td('85%') + td('80%') + td('75%') + td('Full, BS, 1099, WVOE, P&L, Asset Util') + td('45-50%') + td(tag('Yes','tag-green')) + td('<span class="notes-cell">Rural OK 80%; ITIN 80% NOO; NWC eligible</span>') + '</tr>'
+  ) + '</div>';
+
+// ===== FULL DOC STR =====
+CA.innerHTML += '<div class="pane" id="pane-fulldoc-str">' +
+  '<p class="section-desc">Full Doc and Alt Doc programs that allow Short-Term Rental (STR) properties. These are income-qualified (non-DSCR) programs where borrower qualifies with personal income while the property is used as an STR.</p>' +
+  '<div class="hero-grid">' +
+  card('Programs Available', '3', 'AD Super Prime, AD Prime, Ellington Non-QM', 'gold') +
+  '</div>' +
+  tableWrap('Full Doc & Alt Doc -- STR Properties', '3 programs',
+    th('Investor / Program') + th('Min FICO') + th('Max Loan') + th('Max LTV') + th('Doc Types') + th('STR Requirements') + th('Key Notes'),
+    '<tr>' + td('AD Super Prime','cell-navy') + td('620') + td('$4M') + td('90% (Full Doc)') + td('Full, BS, P&L, WVOE, 1099, Asset Util') + td('STR listed as eligible property type; Refer to guidelines') + td('<span class="notes-cell">$2.5M max for P&L; Residual income $2K</span>') + '</tr>' +
+    '<tr>' + td('AD Prime','cell-navy') + td('620') + td('$1.5M') + td('80%') + td('Full, BS, P&L, WVOE, 1099, Asset Util') + td('STR listed as eligible property type; Refer to guidelines') + td('<span class="notes-cell">Max 80% CLTV; Residual income $1.5K</span>') + '</tr>' +
+    '<tr>' + td('Ellington Non-QM BS','cell-navy') + td('660') + td('$3.5M') + td('85%') + td('Full, BS, 1099, WVOE, P&L, Asset Util') + td('Property type eligible with income qualification') + td('<span class="notes-cell">Rural 80% 10ac; NWC eligible</span>') + '</tr>'
+  ) + '</div>';
+
+// ===== FULL DOC RURAL =====
+CA.innerHTML += '<div class="pane" id="pane-fulldoc-rural">' +
+  '<p class="section-desc">Full Doc and Alt Doc programs that allow rural properties. Key details include LTV adjustments, acreage limits, and specific conditions for rural eligibility.</p>' +
+  '<div class="hero-grid">' +
+  card('Rural Full Doc Programs', '8', 'Across 7 investors', 'gold') +
+  card('Best Rural LTV', '80%', 'AHL / Verus / Prime Time / AD / Ellington', 'navy') +
+  '</div>' +
+  tableWrap('Full Doc & Alt Doc -- Rural Property', '8 programs',
+    th('Investor / Program') + th('Min FICO') + th('Max LTV P') + th('Max LTV Refi') + th('Acreage Max') + th('Conditions') + th('Key Notes'),
+    '<tr>' + td('AHL Invest Star Full/Alt','cell-navy') + td('680') + td('80%') + td('75% R&T / 70% C/O') + td('10 acres') + td('2 comps within 5mi; Paved road required; No dirt roads') + td('<span class="notes-cell">Investment only program</span>') + '</tr>' +
+    '<tr>' + td('Verus Prime Ascent Plus','cell-navy') + td('680') + td('80%') + td('75%') + td('20 acres') + td('SFA/SFD only') + td('<span class="notes-cell">Primary/2nd/Investment</span>') + '</tr>' +
+    '<tr>' + td('Verus Prime Ascent','cell-navy') + td('620') + td('80%') + td('75%') + td('20 acres') + td('All occupancy types') + td('<span class="notes-cell">Condotel also allowed at 85%</span>') + '</tr>' +
+    '<tr>' + td('LoanStream Core Non-QM','cell-navy') + td('600') + td('70%') + td('70%') + td('Per guide') + td('Rural allowed on Core Non-QM') + td('<span class="notes-cell">Not on Select Non-QM</span>') + '</tr>' +
+    '<tr>' + td('Deephaven Expanded Prime','cell-navy') + td('660') + td('75%') + td('N/A (Purchase only)') + td('Per guide') + td('Purchase only, max 75% LTV') + td('<span class="notes-cell">Alt doc same limits</span>') + '</tr>' +
+    '<tr>' + td('AD Super Prime','cell-navy') + td('620') + td('Per grid') + td('Per grid') + td('Per guide') + td('SFR Rural listed as eligible') + td('<span class="notes-cell">Also on Prime program</span>') + '</tr>' +
+    '<tr>' + td('Prime Time (Inv Solutions)','cell-navy') + td('620') + td('80%') + td('75%') + td('20 acres') + td('Same as Verus Prime Ascent') + td('<span class="notes-cell">All occupancy types</span>') + '</tr>' +
+    '<tr>' + td('Ellington Non-QM BS','cell-navy') + td('660') + td('80%') + td('80%') + td('10 acres') + td('Rural eligible on Non-QM Bank Statement program') + td('<span class="notes-cell">Investor Income Qualified also eligible</span>') + '</tr>'
+  ) + '</div>';
+
+// ===== DSCR RURAL =====
+CA.innerHTML += '<div class="pane" id="pane-dscr-rural">' +
+  '<p class="section-desc">DSCR programs that allow rural properties. Most have reduced LTV caps and additional requirements for rural eligibility.</p>' +
+  '<div class="hero-grid">' +
+  card('Rural DSCR Programs', '5', 'Inv Solutions, Verus, Deephaven, LoanStream, AD', 'gold') +
+  card('Best Rural DSCR LTV', '75%', 'Inv Solutions / Verus DSCR', 'navy') +
+  '</div>' +
+  tableWrap('DSCR -- Rural Property', '5 programs',
+    th('Investor / Program') + th('Min FICO') + th('Max LTV P') + th('Max LTV Refi') + th('Acreage Max') + th('DSCR Min') + th('STR on Rural?') + th('Conditions'),
+    '<tr>' + td('Inv Solutions DSCR','cell-navy') + td('640') + td('75%') + td('70%') + td('5 acres') + td('Per grid') + td(tag('N/A','tag-amber')) + td('<span class="notes-cell">Standard DSCR grid with reduced LTV</span>') + '</tr>' +
+    '<tr>' + td('Verus/IS DSCR','cell-navy') + td('640') + td('75%') + td('70%') + td('5 acres') + td('Per grid') + td(tag('N/A','tag-amber')) + td('<span class="notes-cell">Same as Inv Solutions DSCR rural rules</span>') + '</tr>' +
+    '<tr>' + td('Deephaven DSCR','cell-navy') + td('700') + td('65%') + td('N/A (Purchase only)') + td('2 acres') + td('1.0+ required') + td(tag('No','tag-red')) + td('<span class="notes-cell">Purchase only; LTR only (no STR); CFPB check required</span>') + '</tr>' +
+    '<tr>' + td('LoanStream Core DSCR','cell-navy') + td('Per grid') + td('65%') + td('65%') + td('Per guide') + td('1.0') + td(tag('No','tag-red')) + td('<span class="notes-cell">No STR on rural; Max 65% LTV</span>') + '</tr>' +
+    '<tr>' + td('AD Mortgage DSCR','cell-navy') + td('660') + td('80%') + td('80%') + td('Per guide') + td('Sub-1 OK (680)') + td(tag('See Guide','tag-amber')) + td('<span class="notes-cell">SFR Rural listed as eligible; Also Multifamily/Mixed Use</span>') + '</tr>'
+  ) + '</div>';
+
+// ===== STR ON RURAL =====
+CA.innerHTML += '<div class="pane" id="pane-str-rural">' +
+  '<p class="section-desc">Programs that allow BOTH Short-Term Rental AND Rural properties simultaneously. This is a highly restrictive combination -- most investors prohibit STR on rural properties.</p>' +
+  '<div class="hero-grid">' +
+  card('Combined STR + Rural', '0-1', 'Most investors explicitly prohibit this combination', 'gold') +
+  '</div>' +
+  tableWrap('STR on Rural Property -- Combined Eligibility', '',
+    th('Investor / Program') + th('STR on Rural?') + th('Details') + th('Restrictions'),
+    '<tr>' + td('AHL Invest Star DSCR','cell-navy') + td(tag('No','tag-red')) + td('No rural on DSCR program') + td('--') + '</tr>' +
+    '<tr>' + td('Deephaven DSCR','cell-navy') + td(tag('No','tag-red')) + td('Rural = LTR only, no STR') + td('Purchase only, 65% max, DSCR 1.0+') + '</tr>' +
+    '<tr>' + td('LoanStream Core DSCR','cell-navy') + td(tag('No','tag-red')) + td('No STR on rural explicitly') + td('Rural 65% max, STR separate') + '</tr>' +
+    '<tr>' + td('Inv Solutions / Verus DSCR','cell-navy') + td(tag('Not Specified','tag-amber')) + td('Rural 75%P/70%R; STR 70%P/65%R') + td('Combined restrictions would be very limited if allowed') + '</tr>' +
+    '<tr>' + td('AD Mortgage DSCR','cell-navy') + td(tag('Possible','tag-amber')) + td('Both SFR Rural and STR listed as eligible property types') + td('Refer to full guidelines; Max 80% CLTV') + '</tr>' +
+    '<tr>' + td('Ellington DSCR','cell-navy') + td(tag('No','tag-red')) + td('Rural ineligible entirely on Ellington DSCR') + td('--') + '</tr>'
+  ) +
+  '<p class="section-desc" style="margin-top:16px"><strong>Key takeaway:</strong> AD Mortgage DSCR is the only program that lists both SFR Rural and Short Term Rentals as eligible property types. All other major investors either prohibit rural on DSCR entirely or explicitly restrict rural to LTR only.</p>' +
+  '</div>';
+
+// ===== FOREIGN NATIONAL =====
+CA.innerHTML += '<div class="pane" id="pane-foreign-national">' +
+  '<p class="section-desc">All programs eligible for Foreign National borrowers, including both DSCR and Full Doc options.</p>' +
+  '<div class="hero-grid">' +
+  card('FN-Eligible Programs', '5', 'AHL, AD Mortgage (2), Deephaven, Ellington (restricted)', 'gold') +
+  card('Best FN LTV', '75%', 'AHL All Star / AD FN DSCR / AD FN Full Doc', 'navy') +
+  '</div>' +
+  tableWrap('Foreign National Programs', '5 programs',
+    th('Investor / Program') + th('Type') + th('Min FICO') + th('Max Loan') + th('Max LTV') + th('DSCR Req') + th('Occupancy') + th('Key Requirements'),
+    '<tr>' + td('AHL All Star (Full/Alt Doc)','cell-navy') + td('Full Doc') + td('680') + td('$3M') + td('75% P / 70% R&T / 70% C/O') + td('N/A') + td('Second Home only') + td('<span class="notes-cell">Default 680 FICO when US credit unavailable; $150K min loan; 12mo reserves</span>') + '</tr>' +
+    '<tr>' + td('AHL Invest Star DSCR','cell-navy') + td('DSCR') + td('680') + td('$3M') + td('75% P / 70% R&T / 65% C/O') + td('Min 1.00') + td('Investment') + td('<span class="notes-cell">Default 680 FICO; $150K min; 12mo reserves; US Citizen only for 5-10 units</span>') + '</tr>' +
+    '<tr>' + td('AD Mortgage FN DSCR','cell-navy') + td('DSCR') + td('680/No Score') + td('$500K') + td('75%') + td('DSCR >= 1.0') + td('Investment') + td('<span class="notes-cell">Max DTI 43%; 10/15/20/30yr Fixed only; No condotel; 1 Bank Ref Letter</span>') + '</tr>' +
+    '<tr>' + td('AD Mortgage FN Full Doc','cell-navy') + td('Full Doc') + td('680/No Score') + td('Per guide') + td('75%') + td('DSCR >= 1.0') + td('Investment') + td('<span class="notes-cell">2Y Full Doc or BS/Asset Util/WVOE/1099; Letter from Foreign CPA</span>') + '</tr>' +
+    '<tr>' + td('Deephaven DSCR','cell-navy') + td('DSCR') + td('N/A (FN)') + td('$1.5M') + td('70% P / 65% R&T / 65% C/O') + td('Min 1.00') + td('Investment') + td('<span class="notes-cell">6mo PITIA reserves; Min DSCR 1.0; CDA required</span>') + '</tr>'
+  ) + '</div>';
+
+// ===== 5-8 UNIT / MIXED USE =====
+CA.innerHTML += '<div class="pane" id="pane-multi-unit">' +
+  '<p class="section-desc">Multi-family DSCR programs for 5+ unit properties and mixed-use buildings.</p>' +
+  '<div class="hero-grid">' +
+  card('5-8/9 Unit Programs', '3', 'Inv Solutions 5-8, Deephaven 5-9, AHL 5-10', 'gold') +
+  card('Max Loan', '$2.5M', 'Deephaven 5-9 Unit', 'navy') +
+  '</div>' +
+  tableWrap('5-8 Unit / Mixed Use DSCR Programs', '3 programs',
+    th('Investor / Program') + th('Units') + th('Min FICO') + th('Min/Max Loan') + th('LTV P') + th('LTV R&T') + th('LTV C/O') + th('DSCR Min') + th('Mixed Use?') + th('Key Notes'),
+    '<tr>' + td('Inv Solutions 5-8 / Mixed Use','cell-navy') + td('5-8 Res / 2-8 Mixed') + td('700') + td('$400K-$2M') + td('75%') + td('70%') + td('65%') + td('1.0') + td(tag('Yes','tag-green')+'<br><small>Max 49.9% commercial</small>') + td('<span class="notes-cell">Max 3 commercial units (6-8); Retail/Office/Restaurant; No STR; No rural; IL/NY ineligible; 6mo reserves; Experienced investor required</span>') + '</tr>' +
+    '<tr>' + td('Deephaven DSCR 5-9 Unit','cell-navy') + td('5-9 Residential') + td('680') + td('$350K-$2.5M') + td('75%') + td('75%') + td('70%') + td('1.15') + td(tag('No','tag-red')) + td('<span class="notes-cell">No mixed use; No STR; 6mo reserves; 84mo BK/FC seasoning; 12mo investment experience required; Max 2 vacant units</span>') + '</tr>' +
+    '<tr>' + td('AHL Invest Star DSCR','cell-navy') + td('5-10 Residential') + td('660') + td('$75K-$3M') + td('85%') + td('80%') + td('75%') + td('Per grid') + td(tag('No','tag-red')) + td('<span class="notes-cell">Residential use only on 5-10 units; US Citizen required for FN on 5-10</span>') + '</tr>'
+  ) + '</div>';
+
+// ===== CLOSED END SECOND / HELOC =====
+CA.innerHTML += '<div class="pane" id="pane-closed-second">' +
+  '<p class="section-desc">Second lien programs including Closed End Seconds and HELOCs. These are behind a first lien mortgage.</p>' +
+  '<div class="hero-grid">' +
+  card('Second Lien Programs', '4', 'Verus CES, Inv Solutions CES, Verus HELOC, Deephaven Equity Advantage, AD Second Lien', 'gold') +
+  card('Max CLTV', '90%', 'Verus CES / Inv Solutions CES / AD Second / Deephaven EA', 'navy') +
+  '</div>' +
+  tableWrap('Closed End Second / HELOC Programs', '5 programs',
+    th('Investor / Program') + th('Type') + th('Min FICO') + th('Loan Range') + th('Max CLTV Primary') + th('Max CLTV 2nd Home') + th('Max CLTV Invest') + th('Doc Types') + th('IO?') + th('Key Notes'),
+    '<tr>' + td('Verus CES','cell-navy') + td('Closed End 2nd') + td('680') + td('$50K-$750K') + td('90% (740+ Std)') + td('80% (740+ Std)') + td('75% (740+ Std)') + td('Full, BS, 1099, P&L+BS, WVOE') + td(tag('Yes','tag-green')+'<br><small>Primary only, 80% CLTV</small>') + td('<span class="notes-cell">Stand-alone C/O or Simultaneous Purchase; Min 6mo ownership; 48mo credit events; No TX; 30/15 Balloon available; Combined max $4M all liens</span>') + '</tr>' +
+    '<tr>' + td('Inv Solutions CES','cell-navy') + td('Closed End 2nd') + td('680') + td('$50K-$500K') + td('90% (740+ Std)') + td('80% (740+ Std)') + td('75% (740+ Std)') + td('Full, BS, 1099, P&L+BS, WVOE') + td(tag('No','tag-red')) + td('<span class="notes-cell">Same as Verus CES; Max combined $4M; Agency-eligible 1st lien for simultaneous purchase; Condo 80% CLTV; 2-4 unit 75% CLTV</span>') + '</tr>' +
+    '<tr>' + td('Verus HELOC','cell-navy') + td('HELOC') + td('680') + td('$50K-$500K') + td('85% (740+ Std)') + td('75%') + td('70%') + td('Full, BS, 1099, P&L+BS, WVOE') + td('N/A (Draw period)') + td('<span class="notes-cell">5-year draw / 20-year repay; Variable rate; Max line + 1st lien cannot exceed $2M; No TX</span>') + '</tr>' +
+    '<tr>' + td('Deephaven Equity Advantage','cell-navy') + td('HELOAN 2nd') + td('660') + td('$50K-$750K') + td('90% (700+ pri)') + td('80%') + td('75%') + td('Full, BS, 1099, P&L') + td(tag('Yes','tag-green')+'<br><small>700+ FICO, 70% CLTV, Primary</small>') + td('<span class="notes-cell">Max CLTV varies by FICO; Rural ineligible; FN ineligible; 30Y Fixed, 15Y Fixed</span>') + '</tr>' +
+    '<tr>' + td('AD Second Lien','cell-navy') + td('2nd Lien') + td('620') + td('$50K-$500K') + td('90%') + td('Per grid') + td('Per grid') + td('Full, BS, Asset Util, WVOE, 1099') + td(tag('No','tag-red')) + td('<span class="notes-cell">10/15/20/30yr Fixed; FN eligible; Residual $2K; 0x30x12</span>') + '</tr>'
+  ) + '</div>';
+
+// ===== PROGRAM SEARCH =====
+CA.innerHTML += '<div class="pane" id="pane-program-search">' +
+  '<p class="section-desc">Enter your scenario parameters to find matching programs and maximum available LTV per investor.</p>' +
+  '<div class="search-form">' +
+  '<div class="search-grid">' +
+  '<div class="form-group"><label>Loan Amount</label><input type="number" id="s-loan" placeholder="500000" value="500000"></div>' +
+  '<div class="form-group"><label>FICO Score</label><input type="number" id="s-fico" placeholder="720" value="720"></div>' +
+  '<div class="form-group"><label>Property Type</label><select id="s-prop"><option>SFR</option><option>Condo</option><option>2-4 Unit</option><option>5+ Unit</option><option>Rural</option><option>Condotel</option><option>Mixed Use</option></select></div>' +
+  '<div class="form-group"><label>Occupancy</label><select id="s-occ"><option>Primary</option><option>Second Home</option><option>Investment</option></select></div>' +
+  '<div class="form-group"><label>Citizenship</label><select id="s-cit"><option>US Citizen</option><option>Permanent Resident</option><option>Non-Perm Resident</option><option>Foreign National</option><option>ITIN</option></select></div>' +
+  '<div class="form-group"><label>Program Type</label><select id="s-type"><option>Any</option><option>DSCR</option><option>Full Doc</option><option>Alt Doc</option></select></div>' +
+  '</div>' +
+  '<button class="btn-search" onclick="runSearch()">Search Programs</button>' +
+  '</div>' +
+  '<div id="search-results"></div>' +
+  '</div>';
+
+// ===== SEARCH LOGIC =====
+const PROGRAMS = [
+  {inv:'AHL',prog:'All Star Full/Alt Doc',type:'Full Doc',fico:660,maxLoan:3000000,occ:['Primary','Second Home'],prop:['SFR','Condo','2-4 Unit','Condotel'],cit:['US Citizen','Permanent Resident','Non-Perm Resident','Foreign National'],rural:false,fn:true,ltvP:{760:90,740:90,720:90,700:90,680:85,660:80},ltvRT:{760:85,740:85,720:85,700:85,680:80,660:80},ltvCO:{760:80,740:80,720:80,700:80,680:75,660:70}},
+  {inv:'AHL',prog:'Invest Star Full/Alt Doc',type:'Full Doc',fico:660,maxLoan:2000000,occ:['Investment'],prop:['SFR','Condo','2-4 Unit','Condotel','Rural'],cit:['US Citizen','Permanent Resident','Non-Perm Resident'],rural:true,fn:false,ltvP:{760:85,740:85,720:80,700:80,680:80,660:80},ltvRT:{760:80,740:80,720:80,700:80,680:80,660:80},ltvCO:{760:80,740:80,720:75,700:75,680:75,660:75}},
+  {inv:'AHL',prog:'Invest Star DSCR',type:'DSCR',fico:660,maxLoan:3000000,occ:['Investment'],prop:['SFR','Condo','2-4 Unit','Condotel','5+ Unit'],cit:['US Citizen','Permanent Resident','Non-Perm Resident','Foreign National'],rural:false,fn:true,ltvP:{760:85,740:85,720:80,700:80,680:75,660:70},ltvRT:{760:80,740:80,720:80,700:75,680:75,660:70},ltvCO:{760:75,740:75,720:75,700:75,680:70,660:65}},
+  {inv:'Deephaven',prog:'Expanded Prime',type:'Full Doc',fico:660,maxLoan:3500000,occ:['Primary','Second Home','Investment'],prop:['SFR','Condo','2-4 Unit','Rural'],cit:['US Citizen','Permanent Resident','Non-Perm Resident'],rural:true,fn:false,ltvP:{720:90,700:85,680:85,660:85},ltvRT:{720:90,700:85,680:85,660:85},ltvCO:{720:80,700:80,680:80,660:75}},
+  {inv:'Deephaven',prog:'Non-Prime',type:'Full Doc',fico:620,maxLoan:2000000,occ:['Primary','Second Home','Investment'],prop:['SFR','Condo','2-4 Unit','Rural'],cit:['US Citizen','Permanent Resident','Non-Perm Resident'],rural:true,fn:false,ltvP:{700:80,660:80,620:80},ltvRT:{700:80,660:80,620:80},ltvCO:{700:80,660:75,620:75}},
+  {inv:'Deephaven',prog:'DSCR',type:'DSCR',fico:640,maxLoan:2500000,occ:['Investment'],prop:['SFR','Condo','2-4 Unit','Rural'],cit:['US Citizen','Permanent Resident','Non-Perm Resident','Foreign National'],rural:true,fn:true,ltvP:{720:80,700:80,680:80,640:70},ltvRT:{720:80,700:80,680:80,640:70},ltvCO:{720:80,700:75,680:75,640:65}},
+  {inv:'Deephaven',prog:'DSCR 5-9 Unit',type:'DSCR',fico:680,maxLoan:2500000,occ:['Investment'],prop:['5+ Unit'],cit:['US Citizen','Permanent Resident','Non-Perm Resident'],rural:false,fn:false,ltvP:{720:75,700:75,680:70},ltvRT:{720:75,700:75,680:70},ltvCO:{720:70,700:70,680:65}},
+  {inv:'LoanStream',prog:'Core Non-QM',type:'Full Doc',fico:600,maxLoan:4000000,occ:['Primary','Second Home','Investment'],prop:['SFR','Condo','2-4 Unit','Rural'],cit:['US Citizen','Permanent Resident','Non-Perm Resident'],rural:true,fn:false,ltvP:{720:90,700:90,680:85,640:80,600:80},ltvRT:{720:85,700:85,680:85,640:80,600:80},ltvCO:{720:80,700:80,680:80,640:75,600:75}},
+  {inv:'LoanStream',prog:'Core DSCR',type:'DSCR',fico:620,maxLoan:3500000,occ:['Investment'],prop:['SFR','Condo','2-4 Unit','Rural'],cit:['US Citizen','Permanent Resident','Non-Perm Resident'],rural:true,fn:false,ltvP:{720:85,700:80,680:80,640:75,620:70},ltvRT:{720:85,700:75,680:85,640:80,620:65},ltvCO:{720:75,700:75,680:75,640:70,620:65}},
+  {inv:'LoanStream',prog:'Select DSCR (1.25)',type:'DSCR',fico:620,maxLoan:3500000,occ:['Investment'],prop:['SFR'],cit:['US Citizen','Permanent Resident','Non-Perm Resident'],rural:false,fn:false,ltvP:{720:75,700:75,680:0,640:0,620:0},ltvRT:{720:75,700:75,680:75,640:70,620:0},ltvCO:{720:70,700:70,680:0,640:0,620:0}},
+  {inv:'Verus',prog:'Prime Ascent',type:'Full Doc',fico:620,maxLoan:4000000,occ:['Primary','Second Home','Investment'],prop:['SFR','Condo','2-4 Unit','Condotel','Rural'],cit:['US Citizen','Permanent Resident','Non-Perm Resident'],rural:true,fn:false,ltvP:{720:90,700:90,680:90,660:80,640:80,620:70},ltvRT:{720:85,700:85,680:85,660:80,640:75,620:70},ltvCO:{720:80,700:80,680:75,660:75,640:70,620:0}},
+  {inv:'Verus',prog:'Prime Ascent Plus',type:'Full Doc',fico:680,maxLoan:2500000,occ:['Primary','Second Home','Investment'],prop:['SFR','Condo','Rural'],cit:['US Citizen','Permanent Resident','Non-Perm Resident'],rural:true,fn:false,ltvP:{720:90,700:85,680:80},ltvRT:{720:80,700:75,680:75},ltvCO:{720:80,700:75,680:75}},
+  {inv:'Inv Solutions',prog:'DSCR 1-4 Unit',type:'DSCR',fico:640,maxLoan:3500000,occ:['Investment'],prop:['SFR','Condo','2-4 Unit','Condotel','Rural'],cit:['US Citizen','Permanent Resident','Non-Perm Resident'],rural:true,fn:false,ltvP:{740:85,720:85,700:80,680:75,660:80,640:65},ltvRT:{740:85,720:85,700:80,680:70,660:75,640:65},ltvCO:{740:80,720:80,700:80,680:70,660:75,640:0}},
+  {inv:'Inv Solutions',prog:'DSCR 5-8 / Mixed Use',type:'DSCR',fico:700,maxLoan:2000000,occ:['Investment'],prop:['5+ Unit','Mixed Use'],cit:['US Citizen','Permanent Resident','Non-Perm Resident'],rural:false,fn:false,ltvP:{700:75},ltvRT:{700:70},ltvCO:{700:65}},
+  {inv:'Inv Solutions',prog:'Prime Time Full/Alt Doc',type:'Full Doc',fico:620,maxLoan:4000000,occ:['Primary','Second Home','Investment'],prop:['SFR','Condo','2-4 Unit','Condotel','Rural'],cit:['US Citizen','Permanent Resident','Non-Perm Resident'],rural:true,fn:false,ltvP:{720:90,700:90,680:90,660:80,640:80,620:70},ltvRT:{720:85,700:85,680:85,660:80,640:75,620:70},ltvCO:{720:80,700:80,680:75,660:75,640:70,620:0}},
+  {inv:'AD Mortgage',prog:'Super Prime',type:'Full Doc',fico:620,maxLoan:4000000,occ:['Primary','Second Home','Investment'],prop:['SFR','Condo','2-4 Unit','Condotel','Rural'],cit:['US Citizen','Permanent Resident','Non-Perm Resident'],rural:true,fn:false,ltvP:{700:90,680:85,660:80,640:80,620:70},ltvRT:{700:85,680:80,660:75,640:75,620:70},ltvCO:{700:80,680:75,660:70,640:65,620:0}},
+  {inv:'AD Mortgage',prog:'DSCR',type:'DSCR',fico:660,maxLoan:3000000,occ:['Investment'],prop:['SFR','Condo','2-4 Unit','Condotel','Rural','Mixed Use','5+ Unit'],cit:['US Citizen','Permanent Resident','Non-Perm Resident','Foreign National','ITIN'],rural:true,fn:true,ltvP:{700:80,680:75,660:70},ltvRT:{700:80,680:75,660:70},ltvCO:{700:80,680:75,660:70}},
+  {inv:'AD Mortgage',prog:'FN DSCR',type:'DSCR',fico:680,maxLoan:500000,occ:['Investment'],prop:['SFR','Condo','2-4 Unit'],cit:['Foreign National'],rural:false,fn:true,ltvP:{680:75},ltvRT:{680:75},ltvCO:{680:75}},
+  {inv:'AD Mortgage',prog:'Power Jumbo',type:'Full Doc',fico:660,maxLoan:5000000,occ:['Primary','Second Home','Investment'],prop:['SFR','Condo','2-4 Unit'],cit:['US Citizen','Permanent Resident','Non-Perm Resident'],rural:false,fn:false,ltvP:{660:90},ltvRT:{660:85},ltvCO:{660:80}},
+  {inv:'Ellington',prog:'DSCR',type:'DSCR',fico:660,maxLoan:3000000,occ:['Investment'],prop:['SFR','Condo','2-4 Unit','Condotel'],cit:['US Citizen','Permanent Resident','Non-Perm Resident'],rural:false,fn:false,ltvP:{760:85,740:85,720:80,700:75,680:75,660:70},ltvRT:{760:80,740:80,720:80,700:75,680:75,660:70},ltvCO:{760:75,740:75,720:75,700:75,680:70,660:65}},
+  {inv:'Ellington',prog:'Non-QM Bank Statement',type:'Full Doc',fico:660,maxLoan:3500000,occ:['Primary','Second Home','Investment'],prop:['SFR','Condo','2-4 Unit','Rural'],cit:['US Citizen','Permanent Resident','Non-Perm Resident','ITIN'],rural:true,fn:false,ltvP:{720:90,700:85,680:85,660:80},ltvRT:{720:85,700:80,680:80,660:75},ltvCO:{720:80,700:75,680:75,660:70}},
+];
+
+function runSearch() {
+  const loan = parseInt(document.getElementById('s-loan').value) || 0;
+  const fico = parseInt(document.getElementById('s-fico').value) || 0;
+  const prop = document.getElementById('s-prop').value;
+  const occ = document.getElementById('s-occ').value;
+  const cit = document.getElementById('s-cit').value;
+  const ptype = document.getElementById('s-type').value;
+
+  const results = [];
+  PROGRAMS.forEach(p => {
+    if (fico < p.fico) return;
+    if (loan > p.maxLoan) return;
+    if (!p.occ.includes(occ)) return;
+    if (!p.prop.includes(prop)) return;
+    if (!p.cit.includes(cit)) return;
+    if (ptype !== 'Any' && !p.type.includes(ptype)) return;
+
+    // Find best LTV
+    let bestP = 0, bestRT = 0, bestCO = 0;
+    const grids = [p.ltvP, p.ltvRT, p.ltvCO];
+    grids.forEach((grid, gi) => {
+      const ficos = Object.keys(grid).map(Number).sort((a,b)=>b-a);
+      for (const f of ficos) {
+        if (fico >= f) {
+          const v = grid[f];
+          if (gi === 0 && v > bestP) bestP = v;
+          if (gi === 1 && v > bestRT) bestRT = v;
+          if (gi === 2 && v > bestCO) bestCO = v;
+          break;
+        }
+      }
     });
 
-    // Check passcode when 8 chars entered
-    if (val.length === 8 && !unlocked) {
-      if (val === PASSCODE) {
-        unlocked = true;
-        openVault();
-      } else {
-        wrongCode();
-      }
+    if (bestP > 0 || bestRT > 0 || bestCO > 0) {
+      results.push({inv: p.inv, prog: p.prog, type: p.type, ltvP: bestP, ltvRT: bestRT, ltvCO: bestCO});
     }
   });
 
-  // Also capture keydown for mobile/desktop compat
-  document.addEventListener('keydown', function(e) {
-    const vs = document.getElementById('vault-screen');
-    if (vs.classList.contains('gone') || unlocked) return;
-    if (e.key === 'Backspace') {
-      input.focus();
-      return;
-    }
-    if (/^[a-zA-Z]$/.test(e.key) && input.value.length < 8) {
-      input.focus();
-    }
-  });
+  results.sort((a,b) => b.ltvP - a.ltvP);
 
-  function wrongCode() {
-    boxes.forEach(box => box.classList.add('wrong'));
-    setTimeout(() => {
-      boxes.forEach(box => {
-        box.classList.remove('wrong', 'filled');
-        box.textContent = '';
-      });
-      input.value = '';
-      input.focus();
-    }, 800);
+  let html = '';
+  if (results.length === 0) {
+    html = '<div class="table-wrap"><div class="table-title">No matching programs found</div><div style="padding:20px;color:var(--muted)">Try adjusting your search criteria. Some common reasons for no results: FICO too low, loan amount exceeds limits, property type not eligible, or citizenship restriction.</div></div>';
+  } else {
+    let rows = '';
+    results.forEach(r => {
+      rows += '<tr>' + td(r.inv,'cell-navy') + td(r.prog) + td(tag(r.type, r.type==='DSCR'?'tag-gold':'tag-blue')) +
+        td(r.ltvP ? r.ltvP + '%' : '--', r.ltvP >= 80 ? 'cell-green' : '') +
+        td(r.ltvRT ? r.ltvRT + '%' : '--') +
+        td(r.ltvCO ? r.ltvCO + '%' : '--') + '</tr>';
+    });
+    html = tableWrap('Search Results', results.length + ' programs matched',
+      th('Investor') + th('Program') + th('Type') + th('Max LTV Purchase') + th('Max LTV R&T') + th('Max LTV C/O'), rows);
   }
-
-  function openVault() {
-    const screen = document.getElementById('vault-screen');
-    const spoke = document.getElementById('vaultSpoke');
-    const doorWrap = document.getElementById('vaultDoorWrap');
-    const granted = document.getElementById('vaultGranted');
-    const light = document.getElementById('vaultLight');
-    const app = document.getElementById('dashboardApp');
-
-    screen.classList.add('opening');
-
-    // Phase 1: Boxes flash green
-    boxes.forEach(box => box.classList.add('correct'));
-
-    // Phase 2: ACCESS GRANTED + spoke rotation (500ms)
-    setTimeout(() => {
-      granted.classList.add('show');
-      spoke.classList.add('rotate');
-    }, 500);
-
-    // Phase 3: Door swings open (1500ms)
-    setTimeout(() => {
-      doorWrap.classList.add('swing');
-    }, 1500);
-
-    // Phase 4: Light floods in (2200ms)
-    setTimeout(() => {
-      light.classList.add('flood');
-    }, 2200);
-
-    // Phase 5: Fade away vault, reveal dashboard (3000ms)
-    setTimeout(() => {
-      screen.classList.add('fade-away');
-      app.classList.add('revealed');
-    }, 3000);
-
-    // Phase 6: Remove vault entirely (3800ms)
-    setTimeout(() => {
-      screen.classList.add('gone');
-    }, 3800);
-  }
-})();
+  document.getElementById('search-results').innerHTML = html;
+}
 </script>
 </body>
 </html>

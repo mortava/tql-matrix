@@ -1,0 +1,1175 @@
+[
+  {
+    "investor": "LoanStream",
+    "program": "Select Non-QM (Full/Alt Doc)",
+    "last_updated": "2026-02-10",
+    "general": {
+      "min_fico": 600,
+      "max_loan": 3000000,
+      "min_loan": 150000,
+      "max_dti": 45,
+      "property_types": ["SFR", "PUD", "Condo (Warrantable)", "2-Unit", "3-4 Unit"],
+      "occupancy": ["Owner Occupied", "2nd Home", "Non-Owner Occupied"],
+      "max_ltv_noo": 75,
+      "max_ltv_2nd_home": 75,
+      "rural_allowed": false,
+      "condotel_allowed": false,
+      "condo_max_ltv": "85% (FL Condo 75%)",
+      "nw_condo_allowed": false,
+      "two_unit_max_ltv": 80,
+      "three_four_unit_max_ltv": 75,
+      "foreign_national": false,
+      "itin_allowed": false,
+      "daca_allowed": false,
+      "io_available": false,
+      "arm_available": false,
+      "prepay_options": "3 yr min PPP required, transactions where PPP is prohibited are ineligible",
+      "loan_programs": ["15-Year Fixed", "30-Year Fixed", "40-Year Fixed", "Nonstandard Terms Available"],
+      "min_square_footage": {
+        "SFR": 700,
+        "Condo": 500,
+        "2-4_Unit": 400
+      }
+    },
+    "ltv_grid": {
+      "owner_occupied_and_2nd_home": {
+        "$1,000,000": {
+          "700+": { "purchase": 85, "rate_term": 80, "cash_out": 75 },
+          "680+": { "purchase": 80, "rate_term": 80, "cash_out": 75 },
+          "600+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$1,500,000": {
+          "720+": { "purchase": 85, "rate_term": 80, "cash_out": 75 },
+          "700+": { "purchase": 80, "rate_term": 80, "cash_out": 75 }
+        },
+        "$2,000,000": {
+          "680+": { "purchase": 75, "rate_term": 75, "cash_out": 70 },
+          "640+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$2,500,000": {
+          "600+": { "purchase": 85, "rate_term": 80, "cash_out": 75 }
+        },
+        "$3,000,000": {
+          "740+": { "purchase": 75, "rate_term": 75, "cash_out": 70 },
+          "720+": { "purchase": 75, "rate_term": 75, "cash_out": 70 },
+          "700+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "680+": { "purchase": 80, "rate_term": 80, "cash_out": 75 },
+          "640+": { "purchase": 75, "rate_term": 75, "cash_out": 70 }
+        },
+        "note": "> $3,000,000 - See Guides for Appraisal & Credit Overlay"
+      }
+    },
+    "income_doc": {
+      "full_doc_methods": ["12 months Full Doc", "24 months Full Doc"],
+      "alt_doc_methods": [],
+      "dscr_calc": null,
+      "dscr_min": null,
+      "sub1_allowed": false,
+      "no_ratio_allowed": false,
+      "notes": [
+        "Alt Doc (1099, WVOE, Asset Utilization, Bank Statements, P&L w/3 mos Bank Stmts, One Yr Self-Employment, Assets as Blended Income) NOT allowed on Select Non-QM",
+        "1099 Only: Not Allowed",
+        "WVOE Only: Not Allowed",
+        "Asset Utilization: Not Allowed",
+        "One Year Self-Employed: Not Allowed"
+      ]
+    },
+    "str": {
+      "allowed": false
+    },
+    "rural": {
+      "allowed": false
+    },
+    "citizenship": {
+      "us_citizen": true,
+      "permanent_resident": true,
+      "non_permanent_resident": true,
+      "itin": false,
+      "daca": false,
+      "foreign_national": false
+    },
+    "credit_events": {
+      "bk_ss_fc_dil_ccc": "> 48 months seasoning required",
+      "multiple_unrelated_credit_events": "Not Allowed",
+      "housing_history": "0 x 30 x 24, rent free not allowed"
+    },
+    "reserves": {
+      "base": "6 months min, cash-out cannot be utilized",
+      "over_2M_LA": "6 mos, cash-out cannot be utilized",
+      "over_3M_LA": "12 mos, cash-out cannot be utilized",
+      "additional_financed_properties": "2 mos for each addtn'l financed property (based on subject property PITIA)"
+    },
+    "other_restrictions": {
+      "declining_markets": "> 70% LTV: 5% LTV reduction from program max",
+      "delayed_financing": "$1.5M LA: follow program max; > $1.5M LA: 70% max LTV/CLTV",
+      "gift_funds": "100% allowed w/10% LTV reduction from max LTV, no LTV reduction required with min 5% buyer own funds. Gift of Equity not allowed on Select Non-QM",
+      "ipc": "80% LTV = 6% max; > 80% LTV = 4% max",
+      "fthb": "Primary Residence and Investment Properties allowed (2nd Homes ineligible), payment shock should not exceed 300%",
+      "financed_property_limits": "20 financed properties including subject; OCMBC exposure $5.0M or 6 properties",
+      "non_occ_coborrower": "Investment - Purchase & Refinance: Full Doc and Bank Statement income only, 80% Max LTV, 660 Min FICO, 50% Max DTI, $1.5M Max LA",
+      "impound_waivers": "Owner/2nd Home: Allowed if NOT HPML loan; Non-Owner allowed (see rate sheet)",
+      "temporary_buydowns": "Not Allowed",
+      "geographic_restrictions": [
+        "Texas Cash-Out: 80% max LTV (Owner-Occ, per TX 50(a)(6))",
+        "Texas SB 17: Prohibits loans when the borrower is a restricted person connected to China, Russia, Iran, or North Korea; US citizens and PRA from these countries are exempt, while NPRA limited to primary residences only",
+        "Arizona SB 1082: Prohibits loans when a borrower or any 30% beneficial owner is classified as a foreign adversary nation or agent",
+        "TRID (Non-Business Purpose): Row Homes ineligible in Baltimore City, MD",
+        "Investment and Non-TRID (Business Purpose): All subject properties in Baltimore City, MD and Philadelphia County, PA are temporarily ineligible"
+      ],
+      "cash_in_hand_limits": {
+        "lte_65_ltv": "$1.5M max",
+        "gt_65_lte_75_ltv_fico_gte_700": "$1.5M max",
+        "gt_65_lte_75_ltv_fico_lt_700": "$1.0M max",
+        "gt_75_ltv": "$500k max"
+      },
+      "seasoning": "Cash-out: 6 months ownership or since prior Cash-out; < 6 mos seasoning allowed: All borrowers on the original Note at acquisition or prior cash out must be on the current Note & LTV is based off lesser of purchase price + documented improvements, if acquired in the past 6 months, or appraised value"
+    }
+  },
+  {
+    "investor": "LoanStream",
+    "program": "Core Non-QM (Full/Alt Doc)",
+    "last_updated": "2026-02-10",
+    "general": {
+      "min_fico": 600,
+      "max_loan": 4000000,
+      "min_loan": 125000,
+      "max_dti": 50,
+      "max_dti_over_85_ltv": 45,
+      "dti_50_55_conditions": "Full doc, 6 months reserves, 80% max LTV, 660 min FICO, Primary only, Purchase only, $1.5M max LA",
+      "property_types": ["SFR", "PUD", "Condo (Warrantable)", "Condo (Non-Warrantable)", "Condo (High Rise)", "2-Unit", "3-4 Unit", "Rural"],
+      "occupancy": ["Owner Occupied", "2nd Home", "Non-Owner Occupied"],
+      "max_ltv_noo": 85,
+      "max_ltv_2nd_home": 85,
+      "rural_allowed": true,
+      "rural_max_ltv": 70,
+      "condotel_allowed": false,
+      "condo_warrantable_max_ltv": 90,
+      "condo_high_rise_max_ltv": 85,
+      "fl_condo_max_ltv": 75,
+      "nw_condo_max_ltv": 75,
+      "fl_nw_condo_max_ltv": 65,
+      "two_unit_max_ltv": 85,
+      "three_four_unit_max_ltv": 80,
+      "foreign_national": false,
+      "io_available": true,
+      "io_conditions": "640 min FICO, 80% max LTV, Reserves based on IO payment",
+      "arm_available": true,
+      "arm_types": ["5/6 SOFR (2/1/5 Cap) 30-Yr & 40-Yr terms", "7/6 SOFR (5/1/5 Cap) 30-Yr & 40-Yr terms"],
+      "prepay_options": "Owner/2nd Home: Allowed if NOT HPML loan; Non-Owner allowed (see rate sheet)",
+      "loan_programs": [
+        "15-Year Fixed",
+        "30-Year Fixed",
+        "40-Year Fixed",
+        "Nonstandard Terms Available",
+        "5/6 SOFR ARM (2/1/5 Cap) 30-Yr & 40-Yr",
+        "7/6 SOFR ARM (5/1/5 Cap) 30-Yr & 40-Yr",
+        "30-Year Fixed IO (120 mos IO + 240 mos Amortization)",
+        "40-Year Fixed IO (120 mos IO + 360 mos Amortization)",
+        "30-Year 5/6 ARM IO (2/1/5 Cap)",
+        "30-Year 7/6 ARM IO (5/1/5 Cap)"
+      ],
+      "min_square_footage": {
+        "SFR": 700,
+        "Condo": 500,
+        "2-4_Unit": 400
+      }
+    },
+    "ltv_grid": {
+      "owner_occupied_and_2nd_home": {
+        "$1,000,000": {
+          "700+": { "purchase": 90, "rate_term": 85, "cash_out": 80 },
+          "680+": { "purchase": 85, "rate_term": 85, "cash_out": 80 },
+          "600+": { "purchase": 80, "rate_term": 80, "cash_out": 75 }
+        },
+        "$1,500,000": {
+          "720+": { "purchase": 90, "rate_term": 85, "cash_out": 80 },
+          "700+": { "purchase": 90, "rate_term": 85, "cash_out": 80 },
+          "680+": { "purchase": 85, "rate_term": 85, "cash_out": 75 },
+          "640+": { "purchase": 80, "rate_term": 80, "cash_out": 70 },
+          "600+": { "purchase": 75, "rate_term": 75, "cash_out": null }
+        },
+        "$2,000,000": {
+          "740+": { "purchase": 85, "rate_term": 85, "cash_out": 80 },
+          "720+": { "purchase": 85, "rate_term": 85, "cash_out": 75 },
+          "700+": { "purchase": 85, "rate_term": 85, "cash_out": 80 },
+          "680+": { "purchase": 80, "rate_term": 80, "cash_out": 75 },
+          "640+": { "purchase": 75, "rate_term": 75, "cash_out": null }
+        },
+        "$2,500,000": {
+          "740+": { "purchase": 85, "rate_term": 85, "cash_out": 80 },
+          "720+": { "purchase": 85, "rate_term": 85, "cash_out": 75 },
+          "700+": { "purchase": 85, "rate_term": 85, "cash_out": 70 },
+          "680+": { "purchase": 80, "rate_term": 80, "cash_out": 75 },
+          "640+": { "purchase": 75, "rate_term": 75, "cash_out": null }
+        },
+        "$3,000,000": {
+          "740+": { "purchase": 80, "rate_term": 80, "cash_out": 70 },
+          "720+": { "purchase": 80, "rate_term": 80, "cash_out": 65 },
+          "700+": { "purchase": 80, "rate_term": 80, "cash_out": 75 },
+          "680+": { "purchase": 75, "rate_term": 75, "cash_out": null },
+          "660+": { "purchase": 70, "rate_term": 70, "cash_out": null }
+        },
+        "$3,500,000": {
+          "740+": { "purchase": 75, "rate_term": 75, "cash_out": 55 },
+          "720+": { "purchase": 70, "rate_term": 70, "cash_out": 45 },
+          "680+": { "purchase": 60, "rate_term": 60, "cash_out": null },
+          "660+": { "purchase": 50, "rate_term": 50, "cash_out": null }
+        },
+        "$4,000,000": {
+          "740+": { "purchase": 65, "rate_term": 65, "cash_out": null },
+          "720+": { "purchase": 60, "rate_term": 60, "cash_out": null },
+          "700+": { "purchase": 50, "rate_term": 50, "cash_out": null }
+        }
+      }
+    },
+    "income_doc": {
+      "full_doc_methods": ["12 months Full Doc", "24 months Full Doc"],
+      "alt_doc_methods": [
+        "1099 Only",
+        "WVOE Only",
+        "Asset Utilization",
+        "Bank Statements",
+        "P&L w/3 mos Bank Stmts",
+        "One Year Self-Employment",
+        "Assets as Blended Income"
+      ],
+      "one_year_self_employed": {
+        "max_ltv": 80,
+        "max_ltv_cashout": 75,
+        "min_fico": 660,
+        "income_type": "Bank Statement only",
+        "housing_history": "1 x 30 x 12 allowed"
+      },
+      "asset_utilization": {
+        "max_ltv": 80,
+        "max_ltv_cashout": 75,
+        "max_la": 2000000,
+        "housing_history": "1 x 60 x 12 allowed"
+      },
+      "1099_only": {
+        "max_la": 3000000,
+        "additional_req": "2 mos recent Bank Stmt",
+        "housing_history": "1 x 60 x 12 allowed"
+      },
+      "wvoe_only": {
+        "min_fico": 620,
+        "max_ltv": 80,
+        "max_ltv_cashout_and_fthb": 70,
+        "housing_history": "0 x 30 x 12"
+      },
+      "itin": {
+        "min_fico": 660,
+        "max_ltv": 85,
+        "max_ltv_noo": 80,
+        "max_ltv_cashout": 65,
+        "max_la_over_80_ltv": 1000000,
+        "max_la": 1500000,
+        "income_types": "Full Doc & 12 mos Bank Stmt only",
+        "housing_history": "0 x 30 x 12"
+      },
+      "daca": {
+        "max_ltv": 85,
+        "max_ltv_cashout": 75,
+        "housing_history": "0 x 30 x 12"
+      },
+      "dscr_calc": null,
+      "dscr_min": null,
+      "sub1_allowed": false,
+      "no_ratio_allowed": false
+    },
+    "str": {
+      "allowed": false
+    },
+    "rural": {
+      "allowed": true,
+      "max_ltv": 70
+    },
+    "citizenship": {
+      "us_citizen": true,
+      "permanent_resident": true,
+      "non_permanent_resident": true,
+      "itin": true,
+      "itin_conditions": "660 min FICO, 85% max LTV, 80% max LTV NOO, 65% max LTV C/O, > 80% LTV $1.0M max LA, $1.5M max LA, Full Doc & 12 mos Bank Stmt only, 0 x 30 x 12",
+      "daca": true,
+      "daca_conditions": "85% max LTV, 75% max LTV C/O, 0 x 30 x 12",
+      "foreign_national": false
+    },
+    "credit_events": {
+      "bk_ss_fc_dil_ccc_36_months": "> 36 months (12 mos seasoning on discharged BK 13 or CCC w/pay history allowed)",
+      "bk_ss_fc_dil_ccc_24_months": "> 24 months - 10% LTV reduction, $3.5M max LA (discharged BK 13 or CCC w/pay history allowed)",
+      "bk_ss_fc_dil_ccc_12_months": "> 12 months - 15% LTV reduction, $3.0M max LA (discharged BK 13 or CCC allowed)",
+      "housing_history_base": "0 x 30 x 12",
+      "housing_1x30x12": "5% LTV reduction; > $2.5M: 10% LTV reduction, $3.5M max LA",
+      "housing_1x60x12": "10% LTV reduction (must be 0 x 60 in most recent 6); > $2.5M: 15% LTV reduction, $3.0M max LA",
+      "housing_1x30x6": "10% LTV reduction; > $2.5M: 20% LTV reduction"
+    },
+    "reserves": {
+      "owner_occupied_and_2nd_home": {
+        "lte_75_ltv": "No reserves",
+        "gt_75_ltv": "3 months",
+        "purchase_rt_gt_80_ltv": "6 months, 3 mos w/0x30x12"
+      },
+      "non_owner_occupied": {
+        "lte_70_ltv": "No reserves",
+        "gt_70_ltv": "3 months",
+        "purchase_rt_gt_80_ltv": "6 months, 3 mos w/0x30x12"
+      },
+      "all_occupancies": {
+        "over_2M_LA": "6 months",
+        "over_3M_LA": "12 months",
+        "additional_financed_properties": "2 mos for each addtn'l financed property (based on subject property PITIA)",
+        "additional_3_mos_with_1x60x12": true,
+        "cash_out_may_be_utilized": true
+      }
+    },
+    "other_restrictions": {
+      "declining_markets": "> 70% LTV: 5% LTV reduction from program max LTV",
+      "delayed_financing": "$1.5M LA: follow program max; > $1.5M LA: 70% max LTV/CLTV",
+      "debt_consolidation": "Follows R/T Refi LTV w/80% max LTV, Owner Occupied only (5k max cash in hand)",
+      "gift_funds": "100% allowed w/10% LTV reduction from max LTV, no LTV reduction required with min 5% buyer own funds. Gift of Equity not allowed on Select Non-QM",
+      "ipc": "80% LTV = 6% max; > 80% LTV = 4% max",
+      "fthb": "Primary Residence and Investment Properties allowed (2nd Homes ineligible), payment shock should not exceed 300%",
+      "non_occ_coborrower": "Investment - Purchase & Refinance: Full Doc and Bank Statement income only, 80% Max LTV, 660 Min FICO, 50% Max DTI, $1.5M Max LA",
+      "financed_property_limits": "20 financed properties including subject; OCMBC exposure $5.0M or 6 properties",
+      "temporary_buydowns": "2:1 and 1:0, 30 year fixed, Purchase transactions only, Primary & Second Home eligible, Investment loans ineligible",
+      "non_qm_professional": {
+        "pricing_improvement": "+25 bps",
+        "occupancy": "Primary Residence only",
+        "transactions": "Purchase, Rate/Term and Cash-Out Refinance",
+        "min_fico": 680,
+        "requirement": "Borrower must be currently practicing full-time in their profession, copy of active license and/or degree required",
+        "eligible_doctors": ["MD", "Medical Fellows", "Medical Resident", "DMD", "DDS", "Ophthalmology (MD)", "OD", "DO", "PharmD", "DPM", "DVM"],
+        "eligible_professionals": ["Accounting", "Architecture", "Engineering", "Legal"],
+        "professional_requirement": "Postgraduate degree + 2 years current employment in discipline"
+      },
+      "geographic_restrictions": [
+        "Texas Cash-Out: 80% max LTV (Owner-Occ, per TX 50(a)(6))",
+        "Texas SB 17: Prohibits loans when the borrower is a restricted person connected to China, Russia, Iran, or North Korea; US citizens and PRA exempt, NPRA limited to primary residences only",
+        "Arizona SB 1082: Prohibits loans when a borrower or any 30% beneficial owner is classified as a foreign adversary nation or agent",
+        "TRID (Non-Business Purpose): Row Homes ineligible in Baltimore City, MD",
+        "Investment and Non-TRID (Business Purpose): All subject properties in Baltimore City, MD and Philadelphia County, PA temporarily ineligible"
+      ],
+      "cash_in_hand_limits": {
+        "lte_65_ltv": "$1.5M max",
+        "gt_65_lte_75_ltv_fico_gte_700": "$1.5M max",
+        "gt_65_lte_75_ltv_fico_lt_700": "$1.0M max",
+        "gt_75_ltv": "$500k max"
+      },
+      "seasoning": "Cash-out: 6 months ownership or since prior Cash-out; < 6 mos seasoning allowed: All borrowers on the original Note at acquisition or prior cash out must be on the current Note & LTV based off lesser of purchase price + documented improvements, if acquired in past 6 months, or appraised value",
+      "residual_income": "$1250/month + $250 1st + $125 others"
+    },
+    "tradeline_requirements": {
+      "standard": [
+        "3 tradelines reporting 12 months with activity in last 12 months",
+        "2 tradelines reporting for 24 months with activity in last 12 months",
+        "1 revolving tradeline reporting for 60 months with activity in last 12 months",
+        "1 installment tradeline reporting for 36 months with activity in last 12 months"
+      ],
+      "trid_shortcut": "If primary wage earner has 3 credit scores, minimum standard tradeline requirement is met",
+      "non_trid_shortcut": "If each borrower has 3 credit scores, minimum standard tradeline requirement is met",
+      "limited_tradelines": "80% max LTV - Primary and Second Homes, 70% max LTV - Investment; Not available on Select Non-QM"
+    }
+  },
+  {
+    "investor": "LoanStream",
+    "program": "Select DSCR (Ratio 1.25)",
+    "last_updated": "2026-02-10",
+    "general": {
+      "min_fico": 620,
+      "max_loan": 3500000,
+      "min_loan": 250000,
+      "max_dti": null,
+      "property_types": ["SFR", "PUD"],
+      "occupancy": ["Non-Owner Occupied Investment Only"],
+      "rural_allowed": false,
+      "condotel_allowed": false,
+      "condo_max_ltv": "75% (FL Condo 70%)",
+      "nw_condo_allowed": false,
+      "two_four_unit_allowed": false,
+      "foreign_national": false,
+      "itin_allowed": false,
+      "daca_allowed": false,
+      "io_available": false,
+      "arm_available": false,
+      "fully_amortized_arm": false,
+      "prepay_options": "3 yr min PPP required, transactions where PPP is prohibited are ineligible",
+      "loan_programs": ["15-Year Fixed", "30-Year Fixed", "40-Year Fixed", "Nonstandard Terms Available"],
+      "min_square_footage": {
+        "SFR": 700,
+        "Condo": 500,
+        "2-4_Unit": 400
+      }
+    },
+    "ltv_grid": {
+      "investment_property": {
+        "$1,000,000": {
+          "720+": { "purchase": 75, "rate_term": 75, "cash_out": 70 },
+          "700+": { "purchase": 75, "rate_term": 75, "cash_out": 70 },
+          "680+": { "purchase": null, "rate_term": 75, "cash_out": null },
+          "640+": { "purchase": null, "rate_term": 70, "cash_out": null },
+          "620+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$1,500,000": {
+          "720+": { "purchase": 75, "rate_term": 75, "cash_out": 70 },
+          "700+": { "purchase": 75, "rate_term": null, "cash_out": 70 },
+          "680+": { "purchase": null, "rate_term": 65, "cash_out": null },
+          "640+": { "purchase": null, "rate_term": 60, "cash_out": null },
+          "620+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$2,000,000": {
+          "740+": { "purchase": 75, "rate_term": null, "cash_out": 70 },
+          "720+": { "purchase": 70, "rate_term": null, "cash_out": 65 },
+          "700+": { "purchase": 70, "rate_term": null, "cash_out": null },
+          "680+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "640+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "620+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$2,500,000": {
+          "740+": { "purchase": 75, "rate_term": null, "cash_out": 70 },
+          "720+": { "purchase": 70, "rate_term": null, "cash_out": 65 },
+          "700+": { "purchase": 70, "rate_term": null, "cash_out": 65 },
+          "680+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "640+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "620+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$3,000,000": {
+          "740+": { "purchase": 65, "rate_term": null, "cash_out": 60 },
+          "720+": { "purchase": 60, "rate_term": null, "cash_out": 55 },
+          "700+": { "purchase": 60, "rate_term": null, "cash_out": 55 },
+          "680+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "640+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "620+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$3,500,000": {
+          "740+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "720+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "680+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "660+": { "purchase": null, "rate_term": null, "cash_out": null }
+        }
+      }
+    },
+    "income_doc": {
+      "full_doc_methods": [],
+      "alt_doc_methods": [],
+      "dscr_calc": "Gross Income (lower of 1007 estimated market rent or monthly rent from existing lease w/2 mos proof) / PITIA or ITIA",
+      "dscr_min": 1.25,
+      "sub1_allowed": false,
+      "no_ratio_allowed": false
+    },
+    "str": {
+      "allowed": false
+    },
+    "rural": {
+      "allowed": false
+    },
+    "citizenship": {
+      "us_citizen": true,
+      "permanent_resident": true,
+      "non_permanent_resident": true,
+      "itin": false,
+      "daca": false,
+      "foreign_national": false,
+      "foreign_national_note": "See Foreign National DSCR"
+    },
+    "credit_events": {
+      "bk_ss_fc_dil_ccc": "Not Allowed",
+      "housing_history": "0 x 30 x 12",
+      "seasoning_from_credit_event": "> 48 months"
+    },
+    "reserves": {
+      "base": "3 mos, cash-out cannot be utilized",
+      "over_2M_LA": "6 mos, cash-out can be used to satisfy up to 50% of reserve requirement",
+      "additional_financed_properties": "Not applicable"
+    },
+    "recently_listed": {
+      "requirement": "Delisted 1 day prior to application date & may not have been listed for sale for > 180 days",
+      "value_determination": "Lower of lowest listing price w/in 180 days or appraised value"
+    },
+    "experienced_investor_required": true,
+    "experienced_investor_definition": "Borrower(s) with history of owning & managing NOO income-producing investment real estate for at least 1 yr within the last 3 yrs"
+  },
+  {
+    "investor": "LoanStream",
+    "program": "Core DSCR (Ratio 1.0)",
+    "last_updated": "2026-02-10",
+    "general": {
+      "min_fico": 620,
+      "max_loan": 3500000,
+      "min_loan": 100000,
+      "max_dti": null,
+      "property_types": ["SFR", "PUD", "Condo (Warrantable)", "Condo (Non-Warrantable)", "2-4 Unit", "Rural"],
+      "occupancy": ["Non-Owner Occupied Investment Only"],
+      "rural_allowed": true,
+      "rural_max_ltv": 65,
+      "condotel_allowed": false,
+      "condo_max_ltv": "80% (FL Condo 70%)",
+      "nw_condo_max_ltv": "75% (FL Condo 65%), max $3.0M",
+      "two_four_unit_max_ltv": 80,
+      "foreign_national": false,
+      "itin_allowed": false,
+      "daca_allowed": false,
+      "io_available": true,
+      "io_conditions": "700 min FICO, $1.5M max, 75% max LTV, 65% max LTV C/O",
+      "arm_available": true,
+      "arm_conditions": "80% max LTV, 75% max LTV C/O",
+      "prepay_options": "Allowed (see rate sheet)",
+      "loan_programs": [
+        "15-Year Fixed",
+        "30-Year Fixed",
+        "40-Year Fixed",
+        "Nonstandard Terms Available",
+        "5/6 SOFR ARM (2/1/5 Cap) 30-Yr & 40-Yr",
+        "7/6 SOFR ARM (5/1/5 Cap) 30-Yr & 40-Yr",
+        "30-Year Fixed IO (120 mos IO + 240 mos Amortization)",
+        "40-Year Fixed IO (120 mos IO + 360 mos Amortization)",
+        "30-Year 5/6 ARM IO (2/1/5 Cap)",
+        "30-Year 7/6 ARM IO (5/1/5 Cap)"
+      ],
+      "min_square_footage": {
+        "SFR": 700,
+        "Condo": 500,
+        "2-4_Unit": 400
+      }
+    },
+    "ltv_grid": {
+      "investment_property": {
+        "$1,000,000": {
+          "720+": { "purchase": 85, "rate_term": 85, "cash_out": 75 },
+          "700+": { "purchase": 80, "rate_term": 75, "cash_out": 75 },
+          "680+": { "purchase": 80, "rate_term": 85, "cash_out": 75 },
+          "640+": { "purchase": 75, "rate_term": 80, "cash_out": 70 },
+          "620+": { "purchase": 70, "rate_term": 65, "cash_out": 65 }
+        },
+        "$1,500,000": {
+          "720+": { "purchase": 85, "rate_term": 80, "cash_out": 75 },
+          "700+": { "purchase": 80, "rate_term": 75, "cash_out": 75 },
+          "680+": { "purchase": 80, "rate_term": 70, "cash_out": 75 },
+          "640+": { "purchase": 70, "rate_term": 80, "cash_out": 65 },
+          "620+": { "purchase": 65, "rate_term": 75, "cash_out": 60 }
+        },
+        "$2,000,000": {
+          "740+": { "purchase": 80, "rate_term": 70, "cash_out": 75 },
+          "720+": { "purchase": 80, "rate_term": 60, "cash_out": 75 },
+          "700+": { "purchase": 75, "rate_term": 75, "cash_out": 70 },
+          "680+": { "purchase": 75, "rate_term": 75, "cash_out": 70 },
+          "640+": { "purchase": 70, "rate_term": 65, "cash_out": null },
+          "620+": { "purchase": 60, "rate_term": null, "cash_out": 55 }
+        },
+        "$2,500,000": {
+          "740+": { "purchase": 80, "rate_term": null, "cash_out": 75 },
+          "720+": { "purchase": 80, "rate_term": null, "cash_out": 75 },
+          "700+": { "purchase": 75, "rate_term": null, "cash_out": 70 },
+          "680+": { "purchase": 75, "rate_term": null, "cash_out": 70 },
+          "640+": { "purchase": 70, "rate_term": null, "cash_out": 65 },
+          "620+": { "purchase": 60, "rate_term": null, "cash_out": 55 }
+        },
+        "$3,000,000": {
+          "740+": { "purchase": 75, "rate_term": null, "cash_out": 70 },
+          "720+": { "purchase": 75, "rate_term": null, "cash_out": 70 },
+          "700+": { "purchase": 70, "rate_term": null, "cash_out": 65 },
+          "680+": { "purchase": 70, "rate_term": null, "cash_out": 65 },
+          "640+": { "purchase": 65, "rate_term": null, "cash_out": 60 },
+          "620+": { "purchase": 55, "rate_term": null, "cash_out": 50 }
+        },
+        "$3,500,000": {
+          "740+": { "purchase": 65, "rate_term": null, "cash_out": 60 },
+          "720+": { "purchase": 65, "rate_term": null, "cash_out": 60 },
+          "680+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "660+": { "purchase": null, "rate_term": null, "cash_out": null }
+        }
+      },
+      "note": "DSCR > 80% requires 1.20 min ratio"
+    },
+    "income_doc": {
+      "full_doc_methods": [],
+      "alt_doc_methods": [],
+      "dscr_calc": "Gross Income (lower of 1007 estimated market rent or monthly rent from existing lease w/2 mos proof) / PITIA or ITIA. If current rents > market rents, lesser of actual rents or 125% of market rents used.",
+      "dscr_min": 1.0,
+      "dscr_min_over_80_ltv": 1.2,
+      "sub1_allowed": false,
+      "no_ratio_allowed": false
+    },
+    "str": {
+      "allowed": true,
+      "property_types": ["1 Unit SFR", "2-4 Unit", "PUD", "Condo"],
+      "experienced_investors_only": true,
+      "proof_requirements": [
+        "Purchases only: 12+ mos STR rental history in last 3 yrs required",
+        "If < 12 months STR rental history, addtn'l 5% LTV reduction required",
+        "Rents documented with 1007/1025 supported by 12 mos history of payments OR AirDNA/Overview Report",
+        "20% management fee reduction applied"
+      ],
+      "expense_factor": "20% management fee reduction",
+      "vacant_allowed": true,
+      "rural_not_allowed": true,
+      "dscr_fusion_sub1_fn_no_ratio_ineligible": true,
+      "ltv_adjustments": "5% reduction if < 12 months STR rental history"
+    },
+    "rural": {
+      "allowed_dscr": true,
+      "max_ltv": 65,
+      "allowed_dscr_str": false
+    },
+    "citizenship": {
+      "us_citizen": true,
+      "permanent_resident": true,
+      "non_permanent_resident": true,
+      "itin": false,
+      "daca": false,
+      "foreign_national": false,
+      "foreign_national_note": "See Foreign National DSCR"
+    },
+    "credit_events": {
+      "fc_ccc": "> 36 months",
+      "bk_ch13_with_pay_history": "> 12 months",
+      "ss_dil_bk_ch7": "> 24 months",
+      "housing_history": "1 x 30 x 12",
+      "inexperienced_investors_housing": "0 x 30 x 12",
+      "credit_event_ltv_reduction": "5% reduction, 80% max LTV, 70% max LTV C/O"
+    },
+    "reserves": {
+      "base": "> 65% LTV = 3 mos",
+      "over_2M_LA": "6 mos",
+      "over_3M_LA": "12 mos",
+      "cash_out_may_be_utilized": true,
+      "additional_financed_properties": "Not applicable"
+    },
+    "recently_listed": {
+      "requirement": "Delisted 1 day prior to application date & may not have been listed for sale for > 180 days",
+      "value_determination": "Lower of lowest listing price w/in 180 days or appraised value"
+    },
+    "vacant_unleased": {
+      "purchase": "Follow Program Max",
+      "refinance_rate_term": "70% Max LTV",
+      "refinance_cash_out": "65% Max LTV",
+      "loe_required": "LOE for cause of vacancy",
+      "no_ratio_ineligible_refinances_only": true
+    },
+    "inexperienced_investor": {
+      "max_ltv": 80,
+      "max_la": 1500000,
+      "housing_history": "0 x 30 x 12 (VOM/VOR)",
+      "reserves": "Min 3 mos, cash out cannot be utilized",
+      "sub1_max_ltv": 60,
+      "sub1_cashout": "Not allowed",
+      "no_ratio_fusion_str_5_8_ineligible": true,
+      "fthb_living_rent_free": "Not allowed"
+    }
+  },
+  {
+    "investor": "LoanStream",
+    "program": "DSCR Fusion (DSCR + Asset Utilization)",
+    "last_updated": "2026-02-10",
+    "general": {
+      "min_fico": 640,
+      "max_loan": 3500000,
+      "min_loan": 100000,
+      "max_dti": null,
+      "property_types": ["SFR", "PUD", "Condo (Warrantable)", "Condo (Non-Warrantable)", "2-4 Unit"],
+      "occupancy": ["Non-Owner Occupied Investment Only"],
+      "max_ltv": 80,
+      "rural_allowed": false,
+      "condotel_allowed": false,
+      "condo_max_ltv": "70% (FL Condo 50%)",
+      "nw_condo_max_ltv": "60% (FL Condo 50%)",
+      "two_four_unit_max_ltv": 60,
+      "foreign_national": false,
+      "itin_allowed": false,
+      "daca_allowed": false,
+      "io_available": true,
+      "io_conditions": "Qualify on IO Payment ALL States, Reserves based on IO Payment, 640 min FICO, 80% max LTV",
+      "arm_available": false,
+      "fully_amortized_arm": false,
+      "prepay_options": "Allowed (see rate sheet)",
+      "loan_programs": ["15-Year Fixed", "30-Year Fixed", "40-Year Fixed", "Nonstandard Terms Available"],
+      "min_square_footage": {
+        "SFR": 700,
+        "Condo": 500,
+        "2-4_Unit": 400
+      }
+    },
+    "ltv_grid": {
+      "investment_property": {
+        "$1,000,000": {
+          "720+": { "purchase": 80, "rate_term": 75, "cash_out": null },
+          "700+": { "purchase": 75, "rate_term": null, "cash_out": 70 },
+          "680+": { "purchase": 75, "rate_term": 70, "cash_out": 70 },
+          "640+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "620+": { "purchase": null, "rate_term": 65, "cash_out": null }
+        },
+        "$1,500,000": {
+          "720+": { "purchase": 70, "rate_term": 65, "cash_out": 65 },
+          "700+": { "purchase": 70, "rate_term": 60, "cash_out": 65 },
+          "680+": { "purchase": 70, "rate_term": 60, "cash_out": 65 },
+          "640+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "620+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$2,000,000": {
+          "740+": { "purchase": 65, "rate_term": null, "cash_out": 60 },
+          "720+": { "purchase": 65, "rate_term": null, "cash_out": null },
+          "700+": { "purchase": 65, "rate_term": null, "cash_out": 60 },
+          "680+": { "purchase": 65, "rate_term": null, "cash_out": null },
+          "640+": { "purchase": null, "rate_term": null, "cash_out": 60 },
+          "620+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$2,500,000": {
+          "740+": { "purchase": 60, "rate_term": null, "cash_out": 55 },
+          "720+": { "purchase": 60, "rate_term": null, "cash_out": 55 },
+          "700+": { "purchase": 60, "rate_term": null, "cash_out": 55 },
+          "680+": { "purchase": 60, "rate_term": null, "cash_out": 55 },
+          "640+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "620+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$3,000,000": {
+          "740+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "720+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "700+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "680+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "640+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "620+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$3,500,000": {
+          "740+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "720+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "680+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "660+": { "purchase": null, "rate_term": null, "cash_out": null }
+        }
+      }
+    },
+    "income_doc": {
+      "full_doc_methods": [],
+      "alt_doc_methods": [],
+      "dscr_calc": "Gross Income + Asset Utilization / PITIA or ITIA",
+      "dscr_initial_without_asset_utilization": "0.75 - 0.99 ratio",
+      "dscr_final_with_asset_utilization": 1.15,
+      "dscr_min": null,
+      "sub1_allowed": false,
+      "no_ratio_allowed": false
+    },
+    "str": {
+      "allowed": false,
+      "note": "DSCR Fusion ineligible for STR"
+    },
+    "rural": {
+      "allowed": false
+    },
+    "citizenship": {
+      "us_citizen": true,
+      "permanent_resident": true,
+      "non_permanent_resident": true,
+      "itin": false,
+      "daca": false,
+      "foreign_national": false
+    },
+    "credit_events": {
+      "bk_ss_fc_dil_ccc": "Not Allowed",
+      "housing_history": "0 x 30 x 12",
+      "seasoning_from_credit_event": "> 36 months"
+    },
+    "reserves": {
+      "base": "6 mos",
+      "over_2M_LA": "6 mos",
+      "cash_out_may_be_utilized": true,
+      "additional_financed_properties": "Not applicable"
+    }
+  },
+  {
+    "investor": "LoanStream",
+    "program": "Sub1 DSCR (Ratio 0.75 - < 1.0)",
+    "last_updated": "2026-02-10",
+    "general": {
+      "min_fico": 620,
+      "max_loan": 3500000,
+      "min_loan": 100000,
+      "max_dti": null,
+      "property_types": ["SFR", "PUD", "Condo (Warrantable)", "Condo (Non-Warrantable)", "2-4 Unit"],
+      "occupancy": ["Non-Owner Occupied Investment Only"],
+      "rural_allowed": false,
+      "condotel_allowed": false,
+      "condo_max_ltv": "70% (FL Condo 50%)",
+      "nw_condo_max_ltv": "60% (FL Condo 50%)",
+      "two_four_unit_max_ltv": 60,
+      "foreign_national": false,
+      "itin_allowed": false,
+      "daca_allowed": false,
+      "io_available": false,
+      "arm_available": false,
+      "fully_amortized_arm": false,
+      "prepay_options": "Allowed (see rate sheet)",
+      "loan_programs": ["15-Year Fixed", "30-Year Fixed", "40-Year Fixed", "Nonstandard Terms Available"],
+      "min_square_footage": {
+        "SFR": 700,
+        "Condo": 500,
+        "2-4_Unit": 400
+      }
+    },
+    "ltv_grid": {
+      "investment_property": {
+        "$1,000,000": {
+          "720+": { "purchase": 75, "rate_term": 70, "cash_out": 65 },
+          "700+": { "purchase": 70, "rate_term": 70, "cash_out": 65 },
+          "680+": { "purchase": 70, "rate_term": 65, "cash_out": 65 },
+          "640+": { "purchase": 70, "rate_term": 65, "cash_out": 65 },
+          "620+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$1,500,000": {
+          "720+": { "purchase": 65, "rate_term": 60, "cash_out": 60 },
+          "700+": { "purchase": 65, "rate_term": 60, "cash_out": 60 },
+          "680+": { "purchase": 65, "rate_term": null, "cash_out": null },
+          "640+": { "purchase": 65, "rate_term": 55, "cash_out": null },
+          "620+": { "purchase": null, "rate_term": 55, "cash_out": null }
+        },
+        "$2,000,000": {
+          "740+": { "purchase": 60, "rate_term": null, "cash_out": 55 },
+          "720+": { "purchase": 60, "rate_term": 50, "cash_out": 55 },
+          "700+": { "purchase": 60, "rate_term": 50, "cash_out": 55 },
+          "680+": { "purchase": 60, "rate_term": 50, "cash_out": null },
+          "640+": { "purchase": 60, "rate_term": null, "cash_out": null },
+          "620+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$2,500,000": {
+          "740+": { "purchase": 55, "rate_term": null, "cash_out": 50 },
+          "720+": { "purchase": 55, "rate_term": null, "cash_out": 50 },
+          "700+": { "purchase": 55, "rate_term": null, "cash_out": 50 },
+          "680+": { "purchase": 55, "rate_term": null, "cash_out": null },
+          "640+": { "purchase": 55, "rate_term": null, "cash_out": null },
+          "620+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$3,000,000": {
+          "740+": { "purchase": 50, "rate_term": null, "cash_out": 45 },
+          "720+": { "purchase": 50, "rate_term": null, "cash_out": 45 },
+          "700+": { "purchase": 50, "rate_term": null, "cash_out": 45 },
+          "680+": { "purchase": 50, "rate_term": null, "cash_out": 45 },
+          "640+": { "purchase": 50, "rate_term": null, "cash_out": 45 },
+          "620+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$3,500,000": {
+          "720+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "680+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "660+": { "purchase": null, "rate_term": null, "cash_out": null }
+        }
+      }
+    },
+    "income_doc": {
+      "full_doc_methods": [],
+      "alt_doc_methods": [],
+      "dscr_calc": "Gross Income / PITIA or ITIA",
+      "dscr_min": 0.75,
+      "dscr_max": 0.99,
+      "sub1_allowed": true,
+      "no_ratio_allowed": false
+    },
+    "str": {
+      "allowed": false,
+      "note": "Sub1 DSCR ineligible for STR"
+    },
+    "rural": {
+      "allowed": false
+    },
+    "citizenship": {
+      "us_citizen": true,
+      "permanent_resident": true,
+      "non_permanent_resident": true,
+      "itin": false,
+      "daca": false,
+      "foreign_national": false
+    },
+    "credit_events": {
+      "bk_ss_fc_dil_ccc": "Not Allowed",
+      "housing_history": "0 x 30 x 12",
+      "seasoning_from_credit_event": "> 36 months"
+    },
+    "reserves": {
+      "base": "6 mos",
+      "over_2M_LA": "6 mos",
+      "cash_out_may_be_utilized": true,
+      "additional_financed_properties": "Not applicable"
+    }
+  },
+  {
+    "investor": "LoanStream",
+    "program": "No Ratio DSCR (Ratio < 0.75)",
+    "last_updated": "2026-02-10",
+    "general": {
+      "min_fico": 640,
+      "max_loan": 3500000,
+      "min_loan": 100000,
+      "max_dti": null,
+      "property_types": ["SFR", "PUD", "Condo (Warrantable)", "Condo (Non-Warrantable)", "2-4 Unit"],
+      "occupancy": ["Non-Owner Occupied Investment Only"],
+      "rural_allowed": false,
+      "condotel_allowed": false,
+      "condo_max_ltv": "70% (FL Condo 50%)",
+      "nw_condo_max_ltv": "60% (FL Condo 50%)",
+      "two_four_unit_max_ltv": 60,
+      "foreign_national": false,
+      "itin_allowed": false,
+      "daca_allowed": false,
+      "io_available": false,
+      "arm_available": false,
+      "fully_amortized_arm": false,
+      "prepay_options": "Allowed (see rate sheet)",
+      "loan_programs": ["15-Year Fixed", "30-Year Fixed", "40-Year Fixed", "Nonstandard Terms Available"],
+      "min_square_footage": {
+        "SFR": 700,
+        "Condo": 500,
+        "2-4_Unit": 400
+      }
+    },
+    "ltv_grid": {
+      "investment_property": {
+        "$1,000,000": {
+          "720+": { "purchase": 70, "rate_term": 65, "cash_out": 60 },
+          "700+": { "purchase": null, "rate_term": null, "cash_out": 60 },
+          "680+": { "purchase": 65, "rate_term": 65, "cash_out": null },
+          "660+": { "purchase": null, "rate_term": null, "cash_out": 55 },
+          "640+": { "purchase": null, "rate_term": null, "cash_out": 55 }
+        },
+        "$1,500,000": {
+          "740+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "720+": { "purchase": 65, "rate_term": 65, "cash_out": null },
+          "700+": { "purchase": 60, "rate_term": 60, "cash_out": null },
+          "680+": { "purchase": null, "rate_term": null, "cash_out": 55 },
+          "660+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "640+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$2,000,000": {
+          "740+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "720+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "700+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "680+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "660+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "650+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$2,500,000": {
+          "note": "See source - limited availability"
+        },
+        "$3,000,000": {
+          "note": "See source - limited availability"
+        },
+        "$3,500,000": {
+          "note": "See source - limited availability"
+        }
+      },
+      "note": "No min ratio required"
+    },
+    "income_doc": {
+      "full_doc_methods": [],
+      "alt_doc_methods": [],
+      "dscr_calc": "No min ratio",
+      "dscr_min": null,
+      "dscr_min_note": "No minimum DSCR ratio required",
+      "sub1_allowed": false,
+      "no_ratio_allowed": true
+    },
+    "str": {
+      "allowed": false,
+      "note": "No Ratio DSCR ineligible for STR"
+    },
+    "rural": {
+      "allowed": false
+    },
+    "citizenship": {
+      "us_citizen": true,
+      "permanent_resident": true,
+      "non_permanent_resident": true,
+      "itin": false,
+      "daca": false,
+      "foreign_national": false
+    },
+    "credit_events": {
+      "bk_ss_fc_dil_ccc": "Not Allowed",
+      "housing_history": "0 x 30 x 12",
+      "seasoning_from_credit_event": "> 36 months"
+    },
+    "reserves": {
+      "base": "6 mos, cash-out may be used",
+      "additional_financed_properties": "Not applicable"
+    }
+  },
+  {
+    "investor": "LoanStream",
+    "program": "Foreign National DSCR (Ratio 1.0)",
+    "last_updated": "2026-02-10",
+    "general": {
+      "min_fico": null,
+      "min_fico_note": "No FICO required (680+/No FICO tiers in LTV grid)",
+      "max_loan": 3000000,
+      "min_loan": 100000,
+      "max_dti": null,
+      "property_types": ["SFR", "PUD", "Condo (Warrantable)"],
+      "occupancy": ["Non-Owner Occupied Investment Only"],
+      "rural_allowed": false,
+      "condotel_allowed": false,
+      "condo_max_ltv": "60% (FL Condo 50%)",
+      "two_four_unit_max_ltv": 60,
+      "foreign_national": true,
+      "itin_allowed": true,
+      "daca_allowed": false,
+      "io_available": true,
+      "io_conditions": "Qualify on IO Payment ALL States, Reserves based on IO Payment",
+      "arm_available": false,
+      "fully_amortized_arm": false,
+      "prepay_options": "Allowed (see rate sheet)",
+      "loan_programs": ["15-Year Fixed", "30-Year Fixed", "40-Year Fixed", "Nonstandard Terms Available"],
+      "min_square_footage": {
+        "SFR": 700,
+        "Condo": 500,
+        "2-4_Unit": 400
+      }
+    },
+    "ltv_grid": {
+      "investment_property": {
+        "$1,000,000": {
+          "720+": { "purchase": 75, "rate_term": 70, "cash_out": 65 },
+          "700+": { "purchase": 70, "rate_term": 65, "cash_out": 60 },
+          "680+/No_FICO": { "purchase": 65, "rate_term": 60, "cash_out": 55 },
+          "660+": { "purchase": 65, "rate_term": 60, "cash_out": 55 },
+          "640+": { "purchase": 65, "rate_term": 60, "cash_out": 55 }
+        },
+        "$1,500,000": {
+          "680+/No_FICO": { "purchase": 60, "rate_term": 55, "cash_out": 50 }
+        },
+        "$2,000,000": {
+          "700+/No_FICO": { "purchase": null, "rate_term": null, "cash_out": null },
+          "680+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$2,500,000": {
+          "700+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "680+": { "purchase": null, "rate_term": null, "cash_out": null }
+        },
+        "$3,000,000": {
+          "700+": { "purchase": null, "rate_term": null, "cash_out": null },
+          "680+": { "purchase": null, "rate_term": null, "cash_out": null }
+        }
+      }
+    },
+    "income_doc": {
+      "full_doc_methods": [],
+      "alt_doc_methods": [],
+      "dscr_calc": "Gross Income / PITIA or ITIA",
+      "dscr_min": 1.0,
+      "sub1_allowed": false,
+      "no_ratio_allowed": false
+    },
+    "str": {
+      "allowed": false,
+      "note": "Foreign National DSCR ineligible for STR"
+    },
+    "rural": {
+      "allowed": false
+    },
+    "citizenship": {
+      "eligible_countries": [
+        "Canada",
+        "Caribbean (excluding Cuba)",
+        "China (excluding Hong Kong) as permitted by applicable state law",
+        "Europe (excluding Russia)",
+        "Japan",
+        "Latin America (excluding Nicaragua)",
+        "South America (excluding Venezuela)"
+      ],
+      "ofac_sanctions_ineligible": true,
+      "us_tri_merge_credit_report_required": true,
+      "itin": true,
+      "daca": false,
+      "tradelines_with_fico": "Must meet minimum standard tradeline requirements; Limited tradelines not allowed",
+      "tradelines_without_fico": "12 month credit rating from an internationally known financial institution in the borrower country of origin"
+    },
+    "credit_events": {
+      "bk_ss_fc_dil_ccc": "Not Allowed",
+      "housing_history": "0 x 30 x 12 & 2 yr history required",
+      "seasoning_from_credit_event": "> 36 months"
+    },
+    "reserves": {
+      "base": "12 mos",
+      "cash_out_can_be_utilized": true,
+      "additional_financed_properties": "Not applicable"
+    },
+    "cash_in_hand_limits": {
+      "lte_65_ltv": "$1.5M max",
+      "gt_65_lte_75_ltv_fico_gte_700": "$1.5M max",
+      "gt_65_lte_75_ltv_fico_lt_700": "$1.0M max",
+      "gt_75_ltv": "$500k max",
+      "lt_1_00_dscr": "$500k max",
+      "no_ratio_dscr": "$500k max",
+      "foreign_national_dscr_lte_50_ltv": "$500k",
+      "foreign_national_dscr_gt_50_ltv": "$300k"
+    }
+  },
+  {
+    "investor": "LoanStream",
+    "program": "DSCR Programs - Shared Guidelines",
+    "last_updated": "2026-02-10",
+    "general": {
+      "occupancy": "Non-Owner Occupied, Investment Properties, 1-4 Units only",
+      "suspended_areas": "All subject properties located in Baltimore City, MD (and its neighborhoods) and Philadelphia County, PA are temporarily suspended",
+      "georgia_dscr_max_la": 2000000,
+      "texas_sb17": "Prohibits loans when the borrower is a restricted person connected to China, Russia, Iran, or North Korea; US citizens and PRA exempt, NPRA limited to primary residences only",
+      "arizona_sb1082": "Prohibits loans when a borrower or any 30% beneficial owner is classified as a foreign adversary nation or agent"
+    },
+    "appraisals": {
+      "lte_2M_cu_lte_2_5": "No additional requirements",
+      "lte_2M_cu_gt_2_5_or_no_score": "Enhanced desk review (ARR, CCA or CDA) required, 10% variance allowed",
+      "gt_2M": "2 appraisals required"
+    },
+    "tradeline_requirements": {
+      "standard": [
+        "3 tradelines reporting 12 months with activity in last 12 months",
+        "2 tradelines reporting for 24 months with activity in last 12 months",
+        "1 revolving tradeline reporting for 60 months with activity in last 12 months",
+        "1 installment tradeline reporting for 36 months with activity in last 12 months"
+      ],
+      "3_credit_scores_shortcut": "If each borrower has 3 credit scores, minimum tradeline requirement is met (not available for ITINs)",
+      "entity_closing": "If member with highest percentage of ownership has 3 credit scores, minimum tradeline requirement is met; If all members have equal ownership shares each borrower evaluated individually",
+      "thin_credit_note": "Borrower's credit scores primarily based on thin credit (authorized user accounts, self-reported accounts, recently opened accounts with limited activity) must still meet one of the standard tradeline requirements",
+      "limited_tradelines": "Max 70% LTV; Not available on Select DSCR, Sub1 DSCR, No Ratio DSCR, DSCR Fusion and Foreign National DSCR"
+    },
+    "experienced_investor": {
+      "definition": "Borrower(s) with history of owning & managing NOO income-producing investment real estate for at least 1 yr within the last 3 yrs",
+      "only_1_borrower_required": true,
+      "living_rent_free_allowed": true,
+      "paid_off_tradelines_12_mos": "Mortgage tradelines reflected on credit report that have been paid off or sold in the last 12 mos can be used to meet above requirements",
+      "us_domiciled_properties_only": "All properties to meet above definitions must be domiciled in the US (Foreign National excluded)"
+    },
+    "dscr_qualifying_ratio": {
+      "formula": "Gross Income >= PITIA or ITIA, qualify on cash flow of subject property",
+      "fusion_formula": "Gross Income + Asset Utilization >= PITIA or ITIA",
+      "gross_income_definition": "Lower of estimated market rent from Form 1007 or monthly rent from existing lease with 2 mos proof of receipt",
+      "rents_above_market": "If current rents are more than market rents, the lesser of actual rents or 125% of market rents used"
+    },
+    "loan_programs": {
+      "fixed": ["15-Year Fixed", "30-Year Fixed", "40-Year Fixed", "Nonstandard Terms Available"],
+      "arm": ["5/6 SOFR (2/1/5 Cap) 30-Year & 40-Year terms", "7/6 SOFR (5/1/5 Cap) 30-Year & 40-Year terms"],
+      "io": [
+        "30-Year Fixed IO (120 mos IO + 240 mos Amortization)",
+        "40-Year Fixed IO (120 mos IO + 360 mos Amortization)",
+        "30-Year 5/6 ARM IO (2/1/5 Cap)",
+        "30-Year 7/6 ARM IO (5/1/5 Cap)"
+      ]
+    },
+    "cash_out_restrictions": {
+      "ltv_determination": "LTV is the lower of max LTV based on FICO, loan amount, occupancy and property type or program specific max LTV as applicable"
+    },
+    "declining_markets": "> 70% LTV: Areas designated declining value on the appraisal will take a 5% LTV reduction from program Max LTV",
+    "delayed_financing": "> $1.5M loan amount, 70% max LTV/CLTV; Vacant/unleased > 3 mos must follow unleased property LTV/CLTV restrictions",
+    "financed_property_limits": "Unlimited financed properties; OCMBC exposure - $5.0M or 6 properties",
+    "fthb": "Not Allowed",
+    "gift_funds": "100% allowed with 10% LTV reduction from program Max LTV; No LTV reduction required with min 5% buyer own funds; Gift of Equity not allowed for Select DSCR",
+    "ipc": "80% LTV = 6% Max; > 80% LTV = 4% Max",
+    "min_square_footage": {
+      "SFR": 700,
+      "Condo": 500,
+      "2-4_Unit": 400
+    },
+    "prepay_penalty": "Eligible for investment properties only where permitted by applicable state law and regulations",
+    "private_party_vors": "LTV <= 80% & >= 660 FICO; LTV <= 70% & >= 600 FICO",
+    "seasoning": {
+      "cash_out": "6 months ownership or since prior Cash-out",
+      "lt_6_mos": "All borrowers on the original Note at acquisition or prior cash-out must be on the current Note and LTV is based off lesser of purchase price + documented improvements, if acquired in the past 6 months, or appraised value"
+    },
+    "temporary_buydowns": "Ineligible",
+    "impound_waivers": "Allowed (see rate sheet)",
+    "cumulative_adjustments_note": "All Adjustments on this matrix are cumulative, all LTV calculations start from the highest LTV allowed per product"
+  }
+]

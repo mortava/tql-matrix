@@ -1,0 +1,369 @@
+                                    Effective 03/01/2026
+
+                       INVEST STAR CREDIT MATRIX
+
+                                  DSCR
+
+Eligibility                                Description
+
+DSCR Ratio             · As defined in the matrix below
+DSCR Calculation
+                       · Rental income divided by PITIAA · Lesser of the lease or Form 1007/1025
+Short Term Rental      · Vacant properties use 1007/1025 (No LTV restrictions)
+Real Estate Owned      · 1007/1025 may be used for gross rents if within 20% tolerance of actual lease
+                       · Lease may be used with 2 months canceled checks to support higher rent
+     Transaction Type  · Purchase and Refinance: 100% of income documented by 12 month history of deposits from eligible
+                       sources like Airbnb or VRBO
+        Purchase       · Purchase Only: 75% of income documented by 1007 or property management report
+                       · Short term rent is not premitted on 5-10 unit properties
+     Transaction Type
+                       List all properties to meet the experience requirement and those properties associated to mortgage
+       Rate/Term       liabilities on credit.
+       Refinance
+                                  LOAN TYPE RESTRICTIONS
+     Transaction Type
+                           Fico                           DSCR > 1.00
+        Cash Out
+       Refinance         760 +    < $1.0M  < $1.5M        < $2.0M      < $3.0M
+                       740 - 759
+                       720 - 739  85% (5)  80%            75%           70%
+                       700 - 719  85% (5)                               70%
+                       680 - 699   80%     80%            75%           65%
+                       660 -679    80%                                  60%
+                                   75%     75%            70%           60%
+                           Fico    70%                                  55%
+                                           75%            70%
+                         760 +    < $1.0M                              < $3.0M
+                       740 - 759           70%            65%
+                       720 - 739   80%                                  65%
+                       700 - 719   80%     65%            60%           65%
+                       680 - 699   80%                                  65%
+                       660 -679    75%                    DSCR > 1.00   60%
+                                   75%                                  60%
+                           Fico    70%     < $1.5M        < $2.0M       55%
+
+                         760 +    < $1.0M  75%            70%          < $3.0M
+                       740 - 759
+                       720 - 739   75%     75%            70%           65%
+                       700 - 719   75%                                  65%
+                       680 - 699   75%     75%            70%           65%
+                       660 -679   75% (1)                               60%
+                                  70% (1)  70%            65%           60%
+                                  65% (1)                               55%
+                                           70%            65%
+
+                                           65%            60%
+
+                                                          DSCR > 1.00
+
+                                           < $1.5M        < $2.0M
+
+                                           70%            70%
+
+                                           70%            70%
+
+                                           70%            70%
+
+                                           65%            65%
+
+                                           65%            65%
+
+                                           60%            60%
+                  LOAN TYPE RESTRICTIONS CONTINUED
+
+Transaction Type      Fico   < $1.0M                DSCR > .75 < 1.00 (3)  < $2.0M
+
+   Purchase         760 +     75%                          < $1.5M          65%
+                  740 - 759   75%                                           65%
+Transaction Type  720 - 739   75%                           70%             65%
+                  700 - 719   75%                           70%             65%
+  Rate/Term       680 - 699   70%                           70%             65%
+   Refinance      660 -679    70%                           70%             60%
+                                                            70%
+Transaction Type      Fico   < $1.0M                        65%            < $2.0M
+
+   Cash Out         760 +     70%                   DSCR > .75 < 1.00 (3)   60%
+   Refinance      740 - 759   70%                                           60%
+                  720 - 739   70%                          < $1.5M          60%
+                  700 - 719   70%                                           60%
+                  680 - 699   65%                           65%             60%
+                  660 -679    65%                           65%             60%
+                                                            65%
+                      Fico   < $1.0M                        65%            < $2.0M
+                                                            65%
+                    760 +     70%                           65%             60%
+                  740 - 759   70%                                           60%
+                  720 - 739   70%                   DSCR > .75 < 1.00 (3)   60%
+                  700 - 719  70% (1)                                        60%
+                  680 - 699  65% (1)                       < $1.5M          60%
+                  660 -679   65% (1)                                        60%
+                                                            65%
+                                                            65%
+                                                            65%
+                                                            65%
+                                                            65%
+                                                            60%
+                  LOAN TYPE RESTRICTIONS CONTINUED
+
+Transaction Type      Fico   < $1.0M                DSCR < .75(4)  < $2.0M
+
+   Purchase         760 +     75%                     < $1.5M       65%
+                  740 - 759   75%                                   65%
+Transaction Type  720 - 739   70%                       70%          NA
+                  700 - 719   65%                       70%          NA
+  Rate/Term       680 - 699   65%                       65%          NA
+   Refinance      660 -679    60%                       65%          NA
+                                                        NA
+Transaction Type      Fico   < $1.0M                    NA         < $2.0M
+
+   Cash Out         760 +     70%                   DSCR < .75(4)   65%
+   Refinance      740 - 759   70%                                   65%
+                  720 - 739   70%                     < $1.5M        NA
+                  700 - 719   65%                                    NA
+                  680 - 699   60%                       70%          NA
+                  660 -679    60%                       70%          NA
+                                                        65%
+                      Fico   < $1.0M                    65%        < $2.0M
+                                                        NA
+                    760 +     65%                       NA          60%
+                  740 - 759   65%                                   60%
+                  720 - 739   60%                   DSCR < .75(4)    NA
+                  700 - 719   60%                                    NA
+                  680 - 699   60%                     < $1.5M        NA
+                  660 -679    60%                                    NA
+                                                        60%
+                                                        60%
+                                                        60%
+                                                        60%
+                                                        NA
+                                                        NA
+                             PRODUCT TYPE RESTRICTIONS
+
+Eligibility                  Max LTV Purchase  Max LTV R&T  Max LTV Cash Out
+
+2 - 4 Units                          80%            80%             75%
+5 - 10 Units (6)                     75%            70%             65%
+Short Term Rental                   75% (2)         70%             70%
+Non-Warrantable Condo                75%            75%             70%
+Condotel                             75%            70%             65%
+Interest Only                        80%            75%             75%
+Foreign National                     75%            70%             65%
+Non-Permanent Resident               75%            70%             70%
+
+(1) Cash Out Fico < 720      PRODUCT TYPE RESTRICTIONS
+
+(2) Short Term Rental        · Fico 680 - 719 and the LTV is greater than 70% or
+                             · Fico 660 - 679 and the LTV is greater than 65% the following limitations apply:
+(3) DSCR >.75 < 1.00
+                                · Max loan amount of $750,000
+(4) DSCR < .75                  · Max cash out proceeds $100,000
+                             In addition to all short term rental guidelines:
+(5) LTV > 80%                · 75% max LTV purchase requires 700 fico
+                             · 0x30x12 mortgage rating
+(6) 5-10 Unit / Multifamily  · 1.00 short term rental DSCR ratio
+                             · Max $1,500,000 loan amount
+                             · 2-4 Units and Condos Max LTV Purchase 75% / Refinance 70%
+                             · Interest only requires a 700 fico and max LTV of 75%
+                             · Vacant properties ineligible for refinances
+                             · 5% LTV reduction on declining markets (See Declining Markets Table in guide)
+                             · Minimum $150,000 loan amount
+                             · No Non-Warrantable Condo · No Condotel
+                             · Mortgage History rating of 0x30x12
+                             · First time investors not allowed
+                             ·· 21-24MUonnittshasnRdeCseornvdeossRMeqauxirLeTdV Purchase 75% / Refinance 70%
+                             · Interest only requires a 700 fico and max LTV of 70%
+                             · LTV > 65% max cash out of $500,000 · LTV < 65% max cash out of $1,000,000
+                             · Vacant properties ineligible for refinances
+                             · 5% LTV reduction on declining markets (See Declining Markets Table in guide)
+                             · Minimum $150,000 loan amount
+                             · No Non-Warrantable Condo · No Condotel
+                             · Mortgage History rating of 0x30x12
+                             · First time investors not allowed
+                             · 12 Months Reserves Required
+                             · Minimum credit score 740 · Minimum DSCR 1.00 · 12 months PITIA reserves
+                             · No First Time Investors · 0 x 30 x 12 required
+                             · Delegated correspondent not eligible
+                             · Borrower must have experience owning a 2+ unit property
+                             · Minimum 1.10 DSCR, Minimum FICO 680
+                             · Minimum unit size 500 sq ft, No Short Term Rental
+                             · Max UPB $3MM (5% LTV reduction >$2MM)
+                             · 6 mo. min reserves, 12 mo. for >$1.5MM Original Principal Balance
+                             · 1 unit is permitted to be unleased/vacant on RT/CO transaction, 75% of market rent used to qualify. No
+                             Mixed Use
+                             · US Citizen only
+                             · Minimum Loan amount of $250,000
+                             · Mortgage History - 0x30x12
+                             · Correspondent not eligible
+Eligibility                                         PRODUCT
+
+Fixed Products                                                          Description
+Arm Products
+Interest Only Term          30 Year fixed or 40 Year fixed interest only
+Loan Amount
+Prepayment Penalty          Not allowed
+Prepay Restrictions
+Escrows                     120 Months
+Cash Out Proceeds
+                            Minimum loan amount $75,000 · Maximum loan amount $3,000,000
+Appraised Value Seasoning      · 5-10 Unit minimum 250k · 5-10 Unit maximum $3,000,000
+
+Occupancy                   Fixed percentage 1-5 year term with a 5% fixed penalty
+Secondary Financing         Declining structure starting at 5% with a floor of 3%
+Land Contract · Lease with
+Option to Purchase          Not allowed in AK, KS, MN, NM, RI (No Restrictions on 5-10 Unit properties in: KS, MN, NM, RI)
+Delayed Financing           Allowed with conditions in IL, MS, NJ, OH, PA
+
+                            Escrow waiver allowed with conditions, see client guide
+
+                            Must be used for a business purpose
+                            Max cash in hand limited to $500,000 for LTV greater than 65%
+                            There is no cash in hand limitation for loans equal to or less than 65% LTV
+                            No seasoning to use appraised value for a Rate and Term Refinance
+                            3 months seasoning for a Cash Out Refinance
+
+                              · Max loan amount lesser of $750,000 or purchase price plus improvements
+                              · Minimum Fico of 680
+                            6 months seasoning for a Cash Out Refinance
+                              · No additional restrictions
+                            No seasoning required to use appraised value on properties obtained through inheritance, divorce, or
+                            separation
+                            Investment only
+
+                            Not allowed
+
+                            Eligible as a rate and term refinance if seasoned for 12 months with a payment history of 0x30 for 12
+                            months supported by canceled checks
+
+                            Eligible when a property was purchased by a borrower for cash within 180 days of the loan application ·
+                            Rate and Term loan/LTV limits apply
+Eligibility                                         BORROWER
+
+Eligible Borrowers                                                       Description
+
+Foreign National             US Citizen · Permanent Resident · Non-Permanent Resident · Foreign National
+                             US Domiciled Entity · Living Trusts
+ACH Requirements
+Max Borrowers                · Minimum credit score 680 · Default score of 680 when US credit unavailable
+Vesting                      · 12 Months Reserves · See guide for visa requirements
+Experience                   · Minimum DSCR 1.00
+                             · $150,000 minimum loan amount
+First Time Investor          ACH required on all loans
+First Time Homebuyer
+Exposure                     · Required on all cash out refinances with a qualifying score below 700
+                             · Required on all cash out refinances with an LTV greater than 70%
+Eligibility                  · Required on all DSCR ratios less than 1
+
+Decision Credit Score        Max 4 individuals or 2 entities
+
+Mortgage Status              Natural persons · US Domiciled Entity · Living Trusts
+Mortgage Rating
+Mortgage / Primary Rating    Must own an investment property for 12 months during the last 3 years
+Consumer Credit                · 5-10 unit properties require experience owning a 2+ unit property on purchase transactions (Case-by-
+Credit Event Seasoning
+Covid Forbearance            case exceptions may be permitted)
+Charge-Offs and Collections
+Judgments and Liens          Must own primary residence for 12 months during the last 3 years (Max 75% LTV)
+                               · 5-10 unit properties require experience. First time investors are not permitted
+Tradelines
+                             Ineligible
+
+                             No more than $5,000,000 or 15 properties to one single borrower
+
+                                                       CREDIT
+
+                                                                         Description
+
+                             Minimum score 660
+                             A minimum of two scores must be reporting
+                             Use the lower of two or middle of three credit scores to determine the decision score · Use the lowest
+                             decision score amongst all borrowers
+                             Primary and Subject Mortgage must be current at the time of closing
+
+                             1 x 30 x 12 months for Primary and Subject Mortgage
+                               · 5-10 unit properties require 0x30x12 on primary and subject
+
+                             If reporting on credit for 12 months, most recent 60 days not required
+
+                             No requirement
+
+                             36 Months
+
+                             Eligible if all missed payments are repaid or 3 regular payments over 90 days have been paid after
+                             forbearance has ended.
+
+                             Charge-offs and collections can be ignored unless title impacted.
+
+                             All open judgments, garnishments, and outstanding liens affecting title must be paid off prior to or at
+                             closing.
+
+                             One (1) active tradeline rated for 24 months and Two (2) tradelines rated 12 months open or closed ·
+                             One (1) mortgage tradeline rated for 12 months open or closed in last 24 months and One (1) additional
+                             tradeline
+                         ASSETS / RESERVES
+
+Eligibility                                                          Description
+
+Assets                   Seasoned for 60 days · Sourcing required
+                         · 6 Months PITIA unless:
+Reserves
+                                · Purchase Transaction: 3 Months PITIA with a credit score >= 720 and LTV <= 80
+Concessions              · 12 Months PITIA for loan amounts greater than $1,500,000
+Gift Funds               · 12 Months PITIA for DSCR < 1.00
+Gift Equity              · 12 Months PITIA for foreign nationals
+                         · 12 Months PITIA for > 80% LTV
+                         Loan proceeds can be used for reserves
+                         Not to exceed 6% and must be used for closings costs and prepaids
+
+                         Gift funds permitted after a minimum 10% borrower contribution
+
+                         Not eligible
+
+                         PROPERTY
+
+Eligibility                                                          Description
+
+Property Type            SFR 1 - 4 Units · PUD · Condo · Non-Warrantable Condo · Condotel · 5-10 units (Residential use only)
+Non - Warrantable Condo
+Property Condition       1.00% Min DSCR · 680 Min Fico
+Minimum Square footage
+Acreage                  C4 or better
+
+Appraisal Requirements   SFR & PUD 600 sq ft · Condo Units 500 sq ft · 2-4 Units 400 sq ft · 5-10 units 500 sq ft
+
+Two Appraisals           Max 10 acres · No rural properties
+Appraisal Transfers      Approved AMC required · SSRs required unless transferred
+Insurance Requirements   SFR - 1004/1007 · 2 to 4 Units - 1025 · Condo - 1073/1007 · 5-10 unit - FHLMC 71A
+                         Appraisal must be dated within 120 days of the Note
+Listed for Sale          Desk review required on all loans or CU Score of 2.5 or less with restrictions
+                         Required for loan amounts >$2,000,000
+Unavailable States
+NMLS License Required    Allowed with signed transfer letter from lender, invoice, and first generation report
+
+                         Rent loss coverage equal to 6 months qualifying rent
+                         Liability coverage equal to $100,000
+
+                         Listing must be canceled prior to the application date for a Rate and Term Refinance
+                         Listing must be canceled 90 days prior to the application date for a Cash Out Refinance
+                         The lessor of the recent list price or appraised value will be used within 6 months of the listing
+
+                         ND & SD
+                         · 5-10 unit properties are not permitted in NE or AK
+
+                         AZ, CA, OR, NV, UT, ID, ND, SD, MN, VT
+
+                         COMPLIANCE
+
+Eligibility                        Description
+
+Max Broker Fees          · Loan Amounts < $150,000: Max broker compensation which includes borrower paid compensation,
+                         lender paid compensation, business purpose premium, and total fee compensation, which includes all
+                         other fees charged by the broker such as the credit report fee, processing fee, etc., is 5% in aggregate.
+                         · Loan Amounts > $150,000: Max broker compensation which includes borrower paid compensation,
+                         lender paid compensation, business purpose premium is 3%. Total fee compensation which includes all
+                         other fees charged by the broker such as the credit report fee, processing fee, etc. is 5% in aggregate.
+                         · Stacking Fees does not affect or allow the broker to charge in excess of the above max compensation.
+
+This information is intended for the exclusive use of licensed real estate and mortgage lending professionals. Distribution to the general
+public is prohibited. This is not a commitment to lend. Rates and programs are subject to change without notice. Other restrictions and
+limitations may apply. Granting of loan is subject to the credit and policy requirements of American Heritage Lending, LLC, NMLS 93735
+

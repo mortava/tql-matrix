@@ -1,0 +1,123 @@
+                                                                                                                                                                                        DSCR | Business Purpose
+
+                                                                                                                                                                                             Accelerator DSCR 1-4 Unit
+
+                   DSCR                                DSCR  1.00                                                       DSCR .99 - .75                                                       NO RATIO < .75
+
+         Loan Amount         FICO    Purchase          Rate & Term       Cash-Out                    Purchase  Rate & Term      Cash-Out   Asset Depletion              Purchase        Rate & Term  Cash-Out   Asset Depletion
+                                                                         Refinance                                              Refinance                                                            Refinance
+          < $1,000,000        700       80%                 80%                                         80%         80%                        Purchase                    75%               75%                    Purchase
+                              680       75%                 75%              75%                        75%         75%             75%    Min. FICO: 680                  75%               75%         70%    Min. FICO: 680
+   $1,000,001 - $1,500,000    660       75%                 75%              70%                        75%         75%             70%     Max LTV: 80%                   65%               65%         70%     Max LTV: 75%
+                              640       75%                 75%              70%                        75%         75%             70%                                    60%               60%         60%
+   $1,500,001 - $2,000,000    620       65%                 65%              60%                        65%         65%             60%       Refinance                                                  60%       Refinance
+                              600       60%                 60%              55%                        60%         60%             55%      Rate & Term                   70%               N/A                  Rate & Term
+   $2,000,001 - $2,500,000   740 +      80%                 80%              55%                        80%         75%             55%      Or Cash Out                   70%                           65%    Min. FICO: 720
+                              720       80%                 80%              75%                        80%         75%             75%    Min. FICO: 720                  70%               70%         65%     Max LTV: 75%
+   $2,500,001 - $3,000,000    700       80%                 80%              75%                        80%         75%             75%     Max LTV: 75%                                     70%         65%
+                              680       75%                 75%              75%                        75%         75%             75%                                                      70%                    Cash Out
+State Specific Restrictions   660       75%                 75%              70%                        75%         75%             70%                                                                         Min. FICO: 720
+Ineligible States             640       65%                 65%              70%                        65%         65%             70%                                                 N/A                      Max LTV: 70%
+Ineligible Locations          620       50%                 50%              55%                        50%         50%             55%
+Loan Purpose                 740 +      75%                 75%              50%                        75%         75%             50%                                 65%             65%          60%
+Exceptions                    700       75%                 75%              70%                        75%         75%             70%
+Prepayment Penalty            680       70%                 70%              70%                        70%         70%             70%                                 65%             65%          60%
+Product Type                  660       70%                 70%              65%                        70%         70%             65%
+Interest Only                 640       65%                 65%              65%                        65%         65%             65%                                                 N/A
+Loan Amounts                 740 +      75%                 75%              60%                        70%         70%             60%
+Occupancy                     700       75%                 75%              65%                        70%         70%             65%                                                 N/A
+Property Type and             680       70%                 70%              65%                                                    65%
+Restrictions                  660       70%                 70%              65%                        60%         N/A
+Cash Out                      640       60%                 60%              65%                        60%                         N/A
+Appraisals                   740 +      70%                 70%              N/A                        60%         60%
+Declining Market              720       70%                 70%              65%                                    60%
+Acreage                       700       70%                 70%              65%                                    60%
+Income                        680       65%                 65%              65%
+Short Term Rental             660       65%                 65%                                                     N/A
+Tradelines                    640       60%                 60%              N/A
+
+Mtg/Housing History                                                                                  Geographic Restrictions
+
+First Time Investor          State or Local High Cost not permitted
+
+Rent Free Clarification      Refer to State Licensing
+
+Credit Event Seasoning       Hawaii lava zones 1 & 2| Puerto Rico, Guam| The US Virgin Islands| Baltimore MD| Philadelphia, PA
+Assets
+Reserves                                                                                             Product Highlights
+Seller Contribution
+Gift Funds                   Purchase, Rate-Term, and Cash Out | Investment Business Purpose only
+Citizenship
+                             Considered on a case-by-case basis
+
+                             5% of the unpaid principal balance. (Other than the monthly payments required herein, if Borrower prepays this Note in whole or in part before the full term of the pre-payment period, Borrower will pay a
+                             Prepayment Premium equal to Five Percent (5%) of any amounts prepaid ("Prepayment Premium").) Not allowed Alaska, Kansas, Maryland, Michigan, Minnesota, New Mexico, Ohio 1-2 Units, Rhode Island and
+                             Vermont. ADDITIONAL STATE RESTRICTIONS: IL ­ Natural person < 8.00% APR required. MS - Step Down required . NJ ­ Titled Owner must be an Entity. Pennsylvania 1-2 Units > $329,411.
+
+                             30-Yr Fixed, 5/6 ARM, 7/6 ARM, 10/6 ARM
+
+                             Min Credit Score: 660 | Max LTV: Purchase/R&T: 75% | Cash-Out: 70%
+                             *Interest Only transactions DSCR is calculated using ITIA.
+                             Minimum $125,000 to Maximum $3,000,000
+
+                             Investment Property| Borrower or Family members are not permitted to live in subject.
+
+                             Eligible Property Types: Single Family, Attached, Detached, 2-4 Units | Rural: Not eligible| Condominium: Warrantable: Eligible per Matrix | Non-Warrantable and Condotel: 5% LTV reduction. Condo in FL, with LTV
+                             over 70%, requires a Full Condo Review.
+
+                             Max cash-in-hand: LTV > 65% - $600,000 | 60< LTV <= 65% - $1,000,000 | <=60 LTV unlimited
+
+                             Loan Amounts  $2,000,000 require 2 appraisals. Desk Review Product to be ordered on all loans with an CU Score over 2.5, with the exception of those with a full second appraisal. Desk Review must be in tolerance
+                             as outlined in guidelines * Transferred appraisal acceptable.
+
+                             Declining markets, as identified by the appraiser, require a 5% LTV reduction off Matrix Max LTV.
+
+                             Property up to 10-acres, not meeting the rural definition, is eligible
+
+                             Long Term Rental: Refer to Guidelines
+                             Short Term Rental: Refer to Guidelines
+                             Max LTV: Purchase & Rate and Term 75% | Cash out Refinance: 70%
+
+                             · Borrower(s) have 3 scores; or
+                             · 1 open and reporting 24-months; or
+                             · 2 open and reporting 12-months
+                             Borrowers must have a complete 12-month housing history. Rent Free is not permitted. If living rent-free, refer to Rent Free Clarification
+                             1x30x12: No reduction
+                             0X60X12:
+                             Purchase Max: 70% LTV
+                             Refinance Max: 65% LTV
+
+                             First Time Investor-Definition: First time investor is a borrower not meeting the experienced investor definition of having a history of owning and managing commercial or non-owner occupied residential real estate
+                             for at least 1 year in the last 3 years.
+
+                             First Time Investors eligibility
+                             Minimum credit score: Matrix
+                             Housing history: No housing late payments in the most recent 12 months
+                             Living rent-free: Not permitted
+
+                             Not considered living rent free or having no housing history in the following scenarios:
+                             · Borrower(s) live in a marital home. Provide:
+
+                                    o Letter from spouse and evidence of spouse's mortgage or current lease. If owned free and clear a property profile is acceptable.
+                             · Borrower(s) sold a primary home within the past 6 months and purchasing a primary home
+                             · Borrower(s) who own their primary home Free and Clear with proof taxes are paid current
+                             · Documented 12-month payment history on other real estate owned, plus proof of ownership. (not aplicable for First time investor)
+
+                             BK/FC/SS/DIL/Deferral/Modification:
+                             >=36 Mo ­ No reduction
+                             >=24 Mo:
+                              · Purchase & Rate and Term: Max 75% LTV
+                              · Cashout Refinance Max: 70%LTV
+
+                             Min of 30-days asset verification required
+
+                             Loan Amt 1.5 M: No reserves | Loan Amt > 1.5 M: 2-months PITIA | Loan Amt > 2.5 M: 6-months PITIA | Cash-Out can be used to satisfy reserves requirements
+
+                             6% Max
+
+                             Gift funds are permitted
+
+                             US Citizen, Permanent Resident Alien, Non-Permanent Resident Alien (With US Credit and acceptable VISA).
+
+Rev 03.16.2026
+
